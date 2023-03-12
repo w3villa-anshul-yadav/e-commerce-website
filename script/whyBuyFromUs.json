@@ -1,0 +1,28 @@
+{
+  "whyBuyFromUsData": [
+    {
+      "img": "./assets/1card.jpg",
+      "name": "fashion"
+    },
+    {
+      "img": "./assets/2card.jpg",
+      "name": "helth&beauty"
+    },
+    {
+      "img": "./assets/3card.jpg",
+      "name": "home decor"
+    },
+    {
+      "img": "./assets/4card.jpg",
+      "name": "footware"
+    },
+    {
+      "img": "./assets/5card.jpg",
+      "name": "home decor"
+    },
+    {
+      "img": "./assets/1card.jpg",
+      "name": "fashion"
+    }
+  ]
+}
