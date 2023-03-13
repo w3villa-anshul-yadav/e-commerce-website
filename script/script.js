@@ -175,19 +175,19 @@ function toggleWhyBuyCategories(elem) {
   let activElem = document.getElementsByClassName("active-why-buy")[0];
   activElem.classList.remove("active-why-buy");
   elem.classList.add("active-why-buy");
-  displayWhyBuyUs(elem.innerHTML);
+  displayWhyBuyUs(elem.innerHTML.trim());
 }
 function toggleBlogCategories(elem) {
   let activElem = document.getElementsByClassName("active-blog")[0];
   activElem.classList.remove("active-blog");
   elem.classList.add("active-blog");
-  displayOurBlog(elem.innerHTML);
+  displayOurBlog(elem.innerHTML.trim());
 }
 function toggleFeaturedCategories(elem) {
   let activElem = document.getElementsByClassName("active-featured")[0];
   activElem.classList.remove("active-featured");
   elem.classList.add("active-featured");
-  displayfeaturedProducts(elem.innerHTML);
+  displayfeaturedProducts(elem.innerHTML.trim());
 }
 let mybutton = document.getElementsByClassName("top-navigation-controller")[0];
 window.onscroll = function () {
