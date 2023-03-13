@@ -1,30 +1,4 @@
-let slideIndex = 1;
-showSlides(slideIndex);
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
+
 function owl1() {
   $(".owl1").owlCarousel({
     loop: true,
@@ -552,4 +526,54 @@ async function displayMostViewed() {
   elem += `</div>`;
   container.innerHTML = elem;
   owl6();
+}
+let slideIndex = 1;
+displayHeroSlide();
+async function displayHeroSlide() {
+  let container = document.getElementById("hero-slider");
+  let response = await fetch("script/heroSIlider.json");
+  let responsData = await response.json();
+  let data = responsData.heroSliderData;
+  let elem=``;
+  for (i in data) {
+    elem += `
+    <div class="mySlides fade">
+    <img src="${data[i].img}" style="width: 100%" />
+    <div class="text-over-image">
+      <input type="button" value="${data[i].value}" />
+      <h1>${data[i].text}</h1>
+      <div class="learn-more">
+        <p>LEARN MORE &rarr;</p>
+      </div>
+    </div>
+  </div>
+    `;
+  }
+  container.innerHTML = elem;
+    showSlides(slideIndex );  
+}
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
