@@ -19,22 +19,6 @@
             "img":"./assets/phone.png",
             "name":"Smart Phone",
             "prise":"$397.00"
-        },
-        
-        {
-            "img":"./assets/sandle.png",
-            "name":"Oversized Sandle",
-            "prise":"$397.00"
-        },
-        {
-            "img":"./assets/camera.png",
-            "name":"DSLR Camera",
-            "prise":"$397.00"
-        },
-        {
-            "img":"./assets/headphone.png",
-            "name":"Oversized Headphones",
-            "prise":"$397.00"
         }
     ]
 }

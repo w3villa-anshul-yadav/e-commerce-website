@@ -1,4 +1,3 @@
-
 function owl1() {
   $(".owl1").owlCarousel({
     loop: true,
@@ -174,13 +173,13 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-displayWhyBuyUs("top_categories");
+displayWhyBuyUs("top categories");
 async function displayWhyBuyUs(elem) {
   let response = await fetch("script/whyBuyFromUs.json");
   let responsData = await response.json();
   let data;
   switch (elem) {
-    case "top_categories":
+    case "top categories":
       data = responsData.top_categories;
       break;
     case "electronics":
@@ -376,13 +375,13 @@ async function displayfeaturedCategories() {
   whyBuyContainer.innerHTML = container;
   owl3();
 }
-displayOurBlog("latest_posts");
+displayOurBlog("latest posts");
 async function displayOurBlog(elem) {
   let response = await fetch("script/fromOurBlog.json");
   let responsData = await response.json();
   let data;
   switch (elem) {
-    case "latest_posts":
+    case "latest posts":
       data = responsData.latest_posts;
       break;
     case "rated":
@@ -534,7 +533,7 @@ async function displayHeroSlide() {
   let response = await fetch("script/heroSIlider.json");
   let responsData = await response.json();
   let data = responsData.heroSliderData;
-  let elem=``;
+  let elem = ``;
   for (i in data) {
     elem += `
     <div class="mySlides fade">
@@ -550,7 +549,7 @@ async function displayHeroSlide() {
     `;
   }
   container.innerHTML = elem;
-    showSlides(slideIndex );  
+  showSlides(slideIndex);
 }
 function plusSlides(n) {
   showSlides((slideIndex += n));
