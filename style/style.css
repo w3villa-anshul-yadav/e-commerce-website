@@ -566,7 +566,7 @@ contains two main section
 
 .hero .crousel {
   position: relative;
-  width: 1200px;
+  width: 1219px;
 }
 
 .hero .crousel .mySlides {
@@ -579,7 +579,7 @@ contains two main section
 
 /* Slideshow container */
 .hero .crousel .slideshow-container {
-  max-width: 1200px;
+  max-width: 100%;
   position: relative;
 }
 
