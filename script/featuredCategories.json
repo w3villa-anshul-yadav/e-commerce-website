@@ -1,39 +1,39 @@
 {
   "featuredCategoriesData": [
     {
-      "img": "./assets/camera.png",
+      "img": "./assets/camera.jpg",
       "crossLabel": ["2-3 DAYS"],
       "rightLabels": ["NEW"],
       "name": "camera",
       "discountedPrice": "$999.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
        "rightLabels":["-70%","HOT"],
       "name": "Hadphones",
       "discountedPrice": "$999.00"
     },
     {
-      "img": "./assets/phone.png",
+      "img": "./assets/phone.jpg",
       "crossLabel": ["2-3 DAYS"],
       "rightLabels": ["-70%","HOT"],
       "name": "Hadphones",
       "discountedPrice": "$999.00"
     },
     {
-      "img": "./assets/sandle.png",      "rightLabels": ["-70%","HOT"],
+      "img": "./assets/sandle.jpg",      "rightLabels": ["-70%","HOT"],
        "name": "Hadphones",
       "discountedPrice": "$999.00"
     },
     {
-      "img": "./assets/phone.png",
+      "img": "./assets/phone.jpg",
       "crossLabel": ["2-3 DAYS"],
       "rightLabels": ["NEW"],
       "name": "Hadphones",
       "discountedPrice": "$999.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "rightLabels": ["-70%","HOT"],
       "name": "Hadphones",
       "discountedPrice": "$999.00"

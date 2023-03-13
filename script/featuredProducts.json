@@ -1,7 +1,7 @@
 {
   "featured": [
     {
-      "img": "./assets/sandle.png",
+      "img": "./assets/sandle.jpg",
       "crossLabel": ["CUSTOM LABELS"],
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
@@ -10,7 +10,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "rightLabels": ["NEW  "],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -18,7 +18,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/phone.png",
+      "img": "./assets/phone.jpg",
       "crossLabel": ["LABELS"],
 
       "rightLabels": ["-70%", "HOT"],
@@ -28,7 +28,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "crossLabel": [" Latest"],
       "rightLabels": ["NEW  "],
       "brand": ["Ericksoon", "Model519"],
@@ -37,7 +37,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/camera.png",
+      "img": "./assets/camera.jpg",
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -45,7 +45,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "crossLabel": ["NEW "],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -53,7 +53,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/phone.png",
+      "img": "./assets/phone.jpg",
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -63,7 +63,7 @@
   ],
   "latest": [
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "rightLabels": ["NEW  "],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -71,7 +71,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/phone.png",
+      "img": "./assets/phone.jpg",
       "crossLabel": ["LABELS"],
 
       "rightLabels": ["-70%", "HOT"],
@@ -81,7 +81,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/sandle.png",
+      "img": "./assets/sandle.jpg",
       "crossLabel": ["CUSTOM LABELS"],
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
@@ -90,7 +90,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "rightLabels": ["NEW  "],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -98,7 +98,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/phone.png",
+      "img": "./assets/phone.jpg",
       "crossLabel": ["LABELS"],
 
       "rightLabels": ["-70%", "HOT"],
@@ -108,7 +108,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "crossLabel": [" Latest"],
       "rightLabels": ["NEW  "],
       "brand": ["Ericksoon", "Model519"],
@@ -117,7 +117,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/camera.png",
+      "img": "./assets/camera.jpg",
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -125,7 +125,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "crossLabel": ["NEW "],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -133,7 +133,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/phone.png",
+      "img": "./assets/phone.jpg",
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -143,7 +143,7 @@
   ],
   "Bestsellers": [
     {
-      "img": "./assets/camera.png",
+      "img": "./assets/camera.jpg",
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -151,7 +151,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "crossLabel": ["NEW "],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -159,7 +159,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/phone.png",
+      "img": "./assets/phone.jpg",
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -167,7 +167,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/sandle.png",
+      "img": "./assets/sandle.jpg",
       "crossLabel": ["CUSTOM LABELS"],
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
@@ -176,7 +176,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "rightLabels": ["NEW  "],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -184,7 +184,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/phone.png",
+      "img": "./assets/phone.jpg",
       "crossLabel": ["LABELS"],
 
       "rightLabels": ["-70%", "HOT"],
@@ -194,7 +194,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "crossLabel": [" Latest"],
       "rightLabels": ["NEW  "],
       "brand": ["Ericksoon", "Model519"],
@@ -205,7 +205,7 @@
   ],
   "specials": [
     {
-      "img": "./assets/sandle.png",
+      "img": "./assets/sandle.jpg",
       "crossLabel": ["CUSTOM LABELS"],
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
@@ -214,7 +214,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "rightLabels": ["NEW  "],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -222,7 +222,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/phone.png",
+      "img": "./assets/phone.jpg",
       "crossLabel": ["LABELS"],
 
       "rightLabels": ["-70%", "HOT"],
@@ -232,7 +232,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "crossLabel": [" Latest"],
       "rightLabels": ["NEW  "],
       "brand": ["Ericksoon", "Model519"],
@@ -241,7 +241,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/camera.png",
+      "img": "./assets/camera.jpg",
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -249,7 +249,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/headphone.png",
+      "img": "./assets/headphone.jpg",
       "crossLabel": ["NEW "],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
@@ -257,7 +257,7 @@
       "price": "$3,229.00"
     },
     {
-      "img": "./assets/phone.png",
+      "img": "./assets/phone.jpg",
       "rightLabels": ["-70%", "HOT"],
       "brand": ["Ericksoon", "Model519"],
       "name": "Hadphones",
