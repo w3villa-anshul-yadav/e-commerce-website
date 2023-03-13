@@ -33,7 +33,7 @@
     <title>e-commerce</title>
   </head>
 
-  <body onload="onReady">
+  <body>
     <!-- **************************header section ********************************** -->
     <header>
       <div class="top-navbar-container body-spacer">
@@ -501,7 +501,7 @@
       <div class="categories-navigation-container">
         <a>
           <p class="active-why-buy" onclick="toggleWhyBuyCategories(this)">
-            top categories
+            top_categories
           </p>
         </a>
 
@@ -636,87 +636,7 @@ fratured products
         <hr />
       </div>
 
-      <div class="categories-card-carosel">
-        <div class="owl-carousel owl4 owl-theme">
-          <div class="item">
-            <div class="featured-products-card">
-              <div class="image-container">
-                <img src="./assets/logo1.png" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <div class="image-container">
-                <img src="./assets/logo2.png" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <div class="image-container">
-                <a> <img src="./assets/logo4.jpeg" alt="" /></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <div class="image-container">
-                <a> <img src="./assets/logo1.png" alt="" /></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <div class="image-container">
-                <a> <img src="./assets/logo4.jpeg" alt="" /></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <div class="image-container">
-                <a> <img src="./assets/logo2.png" alt="" /></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <div class="image-container">
-                <a> <img src="./assets/logo1.png" alt="" /></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <div class="image-container">
-                <a> <img src="./assets/logo2.png" alt="" /></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <div class="image-container">
-                <a> <img src="./assets/logo4.jpeg" alt="" /></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <div class="image-container">
-                <a> <img src="./assets/logo2.png" alt="" /></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <div class="image-container">
-                <a><img src="./assets/logo4.jpeg" alt="" /></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="categories-card-carosel" id="shop-by-brand"></div>
     </section>
 
     <!-- 
@@ -732,17 +652,7 @@ fratured products
           magni! Sequi aliquid nobis, amet voluptates ratione totam accusantium?
         </p>
       </div>
-      <div class="gallary-image-container">
-        <img src="./assets/g1.jpeg" alt="" />
-        <img src="./assets/g9.jpeg" alt="" />
-        <img src="./assets/g2.jpeg" alt="" />
-        <img src="./assets/g3.jpeg" alt="" />
-        <img src="./assets/g4.jpeg" alt="" />
-        <img src="./assets/g5.jpeg" alt="" />
-        <img src="./assets/g6.jpeg" alt="" />
-        <img src="./assets/g7.jpeg" alt="" />
-        <img src="./assets/g8.jpeg" alt="" />
-      </div>
+      <div class="gallary-image-container" id="gallery-container"></div>
     </section>
 
     <!-- 
@@ -765,19 +675,17 @@ fratured products
       <div class="categories-navigation-container">
         <a>
           <p class="active-blog" onclick="toggleBlogCategories(this)">
-            latest posts
+            latest_posts
           </p>
           <div></div>
         </a>
 
         <a>
-          <p onclick="toggleBlogCategories(this)">Most rated</p>
+          <p onclick="toggleBlogCategories(this)">rated</p>
         </a>
       </div>
       <div class="categories-card-carosel" id="our-blog">
-        <div class="owl-carousel owl5 owl-theme">
-        
-        </div>
+        <div class="owl-carousel owl5 owl-theme"></div>
       </div>
     </section>
 
@@ -798,82 +706,7 @@ what are people sying about us
 
       <!-- 2. featured navbar -->
 
-      <div class="categories-card-carosel">
-        <div class="owl-carousel owl5 owl-theme">
-          <div class="item">
-            <div class="featured-products-card">
-              <p class="quote"><i class="fa-solid fa-quote-left"></i></p>
-              <div class="blog-paragraph-container">
-                <p>
-                  The Journal is sit amet consectetur adipisicing elit.
-                  Repellendus beatae Lorem ipsum dolor, sit amet consectetur
-                  adipisicing elit. Dolores Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Soluta, dicta! consequuntur,
-                  aliquam fuga porro dignissimos quod. ipsam eum temporibus
-                  incidunt inventore architecto sapiente at, error blanditiis.
-                </p>
-                <a class="author">
-                  <p>-chalibaltimore</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <p class="quote"><i class="fa-solid fa-quote-left"></i></p>
-              <div class="blog-paragraph-container">
-                <p>
-                  The Journal is sit amet consectetur adipisicing elit.
-                  Repellendus beatae Lorem ipsum dolor, sit amet consectetur
-                  adipisicing elit. Dolores Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Soluta, dicta! consequuntur,
-                  aliquam fuga porro dignissimos quod. ipsam eum temporibus
-                  incidunt inventore architecto sapiente at, error blanditiis.
-                </p>
-                <a class="author">
-                  <p>-chalibaltimore</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <p class="quote"><i class="fa-solid fa-quote-left"></i></p>
-              <div class="blog-paragraph-container">
-                <p>
-                  The Journal is sit amet consectetur adipisicing elit.
-                  Repellendus beatae Lorem ipsum dolor, sit amet consectetur
-                  adipisicing elit. Dolores Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Soluta, dicta! consequuntur,
-                  aliquam fuga porro dignissimos quod. ipsam eum temporibus
-                  incidunt inventore architecto sapiente at, error blanditiis.
-                </p>
-                <a class="author">
-                  <p>-chalibaltimore</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="featured-products-card">
-              <p class="quote"><i class="fa-solid fa-quote-left"></i></p>
-              <div class="blog-paragraph-container">
-                <p>
-                  The Journal is sit amet consectetur adipisicing elit.
-                  Repellendus beatae Lorem ipsum dolor, sit amet consectetur
-                  adipisicing elit. Dolores Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Soluta, dicta! consequuntur,
-                  aliquam fuga porro dignissimos quod. ipsam eum temporibus
-                  incidunt inventore architecto sapiente at, error blanditiis.
-                </p>
-                <a class="author">
-                  <p>-chalibaltimore</p>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="categories-card-carosel" id="people-saying-about-us"></div>
     </section>
     <!-- 
     *************************************
@@ -884,68 +717,7 @@ what are people sying about us
       <p>MOST VIEWED</p>
       <hr />
       <div class="card-container">
-        <div class="categories-card-carosel">
-          <div class="owl-carousel owl6 owl-theme">
-            <div class="item">
-              <div class="card">
-                <img src="./assets/headphone.png" alt="" />
-                <div>
-                  <h2>Oversized Headphones</h2>
-                  <p>$397.00</p>
-                  <div class="icon-container">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <i class="fa-regular fa-heart"></i>
-                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="card">
-                <img src="./assets/sandle.png" alt="" />
-                <div>
-                  <h2>Oversized Sandles</h2>
-                  <p>$397.00</p>
-                  <div class="icon-container">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <i class="fa-regular fa-heart"></i>
-                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="card">
-                <img src="./assets/camera.png" alt="" />
-                <div>
-                  <h2>DSLR Camera</h2>
-                  <p>$397.00</p>
-                  <div class="icon-container">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <i class="fa-regular fa-heart"></i>
-                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="card">
-                <img src="./assets/phone.png" alt="" />
-                <div>
-                  <h2>Smartphone</h2>
-                  <p>$397.00</p>
-                  <div class="icon-container">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <i class="fa-regular fa-heart"></i>
-                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="categories-card-carosel" id="most-viewed"></div>
       </div>
     </section>
     <!-- 

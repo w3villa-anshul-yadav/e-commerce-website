@@ -1,8 +1,8 @@
 {
-  "whyBuyFromUsData": [
+  "top_categories": [
     {
       "img": "./assets/1card.jpg",
-      "name": "fashion"
+      "name": "top_categories"
     },
     {
       "img": "./assets/2card.jpg",
@@ -19,6 +19,81 @@
     {
       "img": "./assets/5card.jpg",
       "name": "home decor"
+    },
+    {
+      "img": "./assets/1card.jpg",
+      "name": "fashion"
+    }
+  ],
+  "electronics": [
+    {
+      "img": "./assets/4card.jpg",
+      "name": "electronics"
+    },
+    {
+      "img": "./assets/1card.jpg",
+      "name": "fashion"
+    },
+    {
+      "img": "./assets/2card.jpg",
+      "name": "helth&beauty"
+    },
+    {
+      "img": "./assets/3card.jpg",
+      "name": "home decor"
+    },
+    {
+      "img": "./assets/1card.jpg",
+      "name": "fashion"
+    }
+  ],
+  "beauty": [
+    {
+      "img": "./assets/2card.jpg",
+      "name": "beauty"
+    },
+    {
+      "img": "./assets/3card.jpg",
+      "name": "home decor"
+    },
+    {
+      "img": "./assets/4card.jpg",
+      "name": "footware"
+    },
+    {
+      "img": "./assets/1card.jpg",
+      "name": "fashion"
+    },
+
+    {
+      "img": "./assets/5card.jpg",
+      "name": "home decor"
+    },
+    {
+      "img": "./assets/1card.jpg",
+      "name": "fashion"
+    }
+  ],
+  "fashiion": [
+    {
+      "img": "./assets/3card.jpg",
+      "name": "fashiion"
+    },
+    {
+      "img": "./assets/4card.jpg",
+      "name": "footware"
+    },
+    {
+      "img": "./assets/5card.jpg",
+      "name": "home decor"
+    },
+    {
+      "img": "./assets/1card.jpg",
+      "name": "fashion"
+    },
+    {
+      "img": "./assets/2card.jpg",
+      "name": "helth&beauty"
     },
     {
       "img": "./assets/1card.jpg",

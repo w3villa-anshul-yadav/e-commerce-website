@@ -101,33 +101,34 @@ function owl3() {
     },
   });
 }
-
-$(".owl4").owlCarousel({
-  loop: true,
-  margin: 25,
-  nav: false,
-  autoplay: true,
-  responsive: {
-    0: {
-      items: 2,
+function owl4() {
+  $(".owl4").owlCarousel({
+    loop: true,
+    margin: 25,
+    nav: false,
+    autoplay: true,
+    responsive: {
+      0: {
+        items: 2,
+      },
+      490: {
+        items: 2,
+      },
+      668: {
+        items: 3,
+      },
+      886: {
+        items: 4,
+      },
+      1000: {
+        items: 6,
+      },
+      1820: {
+        items: 9,
+      },
     },
-    490: {
-      items: 2,
-    },
-    668: {
-      items: 3,
-    },
-    886: {
-      items: 4,
-    },
-    1000: {
-      items: 6,
-    },
-    1820: {
-      items: 9,
-    },
-  },
-});
+  });
+}
 function owl5() {
   $(".owl5").owlCarousel({
     loop: true,
@@ -148,42 +149,45 @@ function owl5() {
     },
   });
 }
-$(".owl6").owlCarousel({
-  loop: true,
-  margin: 25,
-  nav: false,
-  autoplay: true,
-  responsive: {
-    0: {
-      items: 1,
+function owl6() {
+  $(".owl6").owlCarousel({
+    loop: true,
+    margin: 25,
+    nav: false,
+    autoplay: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      582: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      },
+      1818: {
+        items: 4,
+      },
     },
-    582: {
-      items: 2,
-    },
-    1000: {
-      items: 3,
-    },
-    1818: {
-      items: 4,
-    },
-  },
-});
-function onReady() {}
-
+  });
+}
 function toggleWhyBuyCategories(elem) {
   let activElem = document.getElementsByClassName("active-why-buy")[0];
   activElem.classList.remove("active-why-buy");
   elem.classList.add("active-why-buy");
+  displayWhyBuyUs(elem.innerHTML);
 }
 function toggleBlogCategories(elem) {
   let activElem = document.getElementsByClassName("active-blog")[0];
   activElem.classList.remove("active-blog");
   elem.classList.add("active-blog");
+  displayOurBlog(elem.innerHTML);
 }
 function toggleFeaturedCategories(elem) {
   let activElem = document.getElementsByClassName("active-featured")[0];
   activElem.classList.remove("active-featured");
   elem.classList.add("active-featured");
+  displayfeaturedProducts(elem.innerHTML);
 }
 let mybutton = document.getElementsByClassName("top-navigation-controller")[0];
 window.onscroll = function () {
@@ -196,11 +200,25 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-displayWhyBuyUs();
-async function displayWhyBuyUs() {
+displayWhyBuyUs("top_categories");
+async function displayWhyBuyUs(elem) {
   let response = await fetch("script/whyBuyFromUs.json");
   let responsData = await response.json();
-  let data = responsData.whyBuyFromUsData;
+  let data;
+  switch (elem) {
+    case "top_categories":
+      data = responsData.top_categories;
+      break;
+    case "electronics":
+      data = responsData.electronics;
+      break;
+    case "beauty":
+      data = responsData.beauty;
+      break;
+    case "fashiion":
+      data = responsData.fashiion;
+      break;
+  }
   let whyBuyContainer = document.getElementById("why-buy");
   let container = ` <div class="owl-carousel owl1 owl-theme">`;
   for (i in data) {
@@ -216,11 +234,25 @@ async function displayWhyBuyUs() {
   whyBuyContainer.innerHTML = container;
   owl1();
 }
-displayfeaturedProducts();
-async function displayfeaturedProducts() {
+displayfeaturedProducts("featured");
+async function displayfeaturedProducts(elem) {
   let response = await fetch("script/featuredProducts.json");
   let responsData = await response.json();
-  let data = responsData.featuredProductsData;
+  let data;
+  switch (elem) {
+    case "featured":
+      data = responsData.featured;
+      break;
+    case "latest":
+      data = responsData.latest;
+      break;
+    case "Bestsellers":
+      data = responsData.Bestsellers;
+      break;
+    case "specials":
+      data = responsData.specials;
+      break;
+  }
   let whyBuyContainer = document.getElementById("featured-products");
   let container = ` 
                 <div class="owl-carousel owl2 owl-theme">`;
@@ -306,7 +338,6 @@ async function displayfeaturedCategories() {
   let response = await fetch("script/featuredCategories.json");
   let responsData = await response.json();
   let data = responsData.featuredCategoriesData;
-  console.log("data" + data);
   let whyBuyContainer = document.getElementById("featured-category");
   let container = ` <div class="owl-carousel owl3 owl-theme">`;
   for (i in data) {
@@ -368,16 +399,22 @@ async function displayfeaturedCategories() {
       `;
   }
   container += `</div>`;
-  console.log("current" + whyBuyContainer);
   whyBuyContainer.innerHTML = container;
   owl3();
 }
-displayOurBlog();
-async function displayOurBlog() {
+displayOurBlog("latest_posts");
+async function displayOurBlog(elem) {
   let response = await fetch("script/fromOurBlog.json");
   let responsData = await response.json();
-  let data = responsData.fromOurBlogData;
-  console.log(data[0]);
+  let data;
+  switch (elem) {
+    case "latest_posts":
+      data = responsData.latest_posts;
+      break;
+    case "rated":
+      data = responsData.rated;
+      break;
+  }
   let whyBuyContainer = document.getElementById("our-blog");
   let container = `<div class="owl-carousel owl5 owl-theme">`;
   for (i in data) {
@@ -421,4 +458,98 @@ async function displayOurBlog() {
   container += `</div>`;
   whyBuyContainer.innerHTML = container;
   owl5();
+}
+
+displayShopByBrand();
+async function displayShopByBrand() {
+  let response = await fetch("script/shopByBrandData.json");
+  let responsData = await response.json();
+  let data = responsData.shopByBrandData;
+  let parentContainer = document.getElementById("shop-by-brand");
+  let container = `<div class="owl-carousel owl4 owl-theme">
+    `;
+  for (i in data) {
+    container += `<div class="item">
+      <div class="featured-products-card">
+        <div class="image-container">
+          <img src="${data[i].img}" alt="" />
+        </div>
+      </div>
+    </div>`;
+  }
+  container += `</div>`;
+  parentContainer.innerHTML = container;
+  owl4();
+}
+
+displayImprovedGallery();
+async function displayImprovedGallery() {
+  let response = await fetch("script/improvedGalleryData.json");
+  let responsData = await response.json();
+  let data = responsData.improvedGalleryData;
+
+  let container = document.getElementById("gallery-container");
+
+  for (i in data) {
+    container.innerHTML += `<img src="${data[i].img}" alt="gallery image">`;
+  }
+}
+displayPeopleSaying();
+async function displayPeopleSaying() {
+  let container = document.getElementById("people-saying-about-us");
+  let elem = `<div class="owl-carousel owl5 owl-theme">
+  `;
+  let response = await fetch("script/peopleSaying.json");
+  let responsData = await response.json();
+  let data = responsData.peopleSaying;
+  for (i in data) {
+    elem += `
+    <div class="item">
+    <div class="featured-products-card">
+      <p class="quote"><i class="fa-solid fa-quote-left"></i></p>
+      <div class="blog-paragraph-container">
+        <p>
+          ${data[i].text}
+        </p>
+        <a class="author">
+          <p> ${data[i].author}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+    `;
+  }
+  elem += `</div>`;
+  container.innerHTML = elem;
+  owl5();
+}
+displayMostViewed();
+async function displayMostViewed() {
+  let container = document.getElementById("most-viewed");
+  let elem = `<div class="owl-carousel owl6 owl-theme">
+  `;
+  let response = await fetch("script/mostViewed.json");
+  let responsData = await response.json();
+  let data = responsData.mostViewed;
+  for (i in data) {
+    elem += `
+    <div class="item">
+              <div class="card">
+                <img src="${data[i].img}" alt="" />
+                <div>
+                  <h2>${data[i].name}</h2>
+                  <p>${data[i].prise}</p>
+                  <div class="icon-container">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+    `;
+  }
+  elem += `</div>`;
+  container.innerHTML = elem;
+  owl6();
 }
