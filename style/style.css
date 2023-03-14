@@ -25,6 +25,7 @@ COMMON CLASSES
   padding-right: 120px;
 }
 
+
 @media screen and (max-width: 1476px) {
   .body-spacer {
     padding-left: 40px;
@@ -1667,4 +1668,40 @@ copyright text
 .top-navigation-controller a i {
   color: white;
   font-size: 30px;
+}
+#searchResult{
+  min-height: 80vh;
+  background-color: #eeecec;
+  display: none;
+}
+.display-none{
+  display: none !important;
+}
+a{
+  text-decoration: none;
+  color: initial;
+}
+.search-result{
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap:20px;
+}
+#searchResult h2{
+  font-size: 40px;
+  padding-top: 40px;
+  /* padding-bottom: 40px; */
+  text-align: center;
+}
+#searchItem{
+  width: 400px;
+  height: 600px;
+}
+#searchItem img{
+  width: 100%;
+  /* height: 100%; */
+  
+  object-fit: cover;
 }

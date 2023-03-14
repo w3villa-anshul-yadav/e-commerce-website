@@ -209,28 +209,29 @@ async function displayWhyBuyUs(elem) {
 }
 displayfeaturedProducts("featured");
 async function displayfeaturedProducts(elem) {
-  let response = await fetch("script/featuredProducts.json");
+  let response = await fetch("script/products.json");
   let responsData = await response.json();
-  let data;
-  switch (elem) {
-    case "featured":
-      data = responsData.featured;
-      break;
-    case "latest":
-      data = responsData.latest;
-      break;
-    case "Bestsellers":
-      data = responsData.Bestsellers;
-      break;
-    case "specials":
-      data = responsData.specials;
-      break;
-  }
+  let data = responsData.productData;
+  // switch (elem) {
+  //   case "featured":
+  //     data = responsData.featured;
+  //     break;
+  //   case "latest":
+  //     data = responsData.latest;
+  //     break;
+  //   case "Bestsellers":
+  //     data = responsData.Bestsellers;
+  //     break;
+  //   case "specials":
+  //     data = responsData.specials;
+  //     break;
+  // }
   let whyBuyContainer = document.getElementById("featured-products");
   let container = ` 
                 <div class="owl-carousel owl2 owl-theme">`;
   for (i in data) {
-    container += `
+    if (data[i].category === elem) {
+      container += `
                         <div class="item">
                         <div class="featured-products-card">
                             <div class="image-container">
@@ -238,33 +239,33 @@ async function displayfeaturedProducts(elem) {
                                 <div class="labels">
                                 <div class="cross-labels">
                           `;
-    for (k in data[i].crossLabel) {
-      container += `  
+      for (k in data[i].crossLabel) {
+        container += `  
                                 <p class="blue-bg">
                                     <strong>${data[i].crossLabel[k]}</strong>
                                 </p>      
                             `;
-    }
-    container += `
+      }
+      container += `
                   </div>
                   <div class="right-labels">
     `;
-    for (j in data[i].rightLabels) {
-      if (j % 2 == 0) {
-        container += `
+      for (j in data[i].rightLabels) {
+        if (j % 2 == 0) {
+          container += `
                       <p class="yellow-bg ">
                         <strong>${data[i].rightLabels[j]}</strong>
                       </p>
                       `;
-      } else {
-        container += `
+        } else {
+          container += `
                       <p class="red-bg ">
                         <strong>${data[i].rightLabels[j]}</strong>
                       </p>
                       `;
+        }
       }
-    }
-    container += `   
+      container += `   
                   </div>
                 </div> 
                       </div>
@@ -301,6 +302,7 @@ async function displayfeaturedProducts(elem) {
                   </div>
                 </div> 
     `;
+    }
   }
   container += `</div>`;
   whyBuyContainer.innerHTML = container;
@@ -308,13 +310,14 @@ async function displayfeaturedProducts(elem) {
 }
 displayfeaturedCategories();
 async function displayfeaturedCategories() {
-  let response = await fetch("script/featuredCategories.json");
+  let response = await fetch("script/products.json");
   let responsData = await response.json();
-  let data = responsData.featuredCategoriesData;
+  let data = responsData.productData;
   let whyBuyContainer = document.getElementById("featured-category");
   let container = ` <div class="owl-carousel owl3 owl-theme">`;
   for (i in data) {
-    container += `
+    if (data[i].category === "featuredCategories") {
+      container += `
      <div class="item">
      <div class="featured-products-card">
          <div class="image-container">
@@ -323,33 +326,33 @@ async function displayfeaturedCategories() {
              <div class="labels">
                       <div class="cross-labels">
                       `;
-    for (k in data[i].crossLabel) {
-      container += `                 
+      for (k in data[i].crossLabel) {
+        container += `                 
                            <p class="blue-bg">
                                <strong>${data[i].crossLabel[k]}</strong>
                            </p>                  
                        `;
-    }
-    container += `
+      }
+      container += `
                       </div>
                       <div class="right-labels">
                       `;
-    for (j in data[i].rightLabels) {
-      if (j % 2 == 0) {
-        container += `
+      for (j in data[i].rightLabels) {
+        if (j % 2 == 0) {
+          container += `
                             <p class="yellow-bg ">
                               <strong>${data[i].rightLabels[j]}</strong>
                            </p>
                             `;
-      } else {
-        container += `
+        } else {
+          container += `
                             <p class="red-bg ">
                               <strong>${data[i].rightLabels[j]}</strong>
                            </p>
                             `;
+        }
       }
-    }
-    container += `            
+      container += `            
                        </div>
              </div>
          </div>
@@ -370,6 +373,7 @@ async function displayfeaturedCategories() {
      </div>
  </div>
       `;
+    }
   }
   container += `</div>`;
   whyBuyContainer.innerHTML = container;
@@ -574,3 +578,105 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
+
+// show search Result 
+
+$("#searchInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+      $("#searchButton").click();
+  }
+});
+
+$("#searchButton").click(function() {
+  showSearchResult()
+});
+function showSearchResult(){
+  let inputValue=document.getElementById("searchInput").value;
+   let SearchResultContainer=document.getElementById("searchResult");
+  SearchResultContainer.style.display='block';
+   let arr=document.getElementsByTagName("section");
+  for(i in arr){
+    try{  arr[i].classList.add("display-none")}
+   catch(err){
+   }
+  }
+  showResult(inputValue);
+}
+async function showResult(inputValue) {
+  let response = await fetch("script/products.json");
+  let responsData = await response.json();
+  let data = responsData.productData;
+   let whyBuyContainer = document.getElementById("searchCard");
+  let container = ` <div class="search-result" >`;
+  let flag=true;
+  for (i in data) {
+    if (data[i].name.includes(inputValue.toUpperCase()) || data[i].name.includes(inputValue.toLowerCase()) && data[i].category==="featuredCategories") {
+      flag=false;
+      if(inputValue.length==00){
+        container+=`<h1 style='color:red'> Input Required</h1>`;
+        break;
+      }
+       container += `
+     <div class="item">
+     <div class="featured-products-card" id="searchItem">
+         <div class="image-container">
+             <img src="${data[i].img}" alt="">
+
+             <div class="labels">
+                      <div class="cross-labels">
+                      `;
+      for (k in data[i].crossLabel) {
+        container += `                 
+                           <p class="blue-bg">
+                               <strong>${data[i].crossLabel[k]}</strong>
+                           </p>                  
+                       `;
+      }
+      container += `
+                      </div>
+                      <div class="right-labels">
+                      `;
+      for (j in data[i].rightLabels) {
+        if (j % 2 == 0) {
+          container += `
+                            <p class="yellow-bg ">
+                              <strong>${data[i].rightLabels[j]}</strong>
+                           </p>
+                            `;
+        } else {
+          container += `
+                            <p class="red-bg ">
+                              <strong>${data[i].rightLabels[j]}</strong>
+                           </p>
+                            `;
+        }
+      }
+      container += `            
+                       </div>
+             </div>
+         </div>
+         <div class="cart-container">
+             <h2>${data[i].name}</h2>
+             <p class="price">${data[i].discountedPrice} </p>
+             <hr>
+             <div class="add-to-cart-container">
+                 <div>
+                     <input type="button" value="ADD TO CART">
+                 </div>
+                 <div>
+                     <i style="font-weight:100" class="fa-solid fa-heart"></i>
+                     <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+      `;
+    }
+  }
+  if(flag==true){
+    container+=`<h1 style='color:red'> NO Result Found</h1>`;
+  }
+  container += `</div>`;
+  whyBuyContainer.innerHTML = container;
+ }

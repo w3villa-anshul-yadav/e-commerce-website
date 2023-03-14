@@ -9,20 +9,21 @@
     },
     {
       "img": "./assets/headphone.jpg",
-       "rightLabels":["-70%","HOT"],
+      "rightLabels": ["-70%", "HOT"],
       "name": "Hadphones",
       "discountedPrice": "$999.00"
     },
     {
       "img": "./assets/phone.jpg",
       "crossLabel": ["2-3 DAYS"],
-      "rightLabels": ["-70%","HOT"],
+      "rightLabels": ["-70%", "HOT"],
       "name": "Hadphones",
       "discountedPrice": "$999.00"
     },
     {
-      "img": "./assets/sandle.jpg",      "rightLabels": ["-70%","HOT"],
-       "name": "Hadphones",
+      "img": "./assets/sandle.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "Hadphones",
       "discountedPrice": "$999.00"
     },
     {
@@ -34,7 +35,7 @@
     },
     {
       "img": "./assets/headphone.jpg",
-      "rightLabels": ["-70%","HOT"],
+      "rightLabels": ["-70%", "HOT"],
       "name": "Hadphones",
       "discountedPrice": "$999.00"
     }

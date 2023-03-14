@@ -149,7 +149,7 @@
         <!-- 1. Brand logo -->
 
         <div class="brand-logo">
-          <h1>JOURNAL</h1>
+         <a href="index.html"> <h1>JOURNAL</h1></a>
         </div>
 
         <!-- 2. Search bar -->
@@ -170,8 +170,8 @@
               <li><a>Shoes</a></li>
             </ul>
           </div>
-          <input type="text" placeholder="Search here..." />
-          <div class="search-icon">
+          <input id="searchInput" type="text" placeholder="Search here..." />
+          <div class="search-icon" id="searchButton" onclick="showSearchResult()">
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
         </div>
@@ -265,7 +265,7 @@
     </header>
 
     <!-- navbar for mobile screen dispalyed after 1220px -->
-    <section class="mobile-navbar body-spacer">
+    <div class="mobile-navbar body-spacer">
       <div class="login-wishlist-container">
         <a>
           <i class="fa-solid fa-user"></i>
@@ -281,7 +281,7 @@
         <div class="language-container dropdown">
           <a>
             <div id="country-flag-image">
-              <img src="./assets/usa-flag.jpg" alt="" />
+              <img src="./assets/usa-flag.png" alt="" />
             </div>
             <p id="country-name">English</p>
             <i class="fa-solid fa-sort-down"></i>
@@ -307,10 +307,10 @@
           </ul>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- mobile-bottom-navbar   -->
-    <section class="mobile-bottom-navbar body-spacer">
+    <div class="mobile-bottom-navbar body-spacer">
       <div class="brand-logo">
         <h1>JOURNAL</h1>
       </div>
@@ -341,7 +341,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- *************************hero section carosel section ***************************************** -->
     <section class="hero body-spacer">
@@ -518,7 +518,7 @@ fratured products
           <p onclick="toggleFeaturedCategories(this)">latest</p>
         </a>
         <a>
-          <p onclick="toggleFeaturedCategories(this)">Bestsellers</p>
+          <p onclick="toggleFeaturedCategories(this)">bestsellers</p>
         </a>
         <a>
           <p onclick="toggleFeaturedCategories(this)">specials</p>
@@ -582,8 +582,7 @@ fratured products
           <hr class="hr" />
 
           <div class="categories-card-carosel" id="featured-category">
-            <div class="owl-carousel owl3 owl-theme"></div>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -598,7 +597,9 @@ fratured products
         <hr />
       </div>
 
-      <div class="categories-card-carosel" id="shop-by-brand"></div>
+      <div class="categories-card-carosel" id="shop-by-brand">
+
+      </div>
     </section>
 
     <!-- 
@@ -699,6 +700,16 @@ Social media handles
       </p>
     </section>
 
+
+  <!-- search Result  -->
+
+  <div id="searchResult" class="body-spacer ">
+    <h2>Search Result</h2>
+    <div class="categories-card-carosel" id="searchCard">
+          
+    </div>
+  </div>
+
     <!-- 
     *****************************************
     Footer 
@@ -761,7 +772,7 @@ Social media handles
     <!-- ************************************
 copyright text 
 ********************************** -->
-    <section class="copyright body-spacer">
+    <div class="copyright body-spacer">
       <div>
         <p>
           Copyright © 2023 developed by
@@ -769,10 +780,14 @@ copyright text
         </p>
         <img src="./assets/paymentcard.jpg" alt="" />
       </div>
-    </section>
+    </div>
+    <div>
     <div class="top-navigation-controller">
       <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
+  </div>
+    
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
       integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
