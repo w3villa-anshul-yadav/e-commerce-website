@@ -4,12 +4,15 @@
   --primary-blue-color: #2b3cf8;
   --light-gray-color: rgb(247, 247, 250);
 }
+body{
+  scroll-behavior: smooth;
+
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  scroll-behavior: smooth;
 }
 
 /* ***********************************
