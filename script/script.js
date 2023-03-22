@@ -4,17 +4,7 @@ function signUpForm() {
   localStorage.setItem("loginFormStatus", true);
   location.assign("loginPage.html");
 }
-loadSignUp();
-function loadSignUp() {
-  let bool = localStorage.getItem("loginFormStatus");
-  bool = bool == "true" ? true : false;
-  if (bool) {
-    showSignUp(document.getElementById("signup-button"));
-  }
-  setTimeout(() => {
-    localStorage.setItem("loginFormStatus", false);
-  }, 500);
-}
+
 // display current user name text
 window.onload = function () {
   setCurrentUser();
