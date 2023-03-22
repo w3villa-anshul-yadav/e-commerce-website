@@ -7,8 +7,9 @@ function signUpForm() {
 
 // display current user name text
 window.onload = function () {
-  setCurrentUser();
+ 
   loadFirstTimeOnBrouser();
+   setCurrentUser();
 };
 function loadFirstTimeOnBrouser(){
   if (localStorage.getItem("cartData")) {
