@@ -1,7 +1,5 @@
-window.onload = function () {
   loadFirstTimeOnBrouser();
    setCurrentUser();
-};
 totalItemInCart();
 // on clicking register button
 function signUpForm() {
