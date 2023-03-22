@@ -11,7 +11,15 @@ window.onload = function () {
   loadFirstTimeOnBrouser();
 };
 function loadFirstTimeOnBrouser(){
-    if (localStorage.getItem("loginFormStatus")) {
+  if (localStorage.getItem("cartData")) {
+  } else {
+    let cartData = {
+      cartArr: [],
+    };
+    cartData.cartArr.push(0);
+    localStorage.setItem("cartData", JSON.stringify(cartData));
+  } 
+  if (localStorage.getItem("loginFormStatus")) {
   } else {
     localStorage.setItem("loginFormStatus", false);
   }
