@@ -8,7 +8,26 @@ function signUpForm() {
 // display current user name text
 window.onload = function () {
   setCurrentUser();
+  loadFirstTimeOnBrouser();
 };
+function loadFirstTimeOnBrouser(){
+    if (localStorage.getItem("loginFormStatus")) {
+  } else {
+    localStorage.setItem("loginFormStatus", false);
+  }
+
+  if(localStorage.getItem("loginData")){}
+  else {
+   loginObj = {
+     username: "userName",
+     password: "password",
+     logedStatus: false,
+   };
+       let obj = {
+         loginArr: [loginObj],
+       };
+       localStorage.setItem("loginData", JSON.stringify(obj));}
+}
 function setCurrentUser() {
   let loginData = JSON.parse(localStorage.getItem("loginData"));
   let userIndx = getCurrentLoggedUserIndex(loginData.loginArr);
