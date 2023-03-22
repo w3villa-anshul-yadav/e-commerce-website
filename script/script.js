@@ -17,7 +17,7 @@ function loadFirstTimeOnBrouser(){
     let cartData = {
       cartArr: [],
     };
-    cartData.cartArr.push(0);
+    cartData.cartArr.push(1);
     localStorage.setItem("cartData", JSON.stringify(cartData));
   } 
   if (localStorage.getItem("loginFormStatus")) {
