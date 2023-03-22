@@ -1,0 +1,31 @@
+{
+  "improvedGalleryData": [
+    {
+      "img": "./assets/g1.jpg"
+    },
+    {
+      "img": "./assets/g2.jpg"
+    },
+    {
+      "img": "./assets/g3.jpg"
+    },
+    {
+      "img": "./assets/g4.jpg"
+    },
+    {
+      "img": "./assets/g5.jpg"
+    },
+    {
+      "img": "./assets/g6.jpg"
+    },
+    {
+      "img": "./assets/g7.jpg"
+    },
+    {
+      "img": "./assets/g8.jpg"
+    },
+    {
+      "img": "./assets/g9.jpg"
+    }
+  ]
+}

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/loginPage.css" />
+    <title>Login</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="top-navbar-container body-spacer">
+        <!-- top-most-navbar  have three different section-->
+
+        <!-- 1. navbar menu container  -->
+
+        <div class="top-navbar-menu-container">
+          <div class="home">
+            <a href="index.html">
+              <i class="fa-solid fa-house"></i>
+              <p>Home</p>
+            </a>
+          </div>
+          <div class="about-us">
+            <a>
+              <i class="fa-regular fa-star"></i>
+              <p>About Us</p>
+            </a>
+          </div>
+          <div class="contact">
+            <a>
+              <i class="fa-regular fa-envelope"></i>
+              <p>Contact</p>
+            </a>
+          </div>
+
+          <div class="dropdown">
+            <a>
+              <i class="fa-solid fa-question"></i>
+              <p id="faq">FAQ</p>
+              <i class="fa-solid fa-sort-down"></i>
+            </a>
+            <ul class="drop-down-menu">
+              <li><a>Question</a></li>
+              <li><a>Contact us</a></li>
+              <li><a>Suggestion</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. Language and currency menu  -->
+
+        <div class="country-language-currency-menu-container">
+          <div class="language-container dropdown">
+            <a>
+              <div id="country-flag-image">
+                <img src="./assets/usa-flag.png" alt="" />
+              </div>
+              <p id="country-name ">English</p>
+              <i class="fa-solid fa-sort-down"></i>
+            </a>
+            <ul class="drop-down-menu">
+              <li><a>Hindi</a></li>
+              <li><a>Bangali</a></li>
+              <li><a>French</a></li>
+            </ul>
+          </div>
+          <div class="currency-container dropdown">
+            <a>
+              <div id="currency-logo">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </div>
+              <p id="currency-nameblack ">Us Doller</p>
+              <i class="fa-solid fa-sort-down"></i>
+            </a>
+            <ul class="drop-down-menu">
+              <li><a>UAE</a></li>
+              <li><a>USR</a></li>
+              <li><a>UK</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. More menu delivery container  -->
+
+        <div class="more-menu-delivery-container">
+          <div class="more-menu dropdown">
+            <a>
+              <div>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-bars"></i>
+              </div>
+              <p id="More-enu">More Menus</p>
+              <i class="fa-solid fa-sort-down"></i>
+            </a>
+            <ul class="drop-down-menu">
+              <li><a>Address</a></li>
+              <li><a>Contact us</a></li>
+              <li><a>Suggestion</a></li>
+            </ul>
+          </div>
+          <div class="delivery">
+            <a>
+              <i class="fa-solid fa-truck"></i>
+              <p>Delivery</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- *******************************header middle section 
+              have four sub section
+  
+              1. Brand logo
+              2. Search bar
+              3. login and other menu container
+              4.cart and price detils
+              
+              **************************** -->
+
+      <div class="middle-header-section body-spacer">
+        <!-- 1. Brand logo -->
+
+        <div class="brand-logo">
+          <h1><a href="index.html"> JOURNAL</a></h1>
+        </div>
+
+        <!-- 2. Search bar -->
+
+        <div class="searchbar-container">
+          <div class="dropdown">
+            <div class="search-catagory-selector dropdown">
+              <a>
+                <p id="Al">ALL</p>
+                <i class="fa-solid fa-sort-down"></i>
+              </a>
+            </div>
+
+            <ul class="drop-down-menu">
+              <li><a>Chlothing</a></li>
+              <li><a>Electronics</a></li>
+              <li><a>Toys</a></li>
+              <li><a>Shoes</a></li>
+            </ul>
+          </div>
+          <input id="searchInput" type="text" placeholder="Search here..." />
+          <div
+            class="search-icon"
+            id="searchButton"
+            onclick="showSearchResult()"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+
+        <!-- 3. login and other menu container -->
+
+        <div class="login-wishlist-container">
+          <p id="currentUser"></p>
+
+          <span id="login-logout-click">
+            <div class="rounded-icon-background">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <p id="login-logout-text">Login</p>
+          </span>
+          <a onclick="signUpForm()">
+            <div class="rounded-icon-background">
+              <i class="fa-solid fa-pencil"></i>
+            </div>
+
+            <p>Register</p>
+          </a>
+
+          <a>
+            <div class="rounded-icon-background">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+            <p>Wishlist</p>
+          </a>
+          <a>
+            <div class="rounded-icon-background">
+              <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            </div>
+            <p>Compare</p>
+          </a>
+        </div>
+
+        <!-- 4.cart and price detils -->
+
+        <div class="cart-price-detail-container">
+          <div id="item-counter">0</div>
+          <div>
+            <p>&nbsp;item(s) -</p>
+          </div>
+          <div id="currency-name">$</div>
+          <div id="total-cart-price">0.00</div>
+          <div>
+            <a class="cart-icon" href="shoppingCart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ********************************************** bottom nabvbar container
+          contains two main section 
+          1. menu 
+          2. contact and blog button  -->
+      <div id="fixed-bottom-navbar">
+        <div class="bottom-navbar-menu-container body-spacer">
+          <!-- 1. menu  -->
+
+          <div class="nav-menu-container">
+            <div>
+              <a class="left-menu-icon-container">
+                <div class="hamburgur"><i class="fa-solid fa-bars"></i></div>
+                <p>All departments</p>
+                <div class="sale-container">Sale</div>
+              </a>
+            </div>
+            <div>
+              <a>
+                <p>multilevel</p>
+              </a>
+            </div>
+
+            <div class="mega-menu-container">
+              <a>
+                <p>Mega Menu</p>
+                <div class="new-container">New</div>
+              </a>
+            </div>
+            <div>
+              <a>
+                <p>full width</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. contact and blog button  -->
+
+          <div class="contact-number-blog-container">
+            <a href="">
+              <div class="contact-number-container">
+                <i class="fa-solid fa-phone-volume"></i>
+                <p>1.800.555.6789</p>
+              </div></a
+            >
+            <div class="blog-container">
+              <i class="fa-solid fa-blog"></i>
+              <p>BLOG</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- navbar for mobile screen dispalyed after 1220px -->
+    <div class="mobile-navbar body-spacer">
+      <div class="login-wishlist-container">
+        <a href="loginPage.html">
+          <i class="fa-solid fa-user"></i>
+          <p>Login</p>
+        </a>
+        <a onclick="signUpForm()">
+          <i class="fa-solid fa-pencil"></i>
+          <p>Register</p>
+        </a>
+      </div>
+
+      <div class="country-language-currency-menu-container">
+        <div class="language-container dropdown">
+          <a>
+            <div id="country-flag-image">
+              <img src="./assets/usa-flag.png" alt="" />
+            </div>
+            <p id="country-name">English</p>
+            <i class="fa-solid fa-sort-down"></i>
+          </a>
+          <ul class="drop-down-menu">
+            <li><a>Hindi</a></li>
+            <li><a>Bangali</a></li>
+            <li><a>French</a></li>
+          </ul>
+        </div>
+        <div class="currency-container dropdown">
+          <a>
+            <div id="currency-logo">
+              <i class="fa-solid fa-dollar-sign"></i>
+            </div>
+            <p id="currency-name">Us Doller</p>
+            <i class="fa-solid fa-sort-down"></i>
+          </a>
+          <ul class="drop-down-menu">
+            <li><a>UK</a></li>
+            <li><a>UAE</a></li>
+            <li><a>India rupees</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile-bottom-navbar   -->
+    <div class="mobile-bottom-navbar body-spacer">
+      <div class="brand-logo">
+        <h1><a href="index.html"> JOURNAL</a></h1>
+      </div>
+
+      <div class="menu-container">
+        <div class="dropdown">
+          <a class="left-menu-icon-container">
+            <div class="hamburgur"><i class="fa-solid fa-bars"></i></div>
+            <ul class="drop-down-menu">
+              <li><a>ALL&nbsp;DEPARTMENT</a></li>
+              <li><a>MULTILEVEL</a></li>
+              <li><a>MEGA MENU</a></li>
+            </ul>
+          </a>
+        </div>
+
+        <div class="searchbar-container">
+          <div
+            class="search-icon"
+            id="mobileSearchClick"
+            onclick="showSearchBar()"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+
+        <div class="cart-price-detail-container">
+          <div>
+            <a class="cart-icon" href="shoppingCart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="" id="mobile-search-bar">
+        <div class="searchbar-container">
+          <div class="dropdown">
+            <div class="search-catagory-selector dropdown">
+              <a>
+                <p id="Al">ALL</p>
+                <i class="fa-solid fa-sort-down"></i>
+              </a>
+            </div>
+
+            <ul class="drop-down-menu">
+              <li><a>Chlothing</a></li>
+              <li><a>Electronics</a></li>
+              <li><a>Toys</a></li>
+              <li><a>Shoes</a></li>
+            </ul>
+          </div>
+          <input
+            id="mobileSearchInput"
+            type="text"
+            placeholder="Search here..."
+          />
+          <div class="search-icon" id="mobileSearchButton">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="loginhero body-spacer">
+        <div class="background-image-container"></div>
+        <div class="login-container">
+          <span class="heading"
+            >Hey,hello<img
+              src="https://em-content.zobj.net/source/microsoft-teams/337/waving-hand_1f44b.png"
+              class="emoji"
+              alt="hand wave emogi"
+            />
+          </span>
+
+          <p class="light-text margin-top">
+            Enter information entered while regestring
+          </p>
+          <form action="" id="login-signup-form">
+            <div class="user-name margin-top">
+              <i class="fa-regular fa-user"></i>
+              <input
+                type="text"
+                placeholder="Username"
+                autocomplete="off"
+                required=""
+                id="user-name"
+              />
+            </div>
+            <div id="password-container">
+              <div class="password">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                  type="password"
+                  autocomplete="off"
+                  required=""
+                  placeholder="Password"
+                  id="password"
+                />
+              </div>
+            </div>
+
+            <div class="remember-me-forgot-password-container margin-top">
+              <div><input type="checkbox" /> <span> Remember me </span></div>
+              <a href="">
+                <span id="forgot-password" class="light-text">
+                  Forgot Password</span
+                ></a
+              >
+            </div>
+
+            <div id="login-button">
+              <input type="button" id="login" value="LOG IN" />
+            </div>
+          </form>
+
+          <div class="login-with-container">
+            <div class="login-wit-text">
+              <p>Or Login with</p>
+            </div>
+
+            <div class="icon-container">
+              <a href="https://w3villa-anshul-yadav.github.io/login-page/"
+                ><i class="fa-brands fa-github"></i> </a
+              ><a href="">
+                <i class="fa-brands fa-google"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </div>
+            <div class="signup login-with-container">
+              <a onclick="showSignUp(this)" id="signup-button">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- search Result  -->
+
+    <div id="searchResult" class="body-spacer">
+      <h3>Search Result</h3>
+      <div class="categories-card-carosel" id="searchCard"></div>
+      <div class="search-pagination">
+        <ul id="paginationHandler"></ul>
+      </div>
+    </div>
+
+    <footer class="body-spacer">
+      <div>
+        <h2>About Us</h2>
+        <hr />
+        <ul>
+          <li><a>About Us</a></li>
+          <li><a>Delivery</a></li>
+          <li><a>Privacy Policy</a></li>
+          <li><a>Terms & Condition</a></li>
+          <li><a>Custom Links</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Customer Service</h2>
+        <hr />
+        <ul>
+          <li><a>Contact</a></li>
+          <li><a>Returns</a></li>
+          <li><a>Site Map</a></li>
+          <li><a>Brands</a></li>
+          <li><a>Unlimited Links</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>My Account</h2>
+        <hr />
+        <ul>
+          <li><a>My Account</a></li>
+          <li><a>Order History</a></li>
+          <li><a>Affiliats</a></li>
+          <li><a>Newslatter</a></li>
+          <li><a>Gifts Certificates</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Newsletter</h2>
+        <hr />
+        <p class="para">
+          Stay up to date with news and promotions by signing up for promotions
+        </p>
+
+        <div class="input-container">
+          <input type="email" placeholder="Your email" />
+          <button><i class="fa-regular fa-envelope"></i> Send</button>
+        </div>
+        <p>
+          <input type="checkbox" name="" id="" /> I have read and agry to the
+          <a>Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+    <!-- ************************************
+  copyright text 
+  ********************************** -->
+    <div class="copyright body-spacer">
+      <div>
+        <p>
+          Copyright © 2023 developed by
+          <a href="mailto:anyadav411998@gmail.com"> anshul yadav </a>
+        </p>
+        <img src="./assets/paymentcard.jpg" alt="" />
+      </div>
+    </div>
+
+    <!-- jquery script  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./script/loginScript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "mostViewed": [
+    {
+      "img": "./assets/headphone.jpg",
+      "name": " Headphones",
+      "prise": "$397.00"
+    },
+    {
+      "img": "./assets/sandle.jpg",
+      "name": "Oversized Sandle",
+      "prise": "$397.00"
+    },
+    {
+      "img": "./assets/camera2.jpg",
+      "name": "DSLR Camera",
+      "prise": "$397.00"
+    },
+    {
+      "img": "./assets/phone.jpg",
+      "name": "Smart Phone",
+      "prise": "$397.00"
+    }
+  ]
+}

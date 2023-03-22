@@ -1,0 +1,246 @@
+{
+  "latest_posts": [
+    {
+      "img": "./assets/blog3.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    },
+    {
+      "img": "./assets/blog2.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    },
+    {
+      "img": "./assets/blog1.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    },
+    {
+      "img": "./assets/blog3.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    },
+    {
+      "img": "./assets/blog2.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    },
+    {
+      "img": "./assets/blog1.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    }
+  ],
+  "rated": [
+    {
+      "img": "./assets/blog1.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    },
+    {
+      "img": "./assets/blog3.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    },
+    {
+      "img": "./assets/blog2.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    },
+    {
+      "img": "./assets/blog3.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    },
+    {
+      "img": "./assets/blog2.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    },
+    {
+      "img": "./assets/blog1.jpg",
+      "date": ["02", "Aug"],
+      "author": "admin",
+      "noOfComment": "38",
+      "views": "19340",
+      "blogText": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis."
+      ]
+    }
+  ]
+}

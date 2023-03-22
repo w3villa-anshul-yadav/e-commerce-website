@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap");
+
+/* ***********************
+loginhero section
+*********************** */
+.loginhero {
+  display: flex;
+  padding-top: 0;
+  background-color: #f6f2ed3d;
+  column-gap: 0;
+}
+
+.background-image-container {
+  background-image: url("../assets/background.jpg");
+  width: 68%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+}
+
+.login-container {
+  height: 700px;
+  width: 620px;
+  padding-top: 5%;
+  background-color: #fff;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+@media screen and (max-width: 1000px) {
+  .background-image-container {
+    width: 0;
+  }
+  .login-container {
+    width: 100%;
+  }
+}
+
+.heading {
+  display: inline-block;
+  font-size: 40px;
+  color: #15b8ef;
+  font-weight: bold;
+}
+
+.emoji {
+  width: 40px;
+  object-fit: contain;
+}
+
+#password::placeholder,
+#confirm-password::placeholder,
+#user-name::placeholder {
+  color: #15b8ef;
+}
+
+#user-name,
+#confirm-password,
+#password {
+  margin: 13px 0;
+  width: 100%;
+  padding: 2px 15px 2px 45px;
+  outline: none;
+  border: none;
+  color: #15b8ef;
+  font-size: 19px;
+  height: 57px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px -1px rgb(147, 25, 254);
+}
+
+#user-name:focus,
+#password:focus,
+#confirm-password:focus {
+  transition: 0.4s ease;
+  box-shadow: 1px 2px 4px -1px #9319fe;
+}
+
+.user-name,
+.password,
+.confirm-password {
+  position: relative;
+  padding: 0;
+}
+
+.login-container .user-name i,
+.password i,
+.confirm-password i {
+  font-size: 22px;
+  position: absolute;
+  opacity: 70%;
+  color: #15b8ef;
+  top: 36%;
+  left: 3%;
+}
+
+/* login buttob   */
+
+#login {
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 20px;
+
+  outline: none;
+  border: none;
+  background: #15b8ef;
+  background: linear-gradient(
+    90deg,
+    rgba(21, 184, 239, 1) 30%,
+    rgba(104, 22, 236, 1) 97%
+  );
+  font-size: 18px;
+  height: 50px;
+  color: #fff;
+  box-shadow: 0px 1px 3px -1px grey;
+}
+
+#login:hover {
+  transform: scale(1.01);
+  color: white;
+  background-color: #3737f3;
+  transition: 0.5s ease;
+  box-shadow: 1px 2px 3px -2px grey;
+}
+
+.light-text {
+  position: relative;
+  opacity: 60%;
+  margin-top: 15px;
+}
+
+/* forgot password container  */
+.remember-me-forgot-password-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.remember-me-forgot-password-container p {
+  padding: 5px 5px;
+}
+
+input[type="checkbox"] {
+  height: 16px;
+  width: 16px;
+}
+
+#forgot-password:hover {
+  color: red;
+  opacity: 99%;
+}
+
+/* login with container  */
+
+.login-container a {
+  opacity: 70%;
+  font-size: 18px;
+
+  text-decoration: none;
+  color: #000;
+}
+
+.login-with-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px 15px;
+  align-items: center;
+  margin-top: 20px;
+}
+.icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 5px 15px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.login-with-container i {
+  font-size: 50px;
+  color: #15b8ef;
+}
+
+.login-with-container i:hover {
+  transform: scale(1.3);
+  color: #3737f3;
+  transition: 0.4s ease;
+}
+.signup a {
+  color: #15b8ef;
+  font-weight: bold;
+}

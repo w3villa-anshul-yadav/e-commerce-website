@@ -1,0 +1,19 @@
+{
+  "heroSliderData": [
+    {
+      "img": "./assets/back1.avif",
+      "value": "WATCH",
+      "text": "Best Watch options at any resolution"
+    },
+    {
+      "img": "./assets/back4.webp",
+      "value": "LAPTOP",
+      "text": "Best Laptop options at any resolution"
+    },
+    {
+      "img": "./assets/back2.jpg",
+      "value": "MOBILE",
+      "text": "Best Mobile options at any resolution"
+    }
+  ]
+}

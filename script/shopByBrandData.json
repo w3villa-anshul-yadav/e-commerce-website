@@ -1,0 +1,38 @@
+{
+  "shopByBrandData": [
+    {
+      "img": "./assets/logo2.jpg"
+    },
+    {
+      "img": "./assets/logo1.jpg"
+    },
+    {
+      "img": "./assets/logo4.jpg"
+    },
+
+    {
+      "img": "./assets/logo1.jpg"
+    },
+    {
+      "img": "./assets/logo2.jpg"
+    },
+    {
+      "img": "./assets/logo4.jpg"
+    },
+    {
+      "img": "./assets/logo1.jpg"
+    },
+    {
+      "img": "./assets/logo2.jpg"
+    },
+    {
+      "img": "./assets/logo1.jpg"
+    },
+    {
+      "img": "./assets/logo4.jpg"
+    },
+    {
+      "img": "./assets/logo1.jpg"
+    }
+  ]
+}

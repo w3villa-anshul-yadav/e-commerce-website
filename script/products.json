@@ -1,0 +1,654 @@
+{
+  "productData": [
+    {
+      "img": "./assets/bottle.jpg",
+      "id": 1,
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["-70%", "HOT"],
+      "name": "bottle",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/digitalwatch.jpg",
+      "id": 2,
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["NEW"],
+      "name": "digital watch",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/pepsi.jpg",
+      "id": 3,
+      "crossLabel": ["NEW "],
+      "brand": ["Ericksoon", "Model519"],
+      "name": "pepsi",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/perfume.jpg",
+      "id": 4,
+      "rightLabels": ["-70%", "HOT"],
+      "name": "perfume",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/redshoes.jpg",
+      "id": 5,
+      "rightLabels": ["-70%", "HOT"],
+      "name": "red shoes",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/shoes2.jpg",
+      "id": 6,
+      "rightLabels": ["-70%", "HOT"],
+      "name": "shoes",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/sunglasses.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "sunglasses",
+      "id": 7,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/watch1.jpg",
+      "id": 8,
+      "rightLabels": ["-70%", "HOT"],
+      "name": "watch",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/watchPremimum.jpg",
+      "id": 9,
+      "rightLabels": ["-70%", "HOT"],
+      "name": "watch Premimum",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/headphone.jpg",
+      "id": 10,
+      "rightLabels": ["NEW  "],
+      "brand": ["Ericksoon", "Model519"],
+      "name": "Headphones",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+
+    {
+      "img": "./assets/bottle.jpg",
+      "id": 11,
+      "crossLabel": [" Latest"],
+      "rightLabels": ["NEW  "],
+      "brand": ["Ericksoon", "Model519"],
+      "name": "bottle",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/camera2.jpg",
+      "id": 12,
+      "rightLabels": ["-70%", "HOT"],
+      "brand": ["Ericksoon", "Model519"],
+      "name": "camera",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/digitalwatch.jpg",
+      "id": 13,
+      "crossLabel": ["NEW "],
+      "brand": ["Ericksoon", "Model519"],
+      "name": "digital Watch",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "featured"
+    },
+    {
+      "img": "./assets/pepsi.jpg",
+      "id": 14,
+      "rightLabels": ["NEW  "],
+      "name": "Pepsi",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/bottle.jpg",
+      "id": 15,
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["-70%", "HOT"],
+      "name": "bottle",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/digitalwatch.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "id": 16,
+      "rightLabels": ["NEW"],
+      "name": "digital watch",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/pepsi.jpg",
+      "crossLabel": ["NEW "],
+      "id": 17,
+      "brand": ["Ericksoon", "Model519"],
+      "name": "pepsi",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/perfume.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "id": 18,
+      "name": "perfume",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/redshoes.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "red shoes",
+      "id": 19,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/shoes2.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "shoes",
+      "id": 20,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/sunglasses.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "sunglasses",
+      "id": 21,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/watch1.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "watch",
+      "id": 22,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/watchPremimum.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "watch Premimum",
+      "id": 23,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+
+    {
+      "img": "./assets/headphone.jpg",
+      "rightLabels": ["NEW  "],
+      "id": 24,
+      "brand": ["Ericksoon", "Model519"],
+      "name": "Headphones",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/headphone.jpg",
+      "crossLabel": [" Latest"],
+      "id": 25,
+      "rightLabels": ["NEW  "],
+      "brand": ["Ericksoon", "Model519"],
+      "name": "Headphones",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/camera2.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "id": 26,
+      "brand": ["Ericksoon", "Model519"],
+      "name": "camera",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/headphone.jpg",
+      "crossLabel": ["NEW "],
+      "brand": ["Ericksoon", "Model519"],
+      "name": "Headphones",
+      "id": 27,
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "latest"
+    },
+    {
+      "img": "./assets/camera2.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "id": 28,
+      "name": "camera",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/bottle.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["-70%", "HOT"],
+      "id": 29,
+      "name": "bottle",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/digitalwatch.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["NEW"],
+      "id": 30,
+      "name": "digital watch",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/pepsi.jpg",
+      "crossLabel": ["NEW "],
+      "brand": ["Ericksoon", "Model519"],
+      "name": "pepsi",
+      "id": 31,
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/perfume.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "perfume",
+      "id": 32,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/redshoes.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "red shoes",
+      "id": 33,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/shoes2.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "shoes",
+      "id": 34,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/sunglasses.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "sunglasses",
+      "id": 35,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/watch1.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "watch",
+      "id": 36,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/watchPremimum.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "watch Premimum",
+      "id": 37,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/headphone.jpg",
+      "crossLabel": ["NEW "],
+      "id": 38,
+      "brand": ["Ericksoon", "Model519"],
+      "name": "Headphones",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+
+    {
+      "img": "./assets/headphone.jpg",
+      "rightLabels": ["NEW  "],
+      "brand": ["Ericksoon", "Model519"],
+      "name": "Headphones",
+      "id": 39,
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/headphone.jpg",
+      "crossLabel": [" Latest"],
+      "rightLabels": ["NEW  "],
+      "id": 40,
+      "brand": ["Ericksoon", "Model519"],
+      "name": "Headphones",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "bestsellers"
+    },
+    {
+      "img": "./assets/bottle.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["-70%", "HOT"],
+      "name": "bottle",
+      "id": 41,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/digitalwatch.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["NEW"],
+      "id": 42,
+      "name": "digital watch",
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/pepsi.jpg",
+      "crossLabel": ["NEW "],
+      "id": 43,
+      "brand": ["Ericksoon", "Model519"],
+      "name": "pepsi",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/perfume.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "perfume",
+      "id": 44,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/redshoes.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "red shoes",
+      "id": 45,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/shoes2.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "shoes",
+      "id": 46,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/sunglasses.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "sunglasses",
+      "id": 47,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/watch1.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "watch",
+      "id": 48,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/watchPremimum.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "watch Premimum",
+      "id": 49,
+      "discountedPrice": "$999.00",
+      "brand": ["Ericksoon", "Model519"],
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/headphone.jpg",
+      "rightLabels": ["NEW  "],
+      "id": 50,
+      "brand": ["Ericksoon", "Model519"],
+      "name": "Headphones",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+
+    {
+      "img": "./assets/headphone.jpg",
+      "crossLabel": [" Latest"],
+      "rightLabels": ["NEW  "],
+      "id": 51,
+      "brand": ["Ericksoon", "Model519"],
+      "name": "Headphones",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/camera2.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "id": 52,
+
+      "brand": ["Ericksoon", "Model519"],
+      "name": "camera",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/headphone.jpg",
+      "crossLabel": ["NEW "],
+      "id": 53,
+
+      "brand": ["Ericksoon", "Model519"],
+      "name": "Headphones",
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "specials"
+    },
+    {
+      "img": "./assets/bottle.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["-70%", "HOT"],
+      "name": "bottle",
+      "id": 54,
+
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories"
+    },
+    {
+      "img": "./assets/headphone.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "id": 55,
+
+      "rightLabels": ["-70%", "HOT"],
+      "name": "headphone",
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories"
+    },
+    {
+      "img": "./assets/digitalwatch.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["NEW"],
+      "id": 56,
+
+      "name": "digital watch",
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories"
+    },
+    {
+      "img": "./assets/pepsi.jpg",
+      "crossLabel": ["NEW "],
+      "brand": ["Ericksoon", "Model519"],
+      "name": "pepsi",
+      "id": 57,
+
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "featuredCategories"
+    },
+    {
+      "img": "./assets/camera2.jpg",
+      "crossLabel": ["NEW "],
+      "brand": ["Ericksoon", "Model519"],
+      "name": "camera",
+      "id": 58,
+
+      "discountedPrice": "$999.00",
+      "price": "$3,229.00",
+      "category": "featuredCategories"
+    },
+    {
+      "img": "./assets/perfume.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "perfume",
+      "id": 59,
+
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories"
+    },
+    {
+      "img": "./assets/redshoes.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "red shoes",
+      "id": 60,
+
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories"
+    },
+    {
+      "img": "./assets/shoes2.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "shoes",
+      "id": 61,
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories"
+    },
+    {
+      "img": "./assets/sunglasses.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "sunglasses",
+      "id": 62,
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories"
+    },
+    {
+      "img": "./assets/watch1.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "watch",
+      "id": 63,
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories"
+    },
+    {
+      "img": "./assets/watchPremimum.jpg",
+      "rightLabels": ["-70%", "HOT"],
+      "name": "watch Premimum",
+      "id": 64,
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories"
+    }
+  ]
+}
