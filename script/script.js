@@ -15,8 +15,7 @@ function loadFirstTimeOnBrouser(){
     let cartData = {
       cartArr: [],
     };
-    cartData.cartArr.push(1);
-    localStorage.setItem("cartData", JSON.stringify(cartData));
+     localStorage.setItem("cartData", JSON.stringify(cartData));
   } 
   if (localStorage.getItem("loginFormStatus")) {
   } else {
@@ -25,13 +24,8 @@ function loadFirstTimeOnBrouser(){
 
   if(localStorage.getItem("loginData")){}
   else {
-   loginObj = {
-     username: "userName",
-     password: "password",
-     logedStatus: false,
-   };
        let obj = {
-         loginArr: [loginObj],
+         loginArr: [{}],
        };
        localStorage.setItem("loginData", JSON.stringify(obj));}
 }
