@@ -1,3 +1,7 @@
+window.onload = function () {
+  loadFirstTimeOnBrouser();
+   setCurrentUser();
+};
 totalItemInCart();
 // on clicking register button
 function signUpForm() {
@@ -6,11 +10,7 @@ function signUpForm() {
 }
 
 // display current user name text
-window.onload = function () {
- 
-  loadFirstTimeOnBrouser();
-   setCurrentUser();
-};
+
 function loadFirstTimeOnBrouser(){
   if (localStorage.getItem("cartData")) {
   } else {
