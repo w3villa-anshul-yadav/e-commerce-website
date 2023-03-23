@@ -37,13 +37,12 @@
   <body>
     <!-- **************************header section ********************************** -->
     <header>
-      <div class="top-navbar-container body-spacer ">
+      <div class="top-navbar-container body-spacer">
         <!-- top-most-navbar  have three different section-->
 
         <!-- 1. navbar menu container  -->
 
         <div class="top-navbar-menu-container">
-          
           <div class="home">
             <a href="index.html">
               <i class="fa-solid fa-house"></i>
@@ -195,7 +194,7 @@
 
             <p>Register</p>
           </a>
-          <a>
+          <a href="wishList.html">
             <div class="rounded-icon-background">
               <i class="fa-regular fa-heart"></i>
             </div>
@@ -283,10 +282,11 @@
     <!-- navbar for mobile screen dispalyed after 1220px -->
     <div class="mobile-navbar body-spacer">
       <div class="login-wishlist-container">
-        <a href="loginPage.html">
-          <i class="fa-solid fa-user"></i>
-          <p>Login</p>
+        <a id="login-logout-click-mobile">
+          <i class="fa-solid fa-user">  </i>
+          <p id="login-logout-text-mobile">Login</p>
         </a>
+        <!-- <p id="currentUser-mobile"></p> -->
         <a onclick="signUpForm()">
           <i class="fa-solid fa-pencil"></i>
           <p>Register</p>
@@ -337,7 +337,7 @@
             <div class="hamburgur"><i class="fa-solid fa-bars"></i></div>
             <ul class="drop-down-menu">
               <li><a>ALL&nbsp;DEPARTMENT</a></li>
-              <li><a>MULTILEVEL</a></li>
+              <li><a href="wishList.html">wish List</a></li>
               <li><a>MEGA MENU</a></li>
             </ul>
           </a>

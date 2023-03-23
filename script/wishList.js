@@ -70,61 +70,73 @@ function showPagination(noOfPages, resultArr) {
 function showSearchResultContent(data,operation) {
   let container = ``;
   container += `
-    <div class="item">
-    <div class="featured-products-card" id="searchItem">
-    <div class="image-container">
-    <img src="${data.img}" alt="">
-
-    <div class="labels">
-    <div class="cross-labels">
-    `;
+  <div class="item">
+  <div class="featured-products-card" id="searchItem">
+  <div class="image-container">
+  <img src="${data.img}" alt="">
+  
+  <div class="labels">
+  <div class="cross-labels">
+  `;
   for (k in data.crossLabel) {
-    container += `
-      <p class="blue-bg">
-      <strong>${data.crossLabel[k]}</strong>
-      </p>
-      `;
+    container += `                 
+    <p class="blue-bg">
+    <strong>${data.crossLabel[k]}</strong>
+    </p>                  
+    `;
   }
   container += `
-    </div>
-    <div class="right-labels">
-    `;
+  </div>
+  <div class="right-labels">
+  `;
   for (j in data.rightLabels) {
     if (j % 2 == 0) {
       container += `
-                              <p class="yellow-bg ">
-                              <strong>${data.rightLabels[j]}</strong>
-                              </p>
-                              `;
+                            <p class="yellow-bg ">
+                            <strong>${data.rightLabels[j]}</strong>
+                            </p>
+                            `;
     } else {
       container += `
-                              <p class="red-bg ">
-                              <strong>${data.rightLabels[j]}</strong>
-                              </p>
-                              `;
+                            <p class="red-bg ">
+                            <strong>${data.rightLabels[j]}</strong>
+                            </p>
+                            `;
     }
   }
-  container += `
-                         </div>
-               </div>
-               </div>
-               <div class="cart-container">
-               <h2>${data.name}</h2>
-               <p class="price">${data.discountedPrice} </p>
-               <hr>
-               <div class="add-to-cart-container">
-               <div>
-               <input type="button" onclick="addToCart(${data.id})" value="ADD TO CART">
-               </div>
-               <div>
-               <i style="font-weight:100" class="fa-solid fa-heart" onclick="addToWishList(${data.id})"></i>
-               <i class="fa-solid fa-arrow-right-arrow-left"></i>
-               </div>
-               </div>
-           </div>
-       </div>
-       </div>
-       `;
+  container += `            
+                       </div>
+             </div>
+             </div>
+             <div class="cart-container">
+             <h2>${data.name}</h2>
+             <p class="price">${data.discountedPrice} </p>
+             <hr>
+             <div class="add-to-cart-container">
+             <div>
+             <input type="button" onclick="addToCart(${data.id})" value="ADD TO CART">
+             </div>
+             <div>
+            `;
+            if(operation!="wishList"){
+             container+=` <i style="font-weight:100" class="fa-solid fa-heart" onclick="addToWishList(${data.id})"></i>`;
+            }
+            if(operation=="wishList"){
+              container+=`
+              <div>
+                  <input style="background-color:red" type="button" onclick="removeFromWishList(${data.id})" value="Remove">
+                      </div>
+           
+              `
+            }
+container+=`
+             <i class="fa-solid fa-arrow-right-arrow-left"></i>
+             </div>
+             </div>
+         </div>
+     </div>
+     </div>
+     `;
   return container;
 }
 //on clicking pagination
@@ -149,43 +161,42 @@ function handlePagination(resultArr) {
   });
 }
 
-//********************see all products */
-showAllProducts();
-async function showAllProducts() {
+function getWishListDataArray(productArr){
+    let wishListArr=JSON.parse(localStorage.getItem("wishListData")).wishListArr;
+    return productArr.filter((value)=>{
+       return wishListArr.includes(value.id);
+    })
+}
+ //********************show wish List */
+showWishList();
+async function showWishList() {
   let whyBuyContainer = document.getElementById("allProductsCard");
   let container = ` <div class="search-result" >`;
   let noOfPages;
   let resultArr = [];
-
   let response = await fetch("./script/products.json");
   let responsData = await response.json();
-  resultArr = responsData.productData;
+    
+   resultArr= getWishListDataArray(responsData.productData);
+  console.log(resultArr);
+
   noOfPages = Math.ceil(resultArr.length / 4);
   for (let i = 0; i < resultArr.length; i++) {
     if (i >= 4) break;
-    container += showSearchResultContent(resultArr[i],"product");
+    container += showSearchResultContent(resultArr[i],"wishList");
   }
   showPagination(noOfPages, resultArr);
   container += `</div>`;
   whyBuyContainer.innerHTML = container;
 }
-
 // ******************************** add to cart   ************************
 function addToCart(productId) {
   let cartData = JSON.parse(localStorage.getItem("cartData"));
   if (cartData.cartArr.includes(productId)) {
     alert("item already in cart");
   } else {
-    if (cartData) {
-      cartData.cartArr.push(productId);
-      localStorage.setItem("cartData", JSON.stringify(cartData));
-    } else {
-      let cartData = {
-        cartArr: [],
-      };
-      cartData.cartArr.push(productId);
-      localStorage.setItem("cartData", JSON.stringify(cartData));
-    }
+    cartData.cartArr.push(productId);
+    localStorage.setItem("cartData", JSON.stringify(cartData));
     alert("item added");
     totalItemInCart();
   }
@@ -220,7 +231,6 @@ function showHIdeNav() {
     saleContainer.style.display = "block";
   }
 }
-
 function totalItemInCart() {
   let cartData = JSON.parse(localStorage.getItem("cartData"));
   document.getElementById("item-counter").innerHTML = cartData.cartArr.length;
@@ -244,7 +254,6 @@ function loadSignUp() {
   }, 500);
 }
 // display current user name text
-
 window.onload = function () {
   setCurrentUser();
 };
@@ -282,6 +291,7 @@ document.getElementById("login-logout-click-mobile").addEventListener("click", (
     location.assign("index.html");
   }
 });
+
 function getCurrentLoggedUserIndex(loginArr) {
   for (i in loginArr) {
     //get current user index
@@ -309,6 +319,16 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
     location.assign("index.html");
   }
 });
+
+
+// remove form wishList 
+function removeFromWishList(productId){
+  let wishListData=JSON.parse(localStorage.getItem("wishListData"));
+  wishListData.wishListArr.splice(wishListData.wishListArr.indexOf(productId),1);
+  localStorage.setItem("wishListData",JSON.stringify(wishListData));
+  location.assign("wishList.html")
+}
+
 // add to wishlist
 function addToWishList(productId) {
   let wishlistData = JSON.parse(localStorage.getItem("wishListData"));

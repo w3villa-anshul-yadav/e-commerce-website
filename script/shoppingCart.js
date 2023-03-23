@@ -1,30 +1,4 @@
-       // display current user name text
-      window.onload = function () {
-        setCurrentUser();
-      };
-      function setCurrentUser() {
-        let loginData = JSON.parse(localStorage.getItem("loginData"));
-        let userIndx = getCurrentLoggedUserIndex(loginData.loginArr);
-        if (userIndx) {
-          let username = loginData.loginArr[userIndx].username;
-          document.getElementById("currentUser").innerHTML =
-            username.toUpperCase();
-          document.getElementById("currentUser").style.color = "blue";
-          document.getElementById("login-logout-text").innerText = "Log Out";
-        } else {
-          document.getElementById("currentUser").innerHTML = "";
-          document.getElementById("login-logout-text").innerText = "Login";
-        }
-      }
-      function getCurrentLoggedUserIndex(loginArr) {
-        for (i in loginArr) {
-          //get current user index
-          if (loginArr[i].logedStatus == true) {
-            return i;
-          }
-        }
-        return false;
-      }
+      
 
       // ************************   show search Result  **********************************
       document.getElementById("searchButton").addEventListener("click", () => {
@@ -449,15 +423,35 @@
         let userIndx = getCurrentLoggedUserIndex(loginData.loginArr);
         if (userIndx) {
           let username = loginData.loginArr[userIndx].username;
-          document.getElementById("currentUser").innerHTML =
-            username.toUpperCase();
+          document.getElementById("currentUser").innerHTML = username.toUpperCase();
+          // document.getElementById("currentUser-mobile").innerHTML = username.toUpperCase();
           document.getElementById("currentUser").style.color = "blue";
           document.getElementById("login-logout-text").innerText = "Log Out";
+          document.getElementById("login-logout-text-mobile").innerText = "Log Out";
         } else {
           document.getElementById("currentUser").innerHTML = "";
+          // document.getElementById("currentUser-mobile").innerHTML = "";
           document.getElementById("login-logout-text").innerText = "Login";
+          document.getElementById("login-logout-text-mobile").innerText = "Login";
         }
-      }
+      }//on clicking login button for mobile nav 
+      document.getElementById("login-logout-click-mobile").addEventListener("click", () => {
+        let bool = localStorage.getItem("loginFormStatus");
+        bool = bool == "false" ? true : false;
+        if (
+          bool &&
+          document.getElementById("login-logout-text-mobile").innerText == "Login"
+        ) {
+          location.assign("loginPage.html");
+        } else {
+          document.getElementById("login-logout-text-mobile").innerText = "Login";
+          let loginData = JSON.parse(localStorage.getItem("loginData"));
+          let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
+          loginData.loginArr[currentUserIndex].logedStatus = false;
+          localStorage.setItem("loginData", JSON.stringify(loginData));
+          location.assign("index.html");
+        }
+      });
       function getCurrentLoggedUserIndex(loginArr) {
         for (i in loginArr) {
           //get current user index
