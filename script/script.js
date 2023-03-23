@@ -1,5 +1,5 @@
-  loadFirstTimeOnBrouser();
-   setCurrentUser();
+loadFirstTimeOnBrouser();
+setCurrentUser();
 totalItemInCart();
 // on clicking register button
 function signUpForm() {
@@ -7,49 +7,50 @@ function signUpForm() {
   location.assign("loginPage.html");
 }
 
-// display current user name text
 
-function loadFirstTimeOnBrouser(){
-  if (localStorage.getItem("cartData")) {
-  } else {
+function loadFirstTimeOnBrouser() {
+  if (!(localStorage.getItem("cartData"))) { 
     let cartData = {
       cartArr: [],
     };
-     localStorage.setItem("cartData", JSON.stringify(cartData));
-  } 
-  if (localStorage.getItem("loginFormStatus")) {
-  } else {
+    localStorage.setItem("cartData", JSON.stringify(cartData));
+  }
+  if (!(localStorage.getItem("loginFormStatus"))) {
     localStorage.setItem("loginFormStatus", false);
   }
 
-  if(localStorage.getItem("loginData")){}
-  else {
-       let obj = {
-         loginArr: [{}],
-       };
-       localStorage.setItem("loginData", JSON.stringify(obj));}
+  if (!localStorage.getItem("loginData")) {
+    let obj = {
+      loginArr: [{}],
+    };
+    localStorage.setItem("loginData", JSON.stringify(obj));
+  }
+
+  if (!localStorage.getItem("wishListData")) {
+    let wishListData = {
+      wishListArr: [],
+    };
+    localStorage.setItem("wishListData", JSON.stringify(wishListData));
+  }
 }
+// display current user name text
+
 function setCurrentUser() {
   let loginData = JSON.parse(localStorage.getItem("loginData"));
   let userIndx = getCurrentLoggedUserIndex(loginData.loginArr);
   if (userIndx) {
     let username = loginData.loginArr[userIndx].username;
     document.getElementById("currentUser").innerHTML = username.toUpperCase();
+    // document.getElementById("currentUser-mobile").innerHTML = username.toUpperCase();
     document.getElementById("currentUser").style.color = "blue";
     document.getElementById("login-logout-text").innerText = "Log Out";
+    document.getElementById("login-logout-text-mobile").innerText = "Log Out";
   } else {
     document.getElementById("currentUser").innerHTML = "";
+    // document.getElementById("currentUser-mobile").innerHTML = "";
     document.getElementById("login-logout-text").innerText = "Login";
+    document.getElementById("login-logout-text-mobile").innerText = "Login";
   }
-}
-function getCurrentLoggedUserIndex(loginArr) {
-  for (i in loginArr) {
-    //get current user index
-    if (loginArr[i].logedStatus == true) {
-      return i;
-    }
-  }
-  return false;
 }
 //on clicking login button
 document.getElementById("login-logout-click").addEventListener("click", () => {
@@ -69,6 +70,34 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
     location.assign("index.html");
   }
 });
+//on clicking login button for mobile nav 
+document.getElementById("login-logout-click-mobile").addEventListener("click", () => {
+  let bool = localStorage.getItem("loginFormStatus");
+  bool = bool == "false" ? true : false;
+  if (
+    bool &&
+    document.getElementById("login-logout-text-mobile").innerText == "Login"
+  ) {
+    location.assign("loginPage.html");
+  } else {
+    document.getElementById("login-logout-text-mobile").innerText = "Login";
+    let loginData = JSON.parse(localStorage.getItem("loginData"));
+    let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
+    loginData.loginArr[currentUserIndex].logedStatus = false;
+    localStorage.setItem("loginData", JSON.stringify(loginData));
+    location.assign("index.html");
+  }
+});
+function getCurrentLoggedUserIndex(loginArr) {
+  for (i in loginArr) {
+    //get current user index
+    if (loginArr[i].logedStatus == true) {
+      return i;
+    }
+  }
+  return false;
+}
+
 
 // ************************   owl Carousel **********************************
 function owl1() {
@@ -358,7 +387,7 @@ async function displayfeaturedProducts(elem) {
                                   <input type="button" id="${data[i].id}" onclick="addToCart(${data[i].id})" value="ADD TO CART">
                               </div>
                               <div>
-                                  <i style="font-weight:100" class="fa-solid fa-heart"></i>
+                                  <i style="font-weight:100" class="fa-solid fa-heart" onclick="addToWishList(${data[i].id})"></i>
                                   <i class="fa-solid fa-arrow-right-arrow-left"></i>
                               </div>
                           </div>
@@ -439,7 +468,7 @@ async function displayfeaturedCategories() {
                      <input type="button" onclick="addToCart(${data[i].id})" value="ADD TO CART">
                  </div>
                  <div>
-                     <i style="font-weight:100" class="fa-solid fa-heart"></i>
+                     <i style="font-weight:100" class="fa-solid fa-heart" onclick="addToWishList(${data[i].id})"></i>
                      <i class="fa-solid fa-arrow-right-arrow-left"></i>
                  </div>
              </div>
@@ -769,7 +798,7 @@ function showSearchResultContent(data) {
              <input type="button" onclick="addToCart(${data.id})" value="ADD TO CART">
              </div>
              <div>
-             <i style="font-weight:100" class="fa-solid fa-heart"></i>
+             <i style="font-weight:100" class="fa-solid fa-heart"  onclick="addToWishList(${data.id})" ></i>
              <i class="fa-solid fa-arrow-right-arrow-left"></i>
              </div>
              </div>
@@ -853,4 +882,17 @@ function totalItemInCart() {
   document.getElementById("item-counter").innerHTML = cartData.cartArr.length;
   document.getElementById("total-cart-price").innerText =
     cartData.cartArr.length * 999;
+}
+// add to wishlist
+function addToWishList(productId) {
+  let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
+  console.log(productId);
+  let wishListArr= wishlistData.wishListArr;
+  if(wishListArr.includes(productId)){
+    alert("Item already in wishlist")
+  }else{
+  wishListArr.push(productId);
+  localStorage.setItem("wishListData",JSON.stringify(wishlistData));
+  alert("item added into wishlist");
+  }
 }
