@@ -14,10 +14,8 @@ function showSearchResult() {
   } else {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
-  let SearchResultContainer = document.getElementById("searchResult");
-  SearchResultContainer.style.display = "block";
-  document.getElementsByTagName("main")[0].classList.add("display-none");
-  showResult(inputValue);
+  localStorage.setItem("searchValue", inputValue);
+  location.href = "searchPage.html";
 }
 async function showResult(inputValue) {
   let whyBuyContainer = document.getElementById("searchCard");
@@ -44,7 +42,7 @@ async function showResult(inputValue) {
     noOfPages = Math.ceil(resultArr.length / 4);
     for (let i = 0; i < resultArr.length; i++) {
       if (i >= 4) break;
-      container += showSearchResultContent(resultArr[i],"search");
+      container += showSearchResultContent(resultArr[i], "search");
     }
     try {
       showPagination(noOfPages, resultArr);
@@ -67,7 +65,7 @@ function showPagination(noOfPages, resultArr) {
   paginationHandler.innerHTML = htm;
   handlePagination(resultArr);
 }
-function showSearchResultContent(data,operation) {
+function showSearchResultContent(data, operation) {
   let container = ``;
   container += `
   <div class="item">
@@ -118,18 +116,18 @@ function showSearchResultContent(data,operation) {
              </div>
              <div>
             `;
-            if(operation!="wishList"){
-             container+=` <i style="font-weight:100" class="fa-solid fa-heart" onclick="addToWishList(${data.id})"></i>`;
-            }
-            if(operation=="wishList"){
-              container+=`
+  if (operation != "wishList") {
+    container += ` <i style="font-weight:100" class="fa-solid fa-heart" onclick="addToWishList(${data.id})"></i>`;
+  }
+  if (operation == "wishList") {
+    container += `
               <div>
                   <input style="background-color:red" type="button" onclick="removeFromWishList(${data.id})" value="Remove">
                       </div>
            
-              `
-            }
-container+=`
+              `;
+  }
+  container += `
              <i class="fa-solid fa-arrow-right-arrow-left"></i>
              </div>
              </div>
@@ -153,7 +151,7 @@ function handlePagination(resultArr) {
       let container = ` <div class="search-result" >`;
       while (start <= end) {
         if (start == resultArr.length) break;
-        container += showSearchResultContent(resultArr[start],"search");
+        container += showSearchResultContent(resultArr[start], "search");
         start++;
       }
       whyBuyContainer.innerHTML = container;
@@ -161,13 +159,15 @@ function handlePagination(resultArr) {
   });
 }
 
-function getWishListDataArray(productArr){
-    let wishListArr=JSON.parse(localStorage.getItem("wishListData")).wishListArr;
-    return productArr.filter((value)=>{
-       return wishListArr.includes(value.id);
-    })
+function getWishListDataArray(productArr) {
+  let wishListArr = JSON.parse(
+    localStorage.getItem("wishListData")
+  ).wishListArr;
+  return productArr.filter((value) => {
+    return wishListArr.includes(value.id);
+  });
 }
- //********************show wish List */
+//********************show wish List */
 showWishList();
 async function showWishList() {
   let whyBuyContainer = document.getElementById("allProductsCard");
@@ -176,14 +176,14 @@ async function showWishList() {
   let resultArr = [];
   let response = await fetch("./script/products.json");
   let responsData = await response.json();
-    
-   resultArr= getWishListDataArray(responsData.productData);
+
+  resultArr = getWishListDataArray(responsData.productData);
   console.log(resultArr);
 
   noOfPages = Math.ceil(resultArr.length / 4);
   for (let i = 0; i < resultArr.length; i++) {
     if (i >= 4) break;
-    container += showSearchResultContent(resultArr[i],"wishList");
+    container += showSearchResultContent(resultArr[i], "wishList");
   }
   showPagination(noOfPages, resultArr);
   container += `</div>`;
@@ -273,24 +273,26 @@ function setCurrentUser() {
     document.getElementById("login-logout-text").innerText = "Login";
     document.getElementById("login-logout-text-mobile").innerText = "Login";
   }
-}//on clicking login button for mobile nav 
-document.getElementById("login-logout-click-mobile").addEventListener("click", () => {
-  let bool = localStorage.getItem("loginFormStatus");
-  bool = bool == "false" ? true : false;
-  if (
-    bool &&
-    document.getElementById("login-logout-text-mobile").innerText == "Login"
-  ) {
-    location.assign("loginPage.html");
-  } else {
-    document.getElementById("login-logout-text-mobile").innerText = "Login";
-    let loginData = JSON.parse(localStorage.getItem("loginData"));
-    let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
-    loginData.loginArr[currentUserIndex].logedStatus = false;
-    localStorage.setItem("loginData", JSON.stringify(loginData));
-    location.assign("index.html");
-  }
-});
+} //on clicking login button for mobile nav
+document
+  .getElementById("login-logout-click-mobile")
+  .addEventListener("click", () => {
+    let bool = localStorage.getItem("loginFormStatus");
+    bool = bool == "false" ? true : false;
+    if (
+      bool &&
+      document.getElementById("login-logout-text-mobile").innerText == "Login"
+    ) {
+      location.assign("loginPage.html");
+    } else {
+      document.getElementById("login-logout-text-mobile").innerText = "Login";
+      let loginData = JSON.parse(localStorage.getItem("loginData"));
+      let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
+      loginData.loginArr[currentUserIndex].logedStatus = false;
+      localStorage.setItem("loginData", JSON.stringify(loginData));
+      location.assign("index.html");
+    }
+  });
 
 function getCurrentLoggedUserIndex(loginArr) {
   for (i in loginArr) {
@@ -320,25 +322,27 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
   }
 });
 
-
-// remove form wishList 
-function removeFromWishList(productId){
-  let wishListData=JSON.parse(localStorage.getItem("wishListData"));
-  wishListData.wishListArr.splice(wishListData.wishListArr.indexOf(productId),1);
-  localStorage.setItem("wishListData",JSON.stringify(wishListData));
-  location.assign("wishList.html")
+// remove form wishList
+function removeFromWishList(productId) {
+  let wishListData = JSON.parse(localStorage.getItem("wishListData"));
+  wishListData.wishListArr.splice(
+    wishListData.wishListArr.indexOf(productId),
+    1
+  );
+  localStorage.setItem("wishListData", JSON.stringify(wishListData));
+  location.assign("wishList.html");
 }
 
 // add to wishlist
 function addToWishList(productId) {
   let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
   console.log(productId);
-  let wishListArr= wishlistData.wishListArr;
-  if(wishListArr.includes(productId)){
-    alert("Item already in wishlist")
-  }else{
-  wishListArr.push(productId);
-  localStorage.setItem("wishListData",JSON.stringify(wishlistData));
-  alert("item added into wishlist");
+  let wishListArr = wishlistData.wishListArr;
+  if (wishListArr.includes(productId)) {
+    alert("Item already in wishlist");
+  } else {
+    wishListArr.push(productId);
+    localStorage.setItem("wishListData", JSON.stringify(wishlistData));
+    alert("item added into wishlist");
   }
 }

@@ -1,4 +1,6 @@
-totalItemInCart();
+// *********************show search result on this page ******************
+showResult(localStorage.getItem("searchValue"));
+// localStorage.setItem("searchValue","");
 // ************************   show search Result  **********************************
 document.getElementById("searchButton").addEventListener("click", () => {
   showSearchResult();
@@ -13,12 +15,16 @@ function showSearchResult() {
     inputValue = document.getElementById("searchInput").value;
   } else {
     inputValue = document.getElementById("mobileSearchInput").value;
-  }   
-   localStorage.setItem("searchValue",inputValue);
-  location.href="searchPage.html"
- }
+  }
+
+  localStorage.setItem("searchValue", inputValue);
+  location.href = "searchPage.html";
+}
 async function showResult(inputValue) {
   let whyBuyContainer = document.getElementById("searchCard");
+  //display search heading on search page
+  document.getElementById("search-value-heading").innerHTML=inputValue;
+  document.getElementById("search-value").value=inputValue;
   let container = ` <div class="search-result" >`;
   let notFound = true;
   let noOfPages;
@@ -42,7 +48,7 @@ async function showResult(inputValue) {
     noOfPages = Math.ceil(resultArr.length / 4);
     for (let i = 0; i < resultArr.length; i++) {
       if (i >= 4) break;
-      container += showSearchResultContent(resultArr[i], "search");
+      container += showSearchResultContent(resultArr[i]);
     }
     try {
       showPagination(noOfPages, resultArr);
@@ -65,64 +71,64 @@ function showPagination(noOfPages, resultArr) {
   paginationHandler.innerHTML = htm;
   handlePagination(resultArr);
 }
-function showSearchResultContent(data, operation) {
+function showSearchResultContent(data) {
   let container = ``;
   container += `
-    <div class="item">
-    <div class="featured-products-card" id="searchItem">
-    <div class="image-container">
-    <img src="${data.img}" alt="">
-
-    <div class="labels">
-    <div class="cross-labels">
-    `;
+  <div class="item">
+  <div class="featured-products-card" id="searchItem">
+  <div class="image-container">
+  <img src="${data.img}" alt="">
+  
+  <div class="labels">
+  <div class="cross-labels">
+  `;
   for (k in data.crossLabel) {
-    container += `
-      <p class="blue-bg">
-      <strong>${data.crossLabel[k]}</strong>
-      </p>
-      `;
+    container += `                 
+    <p class="blue-bg">
+    <strong>${data.crossLabel[k]}</strong>
+    </p>                  
+    `;
   }
   container += `
-    </div>
-    <div class="right-labels">
-    `;
+  </div>
+  <div class="right-labels">
+  `;
   for (j in data.rightLabels) {
     if (j % 2 == 0) {
       container += `
-                              <p class="yellow-bg ">
-                              <strong>${data.rightLabels[j]}</strong>
-                              </p>
-                              `;
+                            <p class="yellow-bg ">
+                            <strong>${data.rightLabels[j]}</strong>
+                            </p>
+                            `;
     } else {
       container += `
-                              <p class="red-bg ">
-                              <strong>${data.rightLabels[j]}</strong>
-                              </p>
-                              `;
+                            <p class="red-bg ">
+                            <strong>${data.rightLabels[j]}</strong>
+                            </p>
+                            `;
     }
   }
-  container += `
-                         </div>
-               </div>
-               </div>
-               <div class="cart-container">
-               <h2>${data.name}</h2>
-               <p class="price">${data.discountedPrice} </p>
-               <hr>
-               <div class="add-to-cart-container">
-               <div>
-               <input type="button" onclick="addToCart(${data.id})" value="ADD TO CART">
-               </div>
-               <div>
-               <i style="font-weight:100" class="fa-solid fa-heart" onclick="addToWishList(${data.id})"></i>
-               <i class="fa-solid fa-arrow-right-arrow-left"></i>
-               </div>
-               </div>
-           </div>
-       </div>
-       </div>
-       `;
+  container += `            
+                       </div>
+             </div>
+             </div>
+             <div class="cart-container">
+             <h2>${data.name}</h2>
+             <p class="price">${data.discountedPrice} </p>
+             <hr>
+             <div class="add-to-cart-container">
+             <div>
+             <input type="button" onclick="addToCart(${data.id})" value="ADD TO CART">
+             </div>
+             <div>
+             <i style="font-weight:100" class="fa-solid fa-heart"  onclick="addToWishList(${data.id})" ></i>
+             <i class="fa-solid fa-arrow-right-arrow-left"></i>
+             </div>
+             </div>
+         </div>
+     </div>
+     </div>
+     `;
   return container;
 }
 //on clicking pagination
@@ -135,11 +141,11 @@ function handlePagination(resultArr) {
       let activElem = document.getElementsByClassName("active-pagination")[0];
       activElem.classList.remove("active-pagination");
       elem.classList.add("active-pagination");
-      let whyBuyContainer = document.getElementById("allProductsCard");
+      let whyBuyContainer = document.getElementById("searchCard");
       let container = ` <div class="search-result" >`;
       while (start <= end) {
         if (start == resultArr.length) break;
-        container += showSearchResultContent(resultArr[start], "search");
+        container += showSearchResultContent(resultArr[start]);
         start++;
       }
       whyBuyContainer.innerHTML = container;
@@ -147,55 +153,19 @@ function handlePagination(resultArr) {
   });
 }
 
-//********************see all products */
-showAllProducts();
-async function showAllProducts() {
-  let whyBuyContainer = document.getElementById("allProductsCard");
-  let container = ` <div class="search-result" >`;
-  let noOfPages;
-  let resultArr = [];
-
-  let response = await fetch("./script/products.json");
-  let responsData = await response.json();
-  resultArr = responsData.productData;
-  noOfPages = Math.ceil(resultArr.length / 4);
-  for (let i = 0; i < resultArr.length; i++) {
-    if (i >= 4) break;
-    container += showSearchResultContent(resultArr[i], "product");
-  }
-  showPagination(noOfPages, resultArr);
-  container += `</div>`;
-  whyBuyContainer.innerHTML = container;
-}
-
-// ******************************** add to cart   ************************
-function addToCart(productId) {
-  let cartData = JSON.parse(localStorage.getItem("cartData"));
-  if (cartData.cartArr.includes(productId)) {
-    alert("item already in cart");
-  } else {
-    if (cartData) {
-      cartData.cartArr.push(productId);
-      localStorage.setItem("cartData", JSON.stringify(cartData));
-    } else {
-      let cartData = {
-        cartArr: [],
-      };
-      cartData.cartArr.push(productId);
-      localStorage.setItem("cartData", JSON.stringify(cartData));
-    }
-    alert("item added");
-    totalItemInCart();
-  }
-}
-//******************sell all button************************************/
-function seeAllProducts() {
-  location.assign("allProducts.html");
-}
 // ************************   show mobile search bar  *****************************
 function showSearchBar() {
   let searchBar = document.getElementById("mobile-search-bar");
   searchBar.classList.toggle("show-mobile-search-bar");
+}
+
+// show total item in cart
+totalItemInCart();
+function totalItemInCart() {
+  let cartData = JSON.parse(localStorage.getItem("cartData"));
+  document.getElementById("item-counter").innerHTML = cartData.cartArr.length;
+  document.getElementById("total-cart-price").innerHTML =
+    cartData.cartArr.length * 999;
 }
 // *************   show hide navbar item sale and new container**********************
 var bottomNavbar = document.getElementById("fixed-bottom-navbar");
@@ -219,28 +189,33 @@ function showHIdeNav() {
   }
 }
 
-function totalItemInCart() {
+// ******************************** add to cart   ************************
+function addToCart(productId) {
   let cartData = JSON.parse(localStorage.getItem("cartData"));
-  document.getElementById("item-counter").innerHTML = cartData.cartArr.length;
-  document.getElementById("total-cart-price").innerText =
-    cartData.cartArr.length * 999;
+  if (cartData.cartArr.includes(productId)) {
+    alert("item already in cart");
+  } else {
+    if (cartData) {
+      cartData.cartArr.push(productId);
+      localStorage.setItem("cartData", JSON.stringify(cartData));
+    } else {
+      let cartData = {
+        cartArr: [],
+      };
+      cartData.cartArr.push(productId);
+      localStorage.setItem("cartData", JSON.stringify(cartData));
+    }
+    alert("item added");
+    totalItemInCart();
+  }
 }
+
 // on clicking register button
 function signUpForm() {
   localStorage.setItem("loginFormStatus", true);
   location.assign("loginPage.html");
 }
-loadSignUp();
-function loadSignUp() {
-  let bool = localStorage.getItem("loginFormStatus");
-  bool = bool == "true" ? true : false;
-  if (bool) {
-    showSignUp(document.getElementById("signup-button"));
-  }
-  setTimeout(() => {
-    localStorage.setItem("loginFormStatus", false);
-  }, 500);
-}
+
 // display current user name text
 
 window.onload = function () {
@@ -321,4 +296,60 @@ function addToWishList(productId) {
     localStorage.setItem("wishListData", JSON.stringify(wishlistData));
     alert("item added into wishlist");
   }
+}
+// show current page title on current NAV BAR 
+document.getElementById("current-page-title").innerHTML=document.title;
+
+displayMostViewed();
+async function displayMostViewed() {
+  let container = document.getElementById("most-viewed");
+  let elem = `<div class="owl-carousel owl6 owl-theme">
+  `;
+  let response = await fetch("./script/mostViewed.json");
+  let responsData = await response.json();
+  let data = responsData.mostViewed;
+  for (i in data) {
+    elem += `
+    <div class="item">
+              <div class="card">
+                <img src="${data[i].img}" alt="" />
+                <div>
+                  <h2>${data[i].name}</h2>
+                  <p>${data[i].prise}</p>
+                  <div class="icon-container">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+    `;
+  }
+  elem += `</div>`;
+  container.innerHTML = elem;
+  owl6();
+}
+function owl6() {
+  $(".owl6").owlCarousel({
+    //for display Most Viewed
+    loop: true,
+    margin: 25,
+    nav: false,
+    autoplay: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 2,
+      },
+      700: {
+        items: 3,
+      },
+      1100: {
+        items: 4,
+      },
+    },
+  });
 }
