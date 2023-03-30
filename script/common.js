@@ -18,7 +18,7 @@ function showSearchResult() {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
   localStorage.setItem("searchValue", inputValue);
-  location.href = "searchPage.html";
+  location.href = "search.html";
 }
 
 // ************************   show mobile search bar  *****************************
@@ -81,7 +81,7 @@ function addToCart(productId) {
 // on clicking register button
 function signUpForm() {
   localStorage.setItem("loginFormStatus", true);
-  location.assign("loginPage.html");
+  location.assign("login.html");
 }
 
 // display current user name text
@@ -115,7 +115,7 @@ document
       bool &&
       document.getElementById("login-logout-text-mobile").innerText == "Login"
     ) {
-      location.assign("loginPage.html");
+      location.assign("login.html");
     } else {
       document.getElementById("login-logout-text-mobile").innerText = "Login";
       let loginData = JSON.parse(localStorage.getItem("loginData"));
@@ -142,7 +142,7 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
     bool &&
     document.getElementById("login-logout-text").innerText == "Login"
   ) {
-    location.assign("loginPage.html");
+    location.assign("login.html");
   } else {
     document.getElementById("login-logout-text").innerText = "Login";
     let loginData = JSON.parse(localStorage.getItem("loginData"));

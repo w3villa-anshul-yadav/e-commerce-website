@@ -12,17 +12,10 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./style/style.css" />
-      <style>
-      #searchItem {
-        height: 424px;
-        width: 280px;
-      }
-      .search-result {
-        justify-content: center;
-      }
-    </style>
-    <title>All Products</title>
+    <link rel="stylesheet" href="./style/login.css" />
+    <title>Login</title>
   </head>
+
   <body>
     <header>
       <div class="top-navbar-container body-spacer">
@@ -125,14 +118,14 @@
       </div>
 
       <!-- *******************************header middle section 
-                have four sub section
-    
-                1. Brand logo
-                2. Search bar
-                3. login and other menu container
-                4.cart and price detils
-                
-                **************************** -->
+              have four sub section
+  
+              1. Brand logo
+              2. Search bar
+              3. login and other menu container
+              4.cart and price detils
+              
+              **************************** -->
 
       <div class="middle-header-section body-spacer">
         <!-- 1. Brand logo -->
@@ -184,8 +177,10 @@
             <div class="rounded-icon-background">
               <i class="fa-solid fa-pencil"></i>
             </div>
+
             <p>Register</p>
           </a>
+
           <a href="wishList.html">
             <div class="rounded-icon-background">
               <i class="fa-regular fa-heart"></i>
@@ -218,9 +213,9 @@
       </div>
 
       <!-- ********************************************** bottom nabvbar container
-            contains two main section 
-            1. menu 
-            2. contact and blog button  -->
+          contains two main section 
+          1. menu 
+          2. contact and blog button  -->
       <div id="fixed-bottom-navbar">
         <div class="bottom-navbar-menu-container body-spacer">
           <!-- 1. menu  -->
@@ -379,18 +374,82 @@
         </div>
       </div>
     </div>
-
     <main>
-      <div class="body-spacer products-container">
-        <h3>Products We Have</h3>
-        <div class="categories-card-carosel" id="allProductsCard"></div>
-        <div class="search-pagination">
-          <ul id="paginationHandler"></ul>
+      <div class="loginhero body-spacer">
+        <div class="background-image-container"></div>
+        <div class="login-container">
+          <span class="heading"
+            >Hey,hello<img
+              src="https://em-content.zobj.net/source/microsoft-teams/337/waving-hand_1f44b.png"
+              class="emoji"
+              alt="hand wave emogi"
+            />
+          </span>
+
+          <p class="light-text margin-top">
+            Enter information entered while regestring
+          </p>
+          <form action="" id="login-signup-form">
+            <div class="user-name margin-top">
+              <i class="fa-regular fa-user"></i>
+              <input
+                type="text"
+                placeholder="Username"
+                autocomplete="off"
+                required=""
+                id="user-name"
+              />
+            </div>
+            <div id="password-container">
+              <div class="password">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                  type="password"
+                  autocomplete="off"
+                  required=""
+                  placeholder="Password"
+                  id="password"
+                />
+              </div>
+            </div>
+
+            <div class="remember-me-forgot-password-container margin-top">
+              <div><input type="checkbox" /> <span> Remember me </span></div>
+              <a href="">
+                <span id="forgot-password" class="light-text">
+                  Forgot Password</span
+                ></a
+              >
+            </div>
+
+            <div id="login-button">
+              <input type="button" id="login" value="LOG IN" />
+            </div>
+          </form>
+
+          <div class="login-with-container">
+            <div class="login-wit-text">
+              <p>Or Login with</p>
+            </div>
+
+            <div class="icon-container">
+              <a href="https://w3villa-anshul-yadav.github.io/login-page/"
+                ><i class="fa-brands fa-github"></i> </a
+              ><a href="">
+                <i class="fa-brands fa-google"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </div>
+            <div class="signup login-with-container">
+              <a onclick="showSignUp(this)" id="signup-button">Sign Up</a>
+            </div>
+          </div>
         </div>
       </div>
     </main>
-
- 
+    
 
     <footer class="body-spacer">
       <div>
@@ -466,6 +525,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./script/allProducts.js"></script>
+    <script src="./script/loginScript.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@ totalItemInCart();
 // on clicking register button
 function signUpForm() {
   localStorage.setItem("loginFormStatus", true);
-  location.assign("loginPage.html");
+  location.assign("login.html");
 }
 
 function loadFirstTimeOnBrouser() {
@@ -59,7 +59,7 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
     bool &&
     document.getElementById("login-logout-text").innerText == "Login"
   ) {
-    location.assign("loginPage.html");
+    location.assign("login.html");
   } else {
     document.getElementById("login-logout-text").innerText = "Login";
     let loginData = JSON.parse(localStorage.getItem("loginData"));
@@ -79,7 +79,7 @@ document
       bool &&
       document.getElementById("login-logout-text-mobile").innerText == "Login"
     ) {
-      location.assign("loginPage.html");
+      location.assign("login.html");
     } else {
       document.getElementById("login-logout-text-mobile").innerText = "Login";
       let loginData = JSON.parse(localStorage.getItem("loginData"));
@@ -696,7 +696,7 @@ function showSearchResult() {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
   localStorage.setItem("searchValue", inputValue);
-  location.href = "searchPage.html";
+  location.href = "search.html";
 }
 function showPagination(noOfPages, resultArr) {
   let paginationHandler = document.getElementById("paginationHandler");

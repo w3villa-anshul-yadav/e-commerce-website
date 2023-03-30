@@ -8,7 +8,7 @@ function showSearchResult() {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
   localStorage.setItem("searchValue", inputValue);
-  location.href = "searchPage.html";
+  location.href = "search.html";
 }
 
 // ************************   show mobile search bar  *****************************
@@ -39,7 +39,7 @@ function showHIdeNav() {
 // onClicking register button in navbar
 function signUpForm() {
   localStorage.setItem("loginFormStatus", true);
-  location.assign("loginPage.html");
+  location.assign("login.html");
 }
 
 // signup page on click
@@ -101,9 +101,9 @@ function signUp() {
         loginData.loginArr.push(loginObj);
         localStorage.setItem("loginData", JSON.stringify(loginData));
         alert("Your account has been created");
-        location.assign("loginPage.html");
+        location.assign("login.html");
       } catch (err) {
-        location.assign("loginPage.html");
+        location.assign("login.html");
       }
     } else {
       let obj = {
@@ -111,7 +111,7 @@ function signUp() {
       };
       localStorage.setItem("loginData", JSON.stringify(obj));
       alert("Your account has been created");
-      location.assign("loginPage.html");
+      location.assign("login.html");
     }
   }
 }
@@ -155,7 +155,7 @@ function totalItemInCart() {
 // on clicking register button
 function signUpForm() {
   localStorage.setItem("loginFormStatus", true);
-  location.assign("loginPage.html");
+  location.assign("login.html");
 }
 
 function getCurrentLoggedUserIndex(loginArr) {
@@ -175,7 +175,7 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
     bool &&
     document.getElementById("login-logout-text").innerText == "Login"
   ) {
-    location.assign("loginPage.html");
+    location.assign("login.html");
   } else {
     document.getElementById("login-logout-text").innerText = "Login";
     let loginData = JSON.parse(localStorage.getItem("loginData"));
@@ -215,7 +215,7 @@ function totalItemInCart() {
 //on clicking login button
 document.getElementById("login-logout-click").addEventListener("click", () => {
   if (document.getElementById("login-logout-text").innerText == "Login") {
-    location.assign("loginPage.html");
+    location.assign("login.html");
   } else {
     document.getElementById("login-logout-text").innerText = "Login";
     let loginData = JSON.parse(localStorage.getItem("loginData"));
@@ -521,7 +521,7 @@ function totalItemInCart() {
 // on clicking register button
 function signUpForm() {
   localStorage.setItem("loginFormStatus", true);
-  location.assign("loginPage.html");
+  location.assign("login.html");
 }
 loadSignUp();
 function loadSignUp() {
@@ -565,7 +565,7 @@ document
       bool &&
       document.getElementById("login-logout-text-mobile").innerText == "Login"
     ) {
-      location.assign("loginPage.html");
+      location.assign("login.html");
     } else {
       document.getElementById("login-logout-text-mobile").innerText = "Login";
       let loginData = JSON.parse(localStorage.getItem("loginData"));
@@ -584,7 +584,7 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
     bool &&
     document.getElementById("login-logout-text").innerText == "Login"
   ) {
-    location.assign("loginPage.html");
+    location.assign("login.html");
   } else {
     document.getElementById("login-logout-text").innerText = "Login";
     let loginData = JSON.parse(localStorage.getItem("loginData"));
