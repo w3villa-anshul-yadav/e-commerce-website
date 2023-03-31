@@ -70,7 +70,7 @@ async function showResult(inputValue) {
   container += `</div>`;
 
   whyBuyContainer.innerHTML = container;
-   if (i == resultArr.length) {
+  if (i == resultArr.length) {
     whyBuyContainer.innerHTML += ` <h2 style="text-align:center">You have reached the end of the list</h2>`;
   }
 }
@@ -439,7 +439,7 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
 // add to wishlist
 function addToWishList(productId) {
   let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
-   let wishListArr = wishlistData.wishListArr;
+  let wishListArr = wishlistData.wishListArr;
   if (wishListArr.includes(productId)) {
     alert("Item already in wishlist");
   } else {
@@ -633,4 +633,11 @@ document.getElementById("toggle-style-button").addEventListener("click", () => {
   document.getElementById("toggle-style-icon").classList.toggle("fa-plus");
 });
 
-//    <i class="fa-solid fa-minus" id="toggle-subcategories-icon"></i>
+// display two way  range input on search page
+showInputRangeOnPriseInput();
+function showInputRangeOnPriseInput() {
+  document.getElementById("minInput").value =
+    document.getElementById("min").value;
+  document.getElementById("maxInput").value =
+    document.getElementById("max").value;
+}

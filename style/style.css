@@ -82,9 +82,14 @@ COMMON CLASSES
 .dropdown .drop-down-menu li {
   min-width: 120px;
   text-align: center;
+  border-bottom: 1px solid white;
   list-style-type: none;
   padding: 8px 10px;
 }
+.dropdown .drop-down-menu li:last-child {
+  border-bottom: none;
+}
+
 .dropdown .drop-down-menu li a {
   color: white;
   font-size: 18px;
@@ -663,7 +668,7 @@ contains two main section
 
 .hero .crousel img {
   border-radius: 8px;
-  height: 525px;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -756,7 +761,7 @@ contains two main section
 
 .side-card-container {
   display: flex;
-  height: 525px;
+  height: 500px;
   width: 25%;
   row-gap: 15px;
   flex-direction: column;
@@ -765,7 +770,7 @@ contains two main section
 
 .side-card-container .card img {
   width: 100%;
-  height: 98%;
+  height: 99%;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -851,8 +856,8 @@ contains two main section
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .services-container .free-shiping-container .icon-container {
@@ -911,8 +916,8 @@ contains two main section
   background-color: var(--light-gray-color);
 }
 .why-buy-from-us {
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 35px;
+  padding-bottom:35px;
 }
 
 .why-buy-from-us .why-buy-text h1 {
@@ -1065,8 +1070,8 @@ common for category toggling every :where
 .categories-card-carosel .text-on-image {
   position: absolute;
   bottom: 10px;
-  left: 28%;
-  right: 28%;
+  left: 22%;
+  right: 22%;
   text-transform: uppercase;
   border-radius: 5px;
   background-color: white;
@@ -1099,8 +1104,8 @@ SOME STYLES ARE IN ABOUVE SECTION
   background-color: #dedcdc75;
 }
 .featured-products {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 .image-container {
@@ -1109,7 +1114,7 @@ SOME STYLES ARE IN ABOUVE SECTION
 }
 
 .featured-products-card .image-container img {
-  height: 290px;
+  height: 330px;
   padding: 5px;
   object-fit: cover !important;
 }
@@ -1381,14 +1386,12 @@ input[type="number"]::-webkit-outer-spin-button,
 .featured-category-wrapper {
   background-color: #dde0e8b5;
 }
-.featured-category-container {
-  padding-bottom: 30px !important;
-}
+ 
 .fashion-category-container {
   display: flex;
 }
 .featured-category-container .why-buy-text {
-  padding-bottom: 85px !important;
+  padding-bottom: 30px !important;
 }
 #featured-category {
   padding-top: 20px;
@@ -1402,7 +1405,7 @@ input[type="number"]::-webkit-outer-spin-button,
   margin-top: 20px;
   margin-bottom: 10px;
   width: 100%;
-  height: 370px;
+  height: 351px;
   object-fit: cover;
   border-radius: 4px;
 }
@@ -1475,7 +1478,7 @@ input[type="number"]::-webkit-outer-spin-button,
   color: var(--primary-blue-color);
 }
 .new-fashion-category-container .categories-card-carosel img {
-  height: 374px;
+  height: 355px;
 
   border-radius: 8px;
 }
@@ -1502,8 +1505,8 @@ input[type="number"]::-webkit-outer-spin-button,
   background-color: var(--light-gray-color);
 }
 .shop-by-brand {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 .owl4 .item {
@@ -1590,6 +1593,7 @@ input[type="number"]::-webkit-outer-spin-button,
   box-shadow: 0px 0px 2px 0px gray;
   border-radius: 3px;
   margin: auto;
+  margin-bottom: 1px;
 }
 .from-our-blog .featured-products-card .image-container img {
   object-fit: cover !important;
@@ -1618,9 +1622,7 @@ what are people sying about us
 .people-saying-about-us-wrapper {
   background-color: white;
 }
-.people-saying-about-us {
-  padding-top: 20px;
-}
+ 
 .people-saying-about-us .featured-products-card .quote {
   padding-top: 60px;
   text-align: center;
@@ -1646,8 +1648,8 @@ most viewed section
   background-color: #404b62;
 }
 .most-viewed {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 .most-viewed p {
   font-size: 19px;
@@ -2269,7 +2271,7 @@ search bar
   border-radius: 3px;
   outline: none;
   border: 0.8px solid #eeecec;
-  padding: 1px 15px;
+  text-align: center;
   font-size: 17px;
 }
 .price-navbar {
@@ -2380,6 +2382,29 @@ input[type="checkbox"] {
 
 .search-result-page-main-heading p {
   font-size: 30px;
+}
+.two-way-range-input {
+  display: flex;
+  margin: 20px 0px;
+}
+.price-navbar input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  border-radius: 35px;
+  cursor: pointer;
+  background: rgb(81, 81, 238);
+}
+.price-navbar input[type="range"]::-webkit-slider-thumb {
+  border: 10px solid blue;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: blue;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -9px;
+}
+.price-navbar #min {
+  margin-right: -8px;
 }
 
 .search-result-page-main-heading hr {

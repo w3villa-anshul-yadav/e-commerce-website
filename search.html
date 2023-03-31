@@ -31,6 +31,15 @@
     />
     <!-- custom style sheet -->
     <link rel="stylesheet" href="./style/style.css" />
+       <style>
+      .featured-products-card .cart-container .price{
+        font-size: 22px;
+        font-weight: 600;
+        color: rgb(255, 136, 0);
+        opacity: 70%;
+      }
+       
+    </style>
     <title>Search</title>
   </head>
 
@@ -436,13 +445,33 @@
             </div>
           </div>
           <div class="price-navbar" id="price-range-toggle">
-            <input type="range" name="" id="" />
+            <div class="two-way-range-input">
+                      <input
+      type="range"
+      name=""
+      min="100"
+      max="5000"
+      step="100"
+       id="min"
+      onchange="showInputRangeOnPriseInput()"
+    />
+    <input
+      type="range"
+      name=""
+      min="5100"
+      step="100"
+      max="11000"
+       id="max"
+      onchange="showInputRangeOnPriseInput()"
+    />
+            </div>
             <div class="aside-nav-item-conatainer">
+              
               <div class="price-amount-container">
-                <input type="number" value="70" /> $
+                <input type="number" value="70" id="minInput"/> $
               </div>
               <div class="price-amount-container">
-                <input type="number" value="1718" /> $
+                <input type="number" value="1718" id="maxInput" /> $
               </div>
             </div>
           </div>
