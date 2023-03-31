@@ -520,7 +520,7 @@ contains two main section
 
 @media screen and (max-width: 1274px) {
   .mobile-bottom-navbar {
-     background-color: var(--light-gray-color);
+    background-color: var(--light-gray-color);
     justify-content: space-between;
     display: flex;
   }
@@ -1572,7 +1572,7 @@ input[type="number"]::-webkit-outer-spin-button,
   overflow: hidden !important;
   box-shadow: 0px 0px 2px 0px gray;
   border-radius: 3px;
-  margin: 1px;
+  margin: auto;
 }
 .from-our-blog .featured-products-card .image-container img {
   object-fit: cover !important;
@@ -1827,7 +1827,7 @@ footer div p {
   opacity: 60%;
   font-size: 11px;
 }
- 
+
 footer div p a {
   color: blue;
   opacity: 100%;
@@ -2172,7 +2172,7 @@ search bar
   margin-left: 0;
 }
 .search-page-main-container {
-  background-color: var(--light-gray-color);
+  background-color: #f3f3f72b;
 }
 .search-page-main-container hr {
   border-color: #fbfbfb54;
@@ -2573,7 +2573,7 @@ input[type="checkbox"] {
     display: none;
   }
   .why-buy-text hr {
-  margin-left: 34%;
+    margin-left: 34%;
   }
 
   .product-compare-text {
@@ -2600,7 +2600,7 @@ input[type="checkbox"] {
     font-size: 9px;
   }
   .social-media-icons {
-  column-gap: 4px;
+    column-gap: 4px;
   }
 }
 @media screen and (max-width: 300px) {

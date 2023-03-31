@@ -40,7 +40,7 @@ function setCurrentUser() {
   if (userIndx) {
     let username = loginData.loginArr[userIndx].username;
     document.getElementById("currentUser").innerHTML = username.toUpperCase();
-    // document.getElementById("currentUser-mobile").innerHTML = username.toUpperCase();
+    
     document.getElementById("currentUser").style.color = "blue";
     document.getElementById("login-logout-text").innerText = "Log Out";
     document.getElementById("login-logout-text-mobile").innerText = "Log Out";
@@ -695,8 +695,10 @@ function showSearchResult() {
   } else {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
-  localStorage.setItem("searchValue", inputValue);
-  location.href = "search.html";
+  if(!(inputValue.trim()=="")){
+    localStorage.setItem("searchValue", inputValue);
+    location.href = "search.html";
+  }
 }
 function showPagination(noOfPages, resultArr) {
   let paginationHandler = document.getElementById("paginationHandler");

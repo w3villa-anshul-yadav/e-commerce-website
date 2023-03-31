@@ -13,10 +13,11 @@ function showSearchResult() {
   } else {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
-  localStorage.setItem("searchValue", inputValue);
-  location.href = "search.html";
+  if (!(inputValue.trim() == "")) {
+    localStorage.setItem("searchValue", inputValue);
+    location.href = "search.html";
+  }
 }
- 
 function showPagination(noOfPages, resultArr) {
   let paginationHandler = document.getElementById("paginationHandler");
   let htm = ``;

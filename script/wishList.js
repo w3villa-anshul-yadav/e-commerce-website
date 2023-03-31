@@ -14,8 +14,10 @@ function showSearchResult() {
   } else {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
-  localStorage.setItem("searchValue", inputValue);
-  location.href = "search.html";
+  if (!(inputValue.trim() == "")) {
+    localStorage.setItem("searchValue", inputValue);
+    location.href = "search.html";
+  }
 }
 async function showResult(inputValue) {
   let whyBuyContainer = document.getElementById("searchCard");
