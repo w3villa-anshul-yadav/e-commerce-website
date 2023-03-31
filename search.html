@@ -36,6 +36,7 @@
 
   <body>
     <!-- **************************header section ********************************** -->
+   
     <header>
       <div class="top-navbar-container body-spacer">
         <!-- top-most-navbar  have three different section-->
@@ -145,82 +146,83 @@
             4.cart and price detils
             
             **************************** -->
+      <div class="wrapper-middle-header">
+        <div class="middle-header-section body-spacer">
+          <!-- 1. Brand logo -->
 
-      <div class="middle-header-section body-spacer">
-        <!-- 1. Brand logo -->
+          <div class="brand-logo">
+            <h1><a href="index.html"> JOURNAL</a></h1>
+          </div>
 
-        <div class="brand-logo">
-          <h1><a href="index.html"> JOURNAL</a></h1>
-        </div>
+          <!-- 2. Search bar -->
 
-        <!-- 2. Search bar -->
+          <div class="searchbar-container">
+            <div class="dropdown">
+              <div class="search-catagory-selector dropdown">
+                <a>
+                  <p id="Al">ALL</p>
+                  <i class="fa-solid fa-sort-down"></i>
+                </a>
+              </div>
 
-        <div class="searchbar-container">
-          <div class="dropdown">
-            <div class="search-catagory-selector dropdown">
-              <a>
-                <p id="Al">ALL</p>
-                <i class="fa-solid fa-sort-down"></i>
+              <ul class="drop-down-menu">
+                <li><a>Chlothing</a></li>
+                <li><a>Electronics</a></li>
+                <li><a>Toys</a></li>
+                <li><a>Shoes</a></li>
+              </ul>
+            </div>
+            <input id="searchInput" type="text" placeholder="Search here..." />
+            <div class="search-icon" id="searchButton">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+
+          <!-- 3. login and other menu container -->
+
+          <div class="login-wishlist-container">
+            <p id="currentUser"></p>
+            <span id="login-logout-click">
+              <div class="rounded-icon-background">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <p id="login-logout-text">Login</p>
+            </span>
+            <a onclick="signUpForm()">
+              <div class="rounded-icon-background">
+                <i class="fa-solid fa-pencil"></i>
+              </div>
+
+              <p>Register</p>
+            </a>
+            <a href="wishList.html">
+              <div class="rounded-icon-background">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <p>Wishlist</p>
+            </a>
+            <a>
+              <div class="rounded-icon-background">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+              </div>
+              <p>Compare</p>
+            </a>
+          </div>
+
+          <!-- 4.cart and price detils -->
+
+          <div class="cart-price-detail-container">
+            <div id="item-counter">0</div>
+            <div>
+              <p>&nbsp;item(s) -</p>
+            </div>
+            <div id="currency-name">$</div>
+            <div id="total-cart-price">0.00</div>
+            <div>
+              <a class="cart-icon" href="shoppingCart.html">
+                <i class="fa-solid fa-cart-shopping"></i>
               </a>
             </div>
-
-            <ul class="drop-down-menu">
-              <li><a>Chlothing</a></li>
-              <li><a>Electronics</a></li>
-              <li><a>Toys</a></li>
-              <li><a>Shoes</a></li>
-            </ul>
-          </div>
-          <input id="searchInput" type="text" placeholder="Search here..." />
-          <div class="search-icon" id="searchButton">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-        </div>
-
-        <!-- 3. login and other menu container -->
-
-        <div class="login-wishlist-container">
-          <p id="currentUser"></p>
-          <span id="login-logout-click">
-            <div class="rounded-icon-background">
-              <i class="fa-solid fa-user"></i>
-            </div>
-            <p id="login-logout-text">Login</p>
-          </span>
-          <a onclick="signUpForm()">
-            <div class="rounded-icon-background">
-              <i class="fa-solid fa-pencil"></i>
-            </div>
-
-            <p>Register</p>
-          </a>
-          <a href="wishList.html">
-            <div class="rounded-icon-background">
-              <i class="fa-regular fa-heart"></i>
-            </div>
-            <p>Wishlist</p>
-          </a>
-          <a>
-            <div class="rounded-icon-background">
-              <i class="fa-solid fa-arrow-right-arrow-left"></i>
-            </div>
-            <p>Compare</p>
-          </a>
-        </div>
-
-        <!-- 4.cart and price detils -->
-
-        <div class="cart-price-detail-container">
-          <div id="item-counter">0</div>
-          <div>
-            <p>&nbsp;item(s) -</p>
-          </div>
-          <div id="currency-name">$</div>
-          <div id="total-cart-price">0.00</div>
-          <div>
-            <a class="cart-icon" href="shoppingCart.html">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </a>
           </div>
         </div>
       </div>
@@ -337,7 +339,7 @@
             <div class="hamburgur"><i class="fa-solid fa-bars"></i></div>
             <ul class="drop-down-menu">
               <li><a>ALL&nbsp;DEPARTMENT</a></li>
-              <li><a href="wishList.html">wish List</a></li>
+              <li><a href="wishList.html">WISH LIST</a></li>
               <li><a>MEGA MENU</a></li>
             </ul>
           </a>
@@ -749,15 +751,13 @@
     most viewed section 
     **************************************** -->
 
-      <section class="most-viewed body-spacer">
-        <p>
-          RECENTLY VIEWED
-          <span style="opacity: 80%; padding-left: 10px"> MOST VIEWED</span>
-        </p>
-
-        <hr />
-        <div class="card-container">
-          <div class="categories-card-carosel" id="most-viewed"></div>
+     <section class="most-viewed-wrapper">
+        <div class="most-viewed body-spacer">
+          <p>MOST VIEWED</p>
+          <hr />
+          <div class="card-container">
+            <div class="categories-card-carosel" id="most-viewed"></div>
+          </div>
         </div>
       </section>
     </main>
@@ -824,7 +824,8 @@
     <!-- ************************************
 copyright text 
 ********************************** -->
-    <div class="copyright body-spacer">
+    <div class="copyright-wrapper">
+      <div class="copyright body-spacer">
       <div>
         <p>
           Copyright © 2023 developed by
@@ -832,6 +833,7 @@ copyright text
         </p>
         <img src="./assets/paymentcard.jpg" alt="" />
       </div>
+    </div>
     </div>
     <div>
       <div class="top-navigation-controller">

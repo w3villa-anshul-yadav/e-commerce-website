@@ -20,7 +20,8 @@ function showSearchResult() {
     inputValue = document.getElementById("searchInput").value;
   } else {
     inputValue = document.getElementById("mobileSearchInput").value;
-  }if(inputValue==""){
+  }
+  if (inputValue == "") {
     inputValue = document.getElementById("search-value").value;
   }
 
@@ -69,8 +70,7 @@ async function showResult(inputValue) {
   container += `</div>`;
 
   whyBuyContainer.innerHTML = container;
-  console.log(i);
-  if (i == resultArr.length) {
+   if (i == resultArr.length) {
     whyBuyContainer.innerHTML += ` <h2 style="text-align:center">You have reached the end of the list</h2>`;
   }
 }
@@ -85,10 +85,10 @@ function showPagination(noOfPages, resultArr) {
   paginationHandler.innerHTML = htm;
   handlePagination(resultArr);
 }
-function displayListViewSearch(){
+function displayListViewSearch() {
   if (window.innerWidth <= 580) {
     displayGridViewSearch();
-  }else{
+  } else {
     let toggleListArray = document.getElementsByClassName("toggle-list-view");
 
     for (let i = 0; i < toggleListArray.length; i++) {
@@ -104,7 +104,7 @@ function displayListViewSearch(){
     let gridViewArray = document.getElementsByClassName(
       "grid-view-brand-model"
     );
-     for (let i = 0; i < gridViewArray.length; i++) {
+    for (let i = 0; i < gridViewArray.length; i++) {
       gridViewArray[i].style["display"] = "none";
     }
 
@@ -116,48 +116,44 @@ function displayListViewSearch(){
     }
 
     document.getElementsByClassName("search-result")[0].style["display"] =
-      "block";}
+      "block";
+  }
 }
-function displayGridViewSearch(){
-    let toggleListArray = document.getElementsByClassName("toggle-list-view");
+function displayGridViewSearch() {
+  let toggleListArray = document.getElementsByClassName("toggle-list-view");
 
-    for (let i = 0; i < toggleListArray.length; i++) {
-      toggleListArray[i].style["display"] = "block";
-      toggleListArray[i].style.width = "280px";
-     }
+  for (let i = 0; i < toggleListArray.length; i++) {
+    toggleListArray[i].style["display"] = "block";
+    toggleListArray[i].style.width = "330px";
+  }
 
-    let imageContainer = document.getElementsByClassName("image-container");
-    for (let i = 0; i < imageContainer.length; i++) {
-      imageContainer[i].classList.remove("list-image-container");
-    }
-    let gridViewArray = document.getElementsByClassName(
-      "grid-view-brand-model"
-    );
-     for (let i = 0; i < gridViewArray.length; i++) {
-      gridViewArray[i].style["display"] = "block";
-    }
+  let imageContainer = document.getElementsByClassName("image-container");
+  for (let i = 0; i < imageContainer.length; i++) {
+    imageContainer[i].classList.remove("list-image-container");
+  }
+  let gridViewArray = document.getElementsByClassName("grid-view-brand-model");
+  for (let i = 0; i < gridViewArray.length; i++) {
+    gridViewArray[i].style["display"] = "block";
+  }
 
-    let listViewArray = document.getElementsByClassName(
-      "list-view-brand-model"
-    );
-    for (let i = 0; i < listViewArray.length; i++) {
-      listViewArray[i].style["display"] = "none";
-    }
+  let listViewArray = document.getElementsByClassName("list-view-brand-model");
+  for (let i = 0; i < listViewArray.length; i++) {
+    listViewArray[i].style["display"] = "none";
+  }
 
-    document.getElementsByClassName("search-result")[0].style["display"] =
-      "flex";
+  document.getElementsByClassName("search-result")[0].style["display"] = "flex";
 }
 window.addEventListener("resize", (event) => {
-   if(window.innerWidth<=580){
+  if (window.innerWidth <= 580) {
     displayGridViewSearch();
-   }
+  }
 });
 
 document.getElementById("view-list").addEventListener("click", () => {
-displayListViewSearch();
+  displayListViewSearch();
 });
 document.getElementById("view-grid").addEventListener("click", () => {
-displayGridViewSearch();
+  displayGridViewSearch();
 });
 function showSearchResultContent(data) {
   let container = ``;
@@ -288,6 +284,7 @@ function handlePagination(resultArr) {
   document.getElementById("paginationHandler").childNodes.forEach((elem) => {
     elem.addEventListener("click", () => {
       let innerValue = parseInt(elem.innerText);
+
       let start = (innerValue - 1) * 3;
       let end = start + 3 - 1;
       let activElem = document.getElementsByClassName("active-pagination")[0];
@@ -442,8 +439,7 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
 // add to wishlist
 function addToWishList(productId) {
   let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
-  console.log(productId);
-  let wishListArr = wishlistData.wishListArr;
+   let wishListArr = wishlistData.wishListArr;
   if (wishListArr.includes(productId)) {
     alert("Item already in wishlist");
   } else {

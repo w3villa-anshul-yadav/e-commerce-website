@@ -756,7 +756,6 @@ function showHIdeNav() {
   } else {
     bottomNavbar.style.transition = ".5s ease";
     bottomNavbar.style.position = "static";
-
     newContainer.style.display = "block";
     saleContainer.style.display = "block";
   }
@@ -790,8 +789,7 @@ function totalItemInCart() {
 // add to wishlist
 function addToWishList(productId) {
   let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
-  console.log(productId);
-  let wishListArr = wishlistData.wishListArr;
+   let wishListArr = wishlistData.wishListArr;
   if (wishListArr.includes(productId)) {
     alert("Item already in wishlist");
   } else {

@@ -180,8 +180,7 @@ async function showWishList() {
   let responsData = await response.json();
 
   resultArr = getWishListDataArray(responsData.productData);
-  console.log(resultArr);
-
+ 
   noOfPages = Math.ceil(resultArr.length / 4);
   for (let i = 0; i < resultArr.length; i++) {
     if (i >= 4) break;
@@ -338,8 +337,7 @@ function removeFromWishList(productId) {
 // add to wishlist
 function addToWishList(productId) {
   let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
-  console.log(productId);
-  let wishListArr = wishlistData.wishListArr;
+   let wishListArr = wishlistData.wishListArr;
   if (wishListArr.includes(productId)) {
     alert("Item already in wishlist");
   } else {

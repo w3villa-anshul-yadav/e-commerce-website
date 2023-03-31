@@ -198,13 +198,15 @@ have four sub section
 
 **************************** --> */
 
+.wrapper-middle-header {
+  background-color: var(--light-gray-color);
+}
 .middle-header-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 22px;
   padding-bottom: 22px;
-  background-color: var(--light-gray-color);
 }
 
 /* <!-- 1. Brand logo --> */
@@ -212,6 +214,7 @@ have four sub section
 .middle-header-section .brand-logo h1 a {
   font-family: "Gloock", serif !important;
   font-size: 45px;
+  letter-spacing: 3px;
 }
 
 /* 2. Search bar */
@@ -357,9 +360,10 @@ contains two main section
   top: 0;
   z-index: 10;
   width: 100%;
-}
-.bottom-navbar-menu-container {
   background-color: var(--primary-blue-color);
+}
+
+.bottom-navbar-menu-container {
   display: flex;
   justify-content: space-between;
 }
@@ -628,13 +632,14 @@ contains two main section
 }
 
 /* <!-- *************************hero section carosel section ***************************************** --> */
- 
+.hero-wrapper {
+  background-color: var(--light-gray-color);
+}
 .hero {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
   column-gap: 20px;
-  background-color: var(--light-gray-color);
 }
 
 .hero .crousel {
@@ -837,14 +842,15 @@ contains two main section
 }
 
 /* <!-- **************************free shiping section ****************************************** --> */
-
+.services-wrapper {
+  background-color: #404b62;
+}
 .services-container,
 .services-container .free-shiping-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #404b62;
   padding-top: 7px;
   padding-bottom: 7px;
 }
@@ -901,9 +907,10 @@ contains two main section
     ******************************************** --> */
 
 /* 1. why buy us  */
-
-.why-buy-from-us {
+.why-buy-from-us-wrapper {
   background-color: var(--light-gray-color);
+}
+.why-buy-from-us {
   padding-top: 20px;
   padding-bottom: 10px;
 }
@@ -1083,13 +1090,15 @@ fratured products
 
 SOME STYLES ARE IN ABOUVE SECTION
 ************************************************* --> */
+
 .featured-products-card {
   background-color: white;
   border-radius: 5px;
 }
-
-.featured-products {
+.featured-products-wrapper {
   background-color: #dedcdc75;
+}
+.featured-products {
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -1369,8 +1378,10 @@ input[type="number"]::-webkit-outer-spin-button,
          SOME STYLES ARE INHERITED FORM ABOVE
 
   --> */
-.featured-category-container {
+.featured-category-wrapper {
   background-color: #dde0e8b5;
+}
+.featured-category-container {
   padding-bottom: 30px !important;
 }
 .fashion-category-container {
@@ -1487,6 +1498,9 @@ input[type="number"]::-webkit-outer-spin-button,
 }
 /* 
 <!-- ************************************************************************Shop by Brand ***************************************************** --> */
+.shop-by-brand-wrapper {
+  background-color: var(--light-gray-color);
+}
 .shop-by-brand {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -1506,8 +1520,10 @@ input[type="number"]::-webkit-outer-spin-button,
 }
 /* 
  **************************************************************************                Improved gallery ******************************************* */
-.improved-gallery {
+.improved-gallery-wrapper {
   background-color: #404b62;
+}
+.improved-gallery {
   color: white;
 }
 .improved-gallery .why-buy-text p {
@@ -1530,9 +1546,10 @@ input[type="number"]::-webkit-outer-spin-button,
 }
 /* //
  ***********************************from our blog section ******************************************************** */
-.from-our-blog {
+.from-our-blog-wrapper {
   background-color: #bab9b975;
 }
+
 .from-our-blog .left-labels {
   position: absolute;
   left: 19px;
@@ -1598,8 +1615,10 @@ input[type="number"]::-webkit-outer-spin-button,
 /* ******************************************************
 what are people sying about us
 ***************************************************** */
-.people-saying-about-us {
+.people-saying-about-us-wrapper {
   background-color: white;
+}
+.people-saying-about-us {
   padding-top: 20px;
 }
 .people-saying-about-us .featured-products-card .quote {
@@ -1623,10 +1642,12 @@ what are people sying about us
 *************************************
 most viewed section 
 **************************************** */
+.most-viewed-wrapper {
+  background-color: #404b62;
+}
 .most-viewed {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #404b62;
 }
 .most-viewed p {
   font-size: 19px;
@@ -1698,8 +1719,10 @@ most viewed section
 Social media handles
 
 ****************************** */
-.social-media-icons {
+.social-media-icons-wrapper {
   background-color: var(--light-gray-color);
+}
+.social-media-icons {
   padding: 25px;
 }
 .social-media-icons {
@@ -1850,10 +1873,12 @@ footer div p a {
 **
 copyright text 
 ********************************** */
+.copyright-wrapper {
+  background-color: #404b62;
+}
 .copyright {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #404b62;
 }
 .copyright p {
   font-size: 20px;
@@ -1940,7 +1965,7 @@ search Result
   padding-left: 30px;
 }
 #searchResult .featured-products-card {
-  width: 280px;
+  width: 330px;
 }
 #searchResult .item img {
   width: 100%;
@@ -1949,6 +1974,7 @@ search Result
 
 .search-result {
   display: flex;
+  justify-content: center;
   padding-top: 20px;
   padding-bottom: 35px;
   align-items: center;
@@ -2065,9 +2091,10 @@ search bar
   background-color: var(--light-gray-color);
 }
 /* *****************************  cart css ****************************** */
-#cart-container {
+.cart-wrapper {
   background-color: var(--light-gray-color);
 }
+
 #cart-container .item {
   border-radius: 5px;
   background-color: #fff;
@@ -2086,9 +2113,6 @@ search bar
 #cart-container {
   position: relative;
   overflow: hidden !important;
-  box-shadow: 0px 0px 2px 0px gray;
-  border-radius: 3px;
-  background-color: var(--light-gray-color);
 }
 #cart-container #cart-item {
   padding-top: 20px;
@@ -2526,9 +2550,7 @@ input[type="checkbox"] {
     width: 210px;
     height: 310px;
   }
-  .search-result {
-    justify-content: center;
-  }
+
   .search-result-page-main-heading p {
     font-size: 20px;
   }

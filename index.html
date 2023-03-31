@@ -36,7 +36,7 @@
 
   <body>
     <!-- **************************header section ********************************** -->
-    
+
     <header>
       <div class="top-navbar-container body-spacer">
         <!-- top-most-navbar  have three different section-->
@@ -146,82 +146,83 @@
             4.cart and price detils
             
             **************************** -->
+      <div class="wrapper-middle-header">
+        <div class="middle-header-section body-spacer">
+          <!-- 1. Brand logo -->
 
-      <div class="middle-header-section body-spacer">
-        <!-- 1. Brand logo -->
+          <div class="brand-logo">
+            <h1><a href="index.html"> JOURNAL</a></h1>
+          </div>
 
-        <div class="brand-logo">
-          <h1><a href="index.html"> JOURNAL</a></h1>
-        </div>
+          <!-- 2. Search bar -->
 
-        <!-- 2. Search bar -->
+          <div class="searchbar-container">
+            <div class="dropdown">
+              <div class="search-catagory-selector dropdown">
+                <a>
+                  <p id="Al">ALL</p>
+                  <i class="fa-solid fa-sort-down"></i>
+                </a>
+              </div>
 
-        <div class="searchbar-container">
-          <div class="dropdown">
-            <div class="search-catagory-selector dropdown">
-              <a>
-                <p id="Al">ALL</p>
-                <i class="fa-solid fa-sort-down"></i>
+              <ul class="drop-down-menu">
+                <li><a>Chlothing</a></li>
+                <li><a>Electronics</a></li>
+                <li><a>Toys</a></li>
+                <li><a>Shoes</a></li>
+              </ul>
+            </div>
+            <input id="searchInput" type="text" placeholder="Search here..." />
+            <div class="search-icon" id="searchButton">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+
+          <!-- 3. login and other menu container -->
+
+          <div class="login-wishlist-container">
+            <p id="currentUser"></p>
+            <span id="login-logout-click">
+              <div class="rounded-icon-background">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <p id="login-logout-text">Login</p>
+            </span>
+            <a onclick="signUpForm()">
+              <div class="rounded-icon-background">
+                <i class="fa-solid fa-pencil"></i>
+              </div>
+
+              <p>Register</p>
+            </a>
+            <a href="wishList.html">
+              <div class="rounded-icon-background">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <p>Wishlist</p>
+            </a>
+            <a>
+              <div class="rounded-icon-background">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+              </div>
+              <p>Compare</p>
+            </a>
+          </div>
+
+          <!-- 4.cart and price detils -->
+
+          <div class="cart-price-detail-container">
+            <div id="item-counter">0</div>
+            <div>
+              <p>&nbsp;item(s) -</p>
+            </div>
+            <div id="currency-name">$</div>
+            <div id="total-cart-price">0.00</div>
+            <div>
+              <a class="cart-icon" href="shoppingCart.html">
+                <i class="fa-solid fa-cart-shopping"></i>
               </a>
             </div>
-
-            <ul class="drop-down-menu">
-              <li><a>Chlothing</a></li>
-              <li><a>Electronics</a></li>
-              <li><a>Toys</a></li>
-              <li><a>Shoes</a></li>
-            </ul>
-          </div>
-          <input id="searchInput" type="text" placeholder="Search here..." />
-          <div class="search-icon" id="searchButton">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-        </div>
-
-        <!-- 3. login and other menu container -->
-
-        <div class="login-wishlist-container">
-          <p id="currentUser"></p>
-          <span id="login-logout-click">
-            <div class="rounded-icon-background">
-              <i class="fa-solid fa-user"></i>
-            </div>
-            <p id="login-logout-text">Login</p>
-          </span>
-          <a onclick="signUpForm()">
-            <div class="rounded-icon-background">
-              <i class="fa-solid fa-pencil"></i>
-            </div>
-
-            <p>Register</p>
-          </a>
-          <a href="wishList.html">
-            <div class="rounded-icon-background">
-              <i class="fa-regular fa-heart"></i>
-            </div>
-            <p>Wishlist</p>
-          </a>
-          <a>
-            <div class="rounded-icon-background">
-              <i class="fa-solid fa-arrow-right-arrow-left"></i>
-            </div>
-            <p>Compare</p>
-          </a>
-        </div>
-
-        <!-- 4.cart and price detils -->
-
-        <div class="cart-price-detail-container">
-          <div id="item-counter">0</div>
-          <div>
-            <p>&nbsp;item(s) -</p>
-          </div>
-          <div id="currency-name">$</div>
-          <div id="total-cart-price">0.00</div>
-          <div>
-            <a class="cart-icon" href="shoppingCart.html">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </a>
           </div>
         </div>
       </div>
@@ -285,7 +286,7 @@
     <div class="mobile-navbar body-spacer">
       <div class="login-wishlist-container">
         <a id="login-logout-click-mobile">
-          <i class="fa-solid fa-user">  </i>
+          <i class="fa-solid fa-user"> </i>
           <p id="login-logout-text-mobile">Login</p>
         </a>
         <!-- <p id="currentUser-mobile"></p> -->
@@ -339,7 +340,7 @@
             <div class="hamburgur"><i class="fa-solid fa-bars"></i></div>
             <ul class="drop-down-menu">
               <li><a>ALL&nbsp;DEPARTMENT</a></li>
-              <li><a href="wishList.html">wish List</a></li>
+              <li><a href="wishList.html">WISH LIST</a></li>
               <li><a>MEGA MENU</a></li>
             </ul>
           </a>
@@ -394,35 +395,36 @@
 
     <!-- *************************hero section carosel section ***************************************** -->
     <main class="">
-       <section class="hero body-spacer">
-        <div class="crousel">
-          <div class="slideshow-container" id="hero-slider"></div>
-          <br />
+      <div class="hero-wrapper">
+        <section class="hero body-spacer">
+          <div class="crousel">
+            <div class="slideshow-container" id="hero-slider"></div>
+            <br />
 
-          <div class="crousel-dot-container" style="text-align: center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-          </div>
-        </div>
-        <div class="side-card-container">
-          <div class="card">
-            <img src="./assets/back2.jpg" alt="" />
-            <div class="text-over-card-image">
-              <p>WEARABLES</p>
-              <h2>Intelligent & Durable Design</h2>
+            <div class="crousel-dot-container" style="text-align: center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
             </div>
           </div>
-          <div class="card">
-            <img src="./assets/back2.avif" alt="" />
-            <div class="text-over-card-image">
-              <p>COMPUTER</p>
-              <h2>Intelligent & Durable Design</h2>
+          <div class="side-card-container">
+            <div class="card">
+              <img src="./assets/back2.jpg" alt="" />
+              <div class="text-over-card-image">
+                <p>WEARABLES</p>
+                <h2>Intelligent & Durable Design</h2>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./assets/back2.avif" alt="" />
+              <div class="text-over-card-image">
+                <p>COMPUTER</p>
+                <h2>Intelligent & Durable Design</h2>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
+        </section>
+      </div>
       <!-- **************************free services container section ****************************************** 
 1.free shiping
 2.Free returns
@@ -432,60 +434,62 @@
 
 
 -->
-      <section class="services-container body-spacer">
+
+      <section class="services-wrapper">
         <!-- 1.Free shiping  -->
-
-        <div class="free-shiping-container">
-          <div class="icon-container">
-            <div class="icon">
-              <i class="fa-solid fa-truck-fast"></i>
+        <div class="services-container body-spacer">
+          <div class="free-shiping-container">
+            <div class="icon-container">
+              <div class="icon">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+            </div>
+            <div class="text">
+              <span>Free Shipping</span>
+              <p>Free delivery over $100</p>
             </div>
           </div>
-          <div class="text">
-            <span>Free Shipping</span>
-            <p>Free delivery over $100</p>
-          </div>
-        </div>
 
-        <!-- 2.Free returns  -->
+          <!-- 2.Free returns  -->
 
-        <div class="free-shiping-container">
-          <div class="icon-container">
-            <div class="icon">
-              <i class="fa-solid fa-arrow-rotate-left"></i>
+          <div class="free-shiping-container">
+            <div class="icon-container">
+              <div class="icon">
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+              </div>
+            </div>
+            <div class="text">
+              <span>Free Returns</span>
+              <p>Free delivery over $100</p>
             </div>
           </div>
-          <div class="text">
-            <span>Free Returns</span>
-            <p>Free delivery over $100</p>
-          </div>
-        </div>
 
-        <!-- 3.Secure shoping -->
+          <!-- 3.Secure shoping -->
 
-        <div class="free-shiping-container">
-          <div class="icon-container">
-            <div class="icon">
-              <i class="fa-solid fa-shield-halved"></i>
+          <div class="free-shiping-container">
+            <div class="icon-container">
+              <div class="icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+            </div>
+            <div class="text">
+              <span>Free Shopping</span>
+              <p>Free delivery over $100</p>
             </div>
           </div>
-          <div class="text">
-            <span>Free Shopping</span>
-            <p>Free delivery over $100</p>
-          </div>
-        </div>
 
-        <!-- 4.Unlimited Blocks -->
+          <!-- 4.Unlimited Blocks -->
 
-        <div class="free-shiping-container">
-          <div class="icon-container">
-            <div class="icon">
-              <i class="fa-solid fa-cube"></i>
+          <div class="free-shiping-container">
+            <div class="icon-container">
+              <div class="icon">
+                <i class="fa-solid fa-cube"></i>
+              </div>
             </div>
-          </div>
-          <div class="text">
-            <span>Unlimited Blocks</span>
-            <p>Free delivery over $100</p>
+            <div class="text">
+              <span>Unlimited Blocks</span>
+              <p>Free delivery over $100</p>
+            </div>
           </div>
         </div>
       </section>
@@ -497,39 +501,41 @@
     3. categories card carosel
     
     ******************************************** -->
-      <section class="why-buy-from-us body-spacer">
-        <div class="why-buy-text">
-          <h1>Why buy from us?</h1>
-          <hr />
-          <p>
-            Jurnal has been the best selling Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Iste asperiores Lorem ipsum dolor sit.
-            numquam minus iure, quidem dicta error quaerat qui repudiandae
-            laborum. <span><a href="">Learn more</a></span>
-          </p>
-        </div>
-
-        <div class="categories-navigation-container">
-          <a>
-            <p class="active-why-buy" onclick="toggleWhyBuyCategories(this)">
-              top categories
+      <section class="why-buy-from-us-wrapper">
+        <div class="why-buy-from-us body-spacer">
+          <div class="why-buy-text">
+            <h1>Why buy from us?</h1>
+            <hr />
+            <p>
+              Jurnal has been the best selling Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Iste asperiores Lorem ipsum dolor
+              sit. numquam minus iure, quidem dicta error quaerat qui
+              repudiandae laborum. <span><a href="">Learn more</a></span>
             </p>
-          </a>
+          </div>
 
-          <a>
-            <p onclick="toggleWhyBuyCategories(this)">electronics</p>
-          </a>
-          <a>
-            <p onclick="toggleWhyBuyCategories(this)">beauty</p>
-          </a>
-          <a>
-            <p onclick="toggleWhyBuyCategories(this)">fashiion</p>
-          </a>
+          <div class="categories-navigation-container">
+            <a>
+              <p class="active-why-buy" onclick="toggleWhyBuyCategories(this)">
+                top categories
+              </p>
+            </a>
+
+            <a>
+              <p onclick="toggleWhyBuyCategories(this)">electronics</p>
+            </a>
+            <a>
+              <p onclick="toggleWhyBuyCategories(this)">beauty</p>
+            </a>
+            <a>
+              <p onclick="toggleWhyBuyCategories(this)">fashiion</p>
+            </a>
+          </div>
+
+          <!-- 3. categories card carosel -->
+
+          <div class="categories-card-carosel" id="why-buy"></div>
         </div>
-
-        <!-- 3. categories card carosel -->
-
-        <div class="categories-card-carosel" id="why-buy"></div>
       </section>
 
       <!-- 
@@ -540,50 +546,55 @@ fratured products
 3.featured card
 ************************************************* -->
 
-      <section class="featured-products why-buy-from-us body-spacer">
-        <!-- 1.heading (& text) -->
+      <section class="featured-products-wrapper">
+        <div class="featured-products why-buy-from-us body-spacer">
+          <!-- 1.heading (& text) -->
 
-        <div class="why-buy-text">
-          <h1>Featured Products</h1>
-          <hr />
-          <p>
-            Display any table as tab orAbout ipsum dolor sit amet consectetur
-            adipisicing elit. Iste asperiores Lorem ipsum dolor sit. numquam
-            minus iure, quidem dicta error quaerat qui repudiandae laborum.
-          </p>
-        </div>
-
-        <!-- 2. featured navbar -->
-
-        <div class="categories-navigation-container">
-          <a>
-            <p class="active-featured" onclick="toggleFeaturedCategories(this)">
-              featured
+          <div class="why-buy-text">
+            <h1>Featured Products</h1>
+            <hr />
+            <p>
+              Display any table as tab orAbout ipsum dolor sit amet consectetur
+              adipisicing elit. Iste asperiores Lorem ipsum dolor sit. numquam
+              minus iure, quidem dicta error quaerat qui repudiandae laborum.
             </p>
-            <div></div>
-          </a>
+          </div>
 
-          <a>
-            <p onclick="toggleFeaturedCategories(this)">latest</p>
-          </a>
-          <a>
-            <p onclick="toggleFeaturedCategories(this)">bestsellers</p>
-          </a>
-          <a>
-            <p onclick="toggleFeaturedCategories(this)">specials</p>
-          </a>
-        </div>
+          <!-- 2. featured navbar -->
 
-        <!-- 3.featured card -->
+          <div class="categories-navigation-container">
+            <a>
+              <p
+                class="active-featured"
+                onclick="toggleFeaturedCategories(this)"
+              >
+                featured
+              </p>
+              <div></div>
+            </a>
 
-        <div class="categories-card-carosel" id="featured-products">
-          <div class="owl-carousel owl2 owl-theme"></div>
-        </div>
+            <a>
+              <p onclick="toggleFeaturedCategories(this)">latest</p>
+            </a>
+            <a>
+              <p onclick="toggleFeaturedCategories(this)">bestsellers</p>
+            </a>
+            <a>
+              <p onclick="toggleFeaturedCategories(this)">specials</p>
+            </a>
+          </div>
 
-        <div class="see-all-button">
-          <button onclick="seeAllProducts()">
-            SEE ALL PRODUCTS <i class="fa-solid fa-arrow-right"></i>
-          </button>
+          <!-- 3.featured card -->
+
+          <div class="categories-card-carosel" id="featured-products">
+            <div class="owl-carousel owl2 owl-theme"></div>
+          </div>
+
+          <div class="see-all-button">
+            <button onclick="seeAllProducts()">
+              SEE ALL PRODUCTS <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -594,108 +605,116 @@ fratured products
 
   -->
 
-      <section
-        class="featured-category-container featured-products why-buy-from-us body-spacer"
-      >
-        <!-- 1.heading (& text) -->
+      <section class="featured-category-wrapper">
+        <div
+          class="featured-category-container featured-products why-buy-from-us body-spacer"
+        >
+          <!-- 1.heading (& text) -->
 
-        <div class="why-buy-text">
-          <h1>Featured Categories</h1>
-          <hr />
-          <p>
-            Display any table as tab or ipsum dolor sit amet consectetur
-            adipisicing elit. Iste asperiores Lorem ipsum dolor sit. numquam
-            minus iure, quidem dicta error quaerat qui repudiandae laborum.
-          </p>
-        </div>
-        <div class="fashion-category-container">
-          <div class="fashion">
-            <span>Fashion</span>
-            <hr class="hr" />
-            <div class="image-container">
-              <img src="./assets/1card.jpg" alt="" />
-            </div>
-            <div class="text-container">
-              <p>Accesories</p>
-              <p>Dressed</p>
-              <p>Pants</p>
-              <p>T-Shirts</p>
-              <a><u>See all in Fashion</u></a>
-            </div>
+          <div class="why-buy-text">
+            <h1>Featured Categories</h1>
+            <hr />
+            <p>
+              Display any table as tab or ipsum dolor sit amet consectetur
+              adipisicing elit. Iste asperiores Lorem ipsum dolor sit. numquam
+              minus iure, quidem dicta error quaerat qui repudiandae laborum.
+            </p>
           </div>
+          <div class="fashion-category-container">
+            <div class="fashion">
+              <span>Fashion</span>
+              <hr class="hr" />
+              <div class="image-container">
+                <img src="./assets/1card.jpg" alt="" />
+              </div>
+              <div class="text-container">
+                <p>Accesories</p>
+                <p>Dressed</p>
+                <p>Pants</p>
+                <p>T-Shirts</p>
+                <a><u>See all in Fashion</u></a>
+              </div>
+            </div>
 
-          <!-- 2.fashion gallary container -->
+            <!-- 2.fashion gallary container -->
 
-          <div class="new-fashion-category-container">
-            <span>New in Fashion</span>
-            <hr class="hr" />
+            <div class="new-fashion-category-container">
+              <span>New in Fashion</span>
+              <hr class="hr" />
 
-            <div class="categories-card-carosel" id="featured-category"></div>
+              <div class="categories-card-carosel" id="featured-category"></div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- ************************************************************************Shop by Brand ***************************************************** -->
 
-      <section class="shop-by-brand why-buy-from-us body-spacer">
-        <!-- 1.heading (& text) -->
+      <section class="shop-by-brand-wrapper">
+        <div class="shop-by-brand why-buy-from-us body-spacer">
+          <!-- 1.heading (& text) -->
 
-        <div class="why-buy-text">
-          <h1>Shop by Brand</h1>
-          <hr />
+          <div class="why-buy-text">
+            <h1>Shop by Brand</h1>
+            <hr />
+          </div>
+
+          <div class="categories-card-carosel" id="shop-by-brand"></div>
         </div>
-
-        <div class="categories-card-carosel" id="shop-by-brand"></div>
       </section>
 
       <!-- 
     ************************************************************************** Improved gallery ******************************************* -->
-      <section class="improved-gallery why-buy-from-us body-spacer">
-        <div class="why-buy-text">
-          <h1>Improved Gallary Module</h1>
-          <hr />
-          <p>
-            The gallery module supports images Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Iure fugit nostrum nisi reprehenderit,
-            repudiandae quas praesentium in expedita tenetur voluptatem voluptas
-            magni! Sequi aliquid nobis, amet voluptates ratione totam
-            accusantium?
-          </p>
+      <section class="improved-gallery-wrapper">
+        <div class="improved-gallery why-buy-from-us body-spacer">
+          <div class="why-buy-text">
+            <h1>Improved Gallary Module</h1>
+            <hr />
+            <p>
+              The gallery module supports images Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Iure fugit nostrum nisi
+              reprehenderit, repudiandae quas praesentium in expedita tenetur
+              voluptatem voluptas magni! Sequi aliquid nobis, amet voluptates
+              ratione totam accusantium?
+            </p>
+          </div>
+          <div class="gallary-image-container" id="gallery-container"></div>
         </div>
-        <div class="gallary-image-container" id="gallery-container"></div>
       </section>
 
       <!-- 
     ***********************************from our blog section ******************************************************** -->
-      <section class="from-our-blog why-buy-from-us body-spacer">
-        <!-- 1.heading (& text) -->
+      <section class="from-our-blog-wrapper">
+        <div class="from-our-blog why-buy-from-us body-spacer">
+          <!-- 1.heading (& text) -->
 
-        <div class="why-buy-text">
-          <h1>From Our Blog</h1>
-          <hr />
-          <p>
-            Display any table as tab or ipsum dolor sit amet consectetur
-            adipisicing elit. Iste asperiores Lorem ipsum dolor sit. numquam
-            minus iure, quidem dicta error quaerat qui repudiandae laborum.
-          </p>
-        </div>
-
-        <!-- 2. from oue blog -->
-
-        <div class="categories-navigation-container">
-          <a>
-            <p class="active-blog" onclick="toggleBlogCategories(this)">
-              latest posts
+          <div class="why-buy-text">
+            <h1>From Our Blog</h1>
+            <hr />
+            <p>
+              Display any table as tab or ipsum dolor sit amet consectetur
+              adipisicing elit. Iste asperiores Lorem ipsum dolor sit. numquam
+              minus iure, quidem dicta error quaerat qui repudiandae laborum.
             </p>
-            <div></div>
-          </a>
+          </div>
 
-          <a>
-            <p onclick="toggleBlogCategories(this)">rated</p>
-          </a>
-        </div>
-        <div class="categories-card-carosel" id="our-blog">
-          <div class="owl-carousel owl5 owl-theme"></div>
+          <!-- 2. from oue blog -->
+
+          <div class="categories-navigation-container">
+            <a>
+              <p class="active-blog" onclick="toggleBlogCategories(this)">
+                latest posts
+              </p>
+              <div></div>
+            </a>
+
+            <a>
+              <p onclick="toggleBlogCategories(this)">rated</p>
+            </a>
+          </div>
+          <div class="categories-card-carosel" id="our-blog">
+            <div class="owl-carousel owl5 owl-theme"></div>
+          </div>
         </div>
       </section>
 
@@ -703,30 +722,37 @@ fratured products
 ******************************************************
 what are people sying about us
 ***************************************************** -->
-      <section
-        class="people-saying-about-us from-our-blog why-buy-from-us body-spacer"
-      >
-        <!-- 1.heading (& text) -->
+      <section class="people-saying-about-us-wrapper">
+        <div
+          class="people-saying-about-us from-our-blog why-buy-from-us body-spacer"
+        >
+          <!-- 1.heading (& text) -->
 
-        <div class="why-buy-text">
-          <h1>What are people saying about us</h1>
-          <hr />
+          <div class="why-buy-text">
+            <h1>What are people saying about us</h1>
+            <hr />
+          </div>
+
+          <!-- 2. featured navbar -->
+
+          <div
+            class="categories-card-carosel"
+            id="people-saying-about-us"
+          ></div>
         </div>
-
-        <!-- 2. featured navbar -->
-
-        <div class="categories-card-carosel" id="people-saying-about-us"></div>
       </section>
       <!-- 
     *************************************
     most viewed section 
     **************************************** -->
 
-      <section class="most-viewed body-spacer">
-        <p>MOST VIEWED</p>
-        <hr />
-        <div class="card-container">
-          <div class="categories-card-carosel" id="most-viewed"></div>
+      <section class="most-viewed-wrapper">
+        <div class="most-viewed body-spacer">
+          <p>MOST VIEWED</p>
+          <hr />
+          <div class="card-container">
+            <div class="categories-card-carosel" id="most-viewed"></div>
+          </div>
         </div>
       </section>
       <!-- 
@@ -734,7 +760,8 @@ what are people sying about us
 Social media handles
 
 ****************************** -->
-      <section class="social-media-icons body-spacer">
+      <section class="social-media-icons-wrapper ">
+      <div class="social-media-icons body-spacer">
         <div class="rounded-icon-background">
           <a><i class="fa-brands fa-facebook"></i></a>
         </div>
@@ -756,9 +783,10 @@ Social media handles
         <div class="rounded-icon-background">
           <a> <i class="fa-brands fa-google-plus-g"></i></a>
         </div>
+      </div>
       </section>
     </main>
-    
+
     <!-- 
     *****************************************
     Footer 
@@ -806,7 +834,8 @@ Social media handles
         <hr />
         <p class="para">
           Stay up to date with news and promotions by signing up for promotions
-and Newslatter        </p>
+          and Newslatter
+        </p>
 
         <div class="input-container">
           <input type="email" placeholder="Your email" />
@@ -821,7 +850,8 @@ and Newslatter        </p>
     <!-- ************************************
 copyright text 
 ********************************** -->
-    <div class="copyright body-spacer">
+    <div class="copyright-wrapper">
+      <div class="copyright body-spacer">
       <div>
         <p>
           Copyright © 2023 developed by
@@ -829,6 +859,7 @@ copyright text
         </p>
         <img src="./assets/paymentcard.jpg" alt="" />
       </div>
+    </div>
     </div>
     <div>
       <div class="top-navigation-controller">
