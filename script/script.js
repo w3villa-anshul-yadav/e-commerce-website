@@ -4,18 +4,17 @@ totalItemInCart();
 // on clicking register button
 function signUpForm() {
   localStorage.setItem("loginFormStatus", true);
-  location.assign("loginPage.html");
+  location.assign("login.html");
 }
 
-
 function loadFirstTimeOnBrouser() {
-  if (!(localStorage.getItem("cartData"))) { 
+  if (!localStorage.getItem("cartData")) {
     let cartData = {
       cartArr: [],
     };
     localStorage.setItem("cartData", JSON.stringify(cartData));
   }
-  if (!(localStorage.getItem("loginFormStatus"))) {
+  if (!localStorage.getItem("loginFormStatus")) {
     localStorage.setItem("loginFormStatus", false);
   }
 
@@ -60,7 +59,7 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
     bool &&
     document.getElementById("login-logout-text").innerText == "Login"
   ) {
-    location.assign("loginPage.html");
+    location.assign("login.html");
   } else {
     document.getElementById("login-logout-text").innerText = "Login";
     let loginData = JSON.parse(localStorage.getItem("loginData"));
@@ -70,24 +69,26 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
     location.assign("index.html");
   }
 });
-//on clicking login button for mobile nav 
-document.getElementById("login-logout-click-mobile").addEventListener("click", () => {
-  let bool = localStorage.getItem("loginFormStatus");
-  bool = bool == "false" ? true : false;
-  if (
-    bool &&
-    document.getElementById("login-logout-text-mobile").innerText == "Login"
-  ) {
-    location.assign("loginPage.html");
-  } else {
-    document.getElementById("login-logout-text-mobile").innerText = "Login";
-    let loginData = JSON.parse(localStorage.getItem("loginData"));
-    let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
-    loginData.loginArr[currentUserIndex].logedStatus = false;
-    localStorage.setItem("loginData", JSON.stringify(loginData));
-    location.assign("index.html");
-  }
-});
+//on clicking login button for mobile nav
+document
+  .getElementById("login-logout-click-mobile")
+  .addEventListener("click", () => {
+    let bool = localStorage.getItem("loginFormStatus");
+    bool = bool == "false" ? true : false;
+    if (
+      bool &&
+      document.getElementById("login-logout-text-mobile").innerText == "Login"
+    ) {
+      location.assign("login.html");
+    } else {
+      document.getElementById("login-logout-text-mobile").innerText = "Login";
+      let loginData = JSON.parse(localStorage.getItem("loginData"));
+      let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
+      loginData.loginArr[currentUserIndex].logedStatus = false;
+      localStorage.setItem("loginData", JSON.stringify(loginData));
+      location.assign("index.html");
+    }
+  });
 function getCurrentLoggedUserIndex(loginArr) {
   for (i in loginArr) {
     //get current user index
@@ -97,7 +98,6 @@ function getCurrentLoggedUserIndex(loginArr) {
   }
   return false;
 }
-
 
 // ************************   owl Carousel **********************************
 function owl1() {
@@ -695,47 +695,8 @@ function showSearchResult() {
   } else {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
-  let SearchResultContainer = document.getElementById("searchResult");
-  SearchResultContainer.style.display = "block";
-  document.getElementsByTagName("main")[0].classList.add("display-none");
-  showResult(inputValue);
-}
-async function showResult(inputValue) {
-  let whyBuyContainer = document.getElementById("searchCard");
-  let container = ` <div class="search-result" >`;
-  let notFound = true;
-  let noOfPages;
-  let resultArr = [];
-  if (inputValue.trim().length == 0) {
-    container += `<h1 style='color:red'> Input Required</h1>`;
-    notFound = false;
-  } else {
-    let response = await fetch("./script/products.json");
-    let responsData = await response.json();
-    let data = responsData.productData;
-    for (i in data) {
-      if (
-        data[i].name.toUpperCase().includes(inputValue.toUpperCase()) &&
-        data[i].category === "featuredCategories"
-      ) {
-        resultArr.push(data[i]);
-        notFound = false;
-      }
-    }
-    noOfPages = Math.ceil(resultArr.length / 4);
-    for (let i = 0; i < resultArr.length; i++) {
-      if (i >= 4) break;
-      container += showSearchResultContent(resultArr[i]);
-    }
-    try {
-      showPagination(noOfPages, resultArr);
-    } catch (err) {}
-  }
-  if (notFound) {
-    container += `<h1 style='color:red'> NO Result Found</h1>`;
-  }
-  container += `</div>`;
-  whyBuyContainer.innerHTML = container;
+  localStorage.setItem("searchValue", inputValue);
+  location.href = "search.html";
 }
 function showPagination(noOfPages, resultArr) {
   let paginationHandler = document.getElementById("paginationHandler");
@@ -748,66 +709,7 @@ function showPagination(noOfPages, resultArr) {
   paginationHandler.innerHTML = htm;
   handlePagination(resultArr);
 }
-function showSearchResultContent(data) {
-  let container = ``;
-  container += `
-  <div class="item">
-  <div class="featured-products-card" id="searchItem">
-  <div class="image-container">
-  <img src="${data.img}" alt="">
-  
-  <div class="labels">
-  <div class="cross-labels">
-  `;
-  for (k in data.crossLabel) {
-    container += `                 
-    <p class="blue-bg">
-    <strong>${data.crossLabel[k]}</strong>
-    </p>                  
-    `;
-  }
-  container += `
-  </div>
-  <div class="right-labels">
-  `;
-  for (j in data.rightLabels) {
-    if (j % 2 == 0) {
-      container += `
-                            <p class="yellow-bg ">
-                            <strong>${data.rightLabels[j]}</strong>
-                            </p>
-                            `;
-    } else {
-      container += `
-                            <p class="red-bg ">
-                            <strong>${data.rightLabels[j]}</strong>
-                            </p>
-                            `;
-    }
-  }
-  container += `            
-                       </div>
-             </div>
-             </div>
-             <div class="cart-container">
-             <h2>${data.name}</h2>
-             <p class="price">${data.discountedPrice} </p>
-             <hr>
-             <div class="add-to-cart-container">
-             <div>
-             <input type="button" onclick="addToCart(${data.id})" value="ADD TO CART">
-             </div>
-             <div>
-             <i style="font-weight:100" class="fa-solid fa-heart"  onclick="addToWishList(${data.id})" ></i>
-             <i class="fa-solid fa-arrow-right-arrow-left"></i>
-             </div>
-             </div>
-         </div>
-     </div>
-     </div>
-     `;
-  return container;
-}
+
 //on clicking pagination
 function handlePagination(resultArr) {
   document.getElementById("paginationHandler").childNodes.forEach((elem) => {
@@ -887,12 +789,12 @@ function totalItemInCart() {
 function addToWishList(productId) {
   let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
   console.log(productId);
-  let wishListArr= wishlistData.wishListArr;
-  if(wishListArr.includes(productId)){
-    alert("Item already in wishlist")
-  }else{
-  wishListArr.push(productId);
-  localStorage.setItem("wishListData",JSON.stringify(wishlistData));
-  alert("item added into wishlist");
+  let wishListArr = wishlistData.wishListArr;
+  if (wishListArr.includes(productId)) {
+    alert("Item already in wishlist");
+  } else {
+    wishListArr.push(productId);
+    localStorage.setItem("wishListData", JSON.stringify(wishlistData));
+    alert("item added into wishlist");
   }
 }

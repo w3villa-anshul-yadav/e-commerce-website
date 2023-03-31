@@ -556,7 +556,25 @@
       "id": 54,
 
       "discountedPrice": "$999.00",
-      "category": "featuredCategories"
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
     },
     {
       "img": "./assets/headphone.jpg",
@@ -566,7 +584,24 @@
       "rightLabels": ["-70%", "HOT"],
       "name": "headphone",
       "discountedPrice": "$999.00",
-      "category": "featuredCategories"
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
     },
     {
       "img": "./assets/digitalwatch.jpg",
@@ -576,29 +611,185 @@
 
       "name": "digital watch",
       "discountedPrice": "$999.00",
-      "category": "featuredCategories"
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
+    },
+
+    {
+      "img": "./assets/digitalwatch.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["NEW"],
+      "id": 56,
+
+      "name": "digital watch",
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
+    },
+    {
+      "img": "./assets/digitalwatch.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["NEW"],
+      "id": 56,
+
+      "name": "digital watch",
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
+    },
+    {
+      "img": "./assets/digitalwatch.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["NEW"],
+      "id": 56,
+
+      "name": "digital watch",
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
+    },
+    {
+      "img": "./assets/digitalwatch.jpg",
+      "crossLabel": ["2-3 DAYS"],
+      "rightLabels": ["NEW"],
+      "id": 56,
+
+      "name": "digital watch",
+      "discountedPrice": "$999.00",
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
     },
     {
       "img": "./assets/pepsi.jpg",
       "crossLabel": ["NEW "],
-      "brand": ["Ericksoon", "Model519"],
       "name": "pepsi",
       "id": 57,
 
       "discountedPrice": "$999.00",
       "price": "$3,229.00",
-      "category": "featuredCategories"
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "brand": ["Ericksoon", "Model519"]
     },
     {
       "img": "./assets/camera2.jpg",
       "crossLabel": ["NEW "],
-      "brand": ["Ericksoon", "Model519"],
       "name": "camera",
       "id": 58,
 
       "discountedPrice": "$999.00",
       "price": "$3,229.00",
-      "category": "featuredCategories"
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "brand": ["Ericksoon", "Model519"]
     },
     {
       "img": "./assets/perfume.jpg",
@@ -607,7 +798,24 @@
       "id": 59,
 
       "discountedPrice": "$999.00",
-      "category": "featuredCategories"
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
     },
     {
       "img": "./assets/redshoes.jpg",
@@ -616,7 +824,24 @@
       "id": 60,
 
       "discountedPrice": "$999.00",
-      "category": "featuredCategories"
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
     },
     {
       "img": "./assets/shoes2.jpg",
@@ -624,7 +849,24 @@
       "name": "shoes",
       "id": 61,
       "discountedPrice": "$999.00",
-      "category": "featuredCategories"
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
     },
     {
       "img": "./assets/sunglasses.jpg",
@@ -632,7 +874,24 @@
       "name": "sunglasses",
       "id": 62,
       "discountedPrice": "$999.00",
-      "category": "featuredCategories"
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
     },
     {
       "img": "./assets/watch1.jpg",
@@ -640,7 +899,24 @@
       "name": "watch",
       "id": 63,
       "discountedPrice": "$999.00",
-      "category": "featuredCategories"
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
     },
     {
       "img": "./assets/watchPremimum.jpg",
@@ -648,7 +924,24 @@
       "name": "watch Premimum",
       "id": 64,
       "discountedPrice": "$999.00",
-      "category": "featuredCategories"
+      "category": "featuredCategories",
+      "discription": [
+        "The Journal is sit amet",
+        "consectetur adipisicing elit. ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
+        " Repellendus beatae Lorem ipsum dolor, ",
+        " sit amet consectetur adipisicing elit. ",
+        "Dolores Lorem ipsum dolor sit amet ",
+        "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
+        "incidunt inventore architecto sapiente at, error blanditiis.",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        
+      ],
+      "price": "$3,229.00",
+      "brand": ["Ericksoon", "Model519"]
     }
   ]
 }

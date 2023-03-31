@@ -13,12 +13,10 @@ function showSearchResult() {
     inputValue = document.getElementById("searchInput").value;
   } else {
     inputValue = document.getElementById("mobileSearchInput").value;
-  }
-  let SearchResultContainer = document.getElementById("searchResult");
-  SearchResultContainer.style.display = "block";
-  document.getElementsByTagName("main")[0].classList.add("display-none");
-  showResult(inputValue);
-}
+  }   
+   localStorage.setItem("searchValue",inputValue);
+  location.href="search.html"
+ }
 async function showResult(inputValue) {
   let whyBuyContainer = document.getElementById("searchCard");
   let container = ` <div class="search-result" >`;
@@ -44,7 +42,7 @@ async function showResult(inputValue) {
     noOfPages = Math.ceil(resultArr.length / 4);
     for (let i = 0; i < resultArr.length; i++) {
       if (i >= 4) break;
-      container += showSearchResultContent(resultArr[i],"search");
+      container += showSearchResultContent(resultArr[i], "search");
     }
     try {
       showPagination(noOfPages, resultArr);
@@ -67,7 +65,7 @@ function showPagination(noOfPages, resultArr) {
   paginationHandler.innerHTML = htm;
   handlePagination(resultArr);
 }
-function showSearchResultContent(data,operation) {
+function showSearchResultContent(data, operation) {
   let container = ``;
   container += `
     <div class="item">
@@ -141,7 +139,7 @@ function handlePagination(resultArr) {
       let container = ` <div class="search-result" >`;
       while (start <= end) {
         if (start == resultArr.length) break;
-        container += showSearchResultContent(resultArr[start],"search");
+        container += showSearchResultContent(resultArr[start], "search");
         start++;
       }
       whyBuyContainer.innerHTML = container;
@@ -163,7 +161,7 @@ async function showAllProducts() {
   noOfPages = Math.ceil(resultArr.length / 4);
   for (let i = 0; i < resultArr.length; i++) {
     if (i >= 4) break;
-    container += showSearchResultContent(resultArr[i],"product");
+    container += showSearchResultContent(resultArr[i], "product");
   }
   showPagination(noOfPages, resultArr);
   container += `</div>`;
@@ -230,7 +228,7 @@ function totalItemInCart() {
 // on clicking register button
 function signUpForm() {
   localStorage.setItem("loginFormStatus", true);
-  location.assign("loginPage.html");
+  location.assign("login.html");
 }
 loadSignUp();
 function loadSignUp() {
@@ -264,24 +262,26 @@ function setCurrentUser() {
     document.getElementById("login-logout-text").innerText = "Login";
     document.getElementById("login-logout-text-mobile").innerText = "Login";
   }
-}//on clicking login button for mobile nav 
-document.getElementById("login-logout-click-mobile").addEventListener("click", () => {
-  let bool = localStorage.getItem("loginFormStatus");
-  bool = bool == "false" ? true : false;
-  if (
-    bool &&
-    document.getElementById("login-logout-text-mobile").innerText == "Login"
-  ) {
-    location.assign("loginPage.html");
-  } else {
-    document.getElementById("login-logout-text-mobile").innerText = "Login";
-    let loginData = JSON.parse(localStorage.getItem("loginData"));
-    let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
-    loginData.loginArr[currentUserIndex].logedStatus = false;
-    localStorage.setItem("loginData", JSON.stringify(loginData));
-    location.assign("index.html");
-  }
-});
+} //on clicking login button for mobile nav
+document
+  .getElementById("login-logout-click-mobile")
+  .addEventListener("click", () => {
+    let bool = localStorage.getItem("loginFormStatus");
+    bool = bool == "false" ? true : false;
+    if (
+      bool &&
+      document.getElementById("login-logout-text-mobile").innerText == "Login"
+    ) {
+      location.assign("login.html");
+    } else {
+      document.getElementById("login-logout-text-mobile").innerText = "Login";
+      let loginData = JSON.parse(localStorage.getItem("loginData"));
+      let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
+      loginData.loginArr[currentUserIndex].logedStatus = false;
+      localStorage.setItem("loginData", JSON.stringify(loginData));
+      location.assign("index.html");
+    }
+  });
 function getCurrentLoggedUserIndex(loginArr) {
   for (i in loginArr) {
     //get current user index
@@ -299,7 +299,7 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
     bool &&
     document.getElementById("login-logout-text").innerText == "Login"
   ) {
-    location.assign("loginPage.html");
+    location.assign("login.html");
   } else {
     document.getElementById("login-logout-text").innerText = "Login";
     let loginData = JSON.parse(localStorage.getItem("loginData"));
@@ -313,12 +313,12 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
 function addToWishList(productId) {
   let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
   console.log(productId);
-  let wishListArr= wishlistData.wishListArr;
-  if(wishListArr.includes(productId)){
-    alert("Item already in wishlist")
-  }else{
-  wishListArr.push(productId);
-  localStorage.setItem("wishListData",JSON.stringify(wishlistData));
-  alert("item added into wishlist");
+  let wishListArr = wishlistData.wishListArr;
+  if (wishListArr.includes(productId)) {
+    alert("Item already in wishlist");
+  } else {
+    wishListArr.push(productId);
+    localStorage.setItem("wishListData", JSON.stringify(wishlistData));
+    alert("item added into wishlist");
   }
 }

@@ -1,3 +1,6 @@
+//  rm showSearchResult
+//  rm showSearchResultContent
+
 // ************************   show search Result  **********************************
 document.getElementById("searchButton").addEventListener("click", () => {
   showSearchResult();
@@ -5,6 +8,7 @@ document.getElementById("searchButton").addEventListener("click", () => {
 document.getElementById("mobileSearchButton").addEventListener("click", () => {
   showSearchResult();
 });
+
 // ************************   show search Result in page  ******************************
 function showSearchResult() {
   let inputValue;
@@ -16,78 +20,6 @@ function showSearchResult() {
   localStorage.setItem("searchValue", inputValue);
   location.href = "search.html";
 }
- 
-function showPagination(noOfPages, resultArr) {
-  let paginationHandler = document.getElementById("paginationHandler");
-  let htm = ``;
-  htm += `<li class="active-pagination">1</li>`;
-
-  for (let i = 2; i <= noOfPages; i++) {
-    htm += `<li>${i}</li>`;
-  }
-  paginationHandler.innerHTML = htm;
-  handlePagination(resultArr);
-}
-function showSearchResultContent(data) {
-  let container = ``;
-  container += `
-                <div class="item">
-                <div class="featured-products-card" id="searchItem">
-                <div class="image-container">
-                <img src="${data.img}" alt="">
-
-                <div class="labels">
-                <div class="cross-labels">
-                `;
-  for (k in data.crossLabel) {
-    container += `
-                  <p class="blue-bg">
-                  <strong>${data.crossLabel[k]}</strong>
-                  </p>
-                  `;
-  }
-  container += `
-                </div>
-                <div class="right-labels">
-                `;
-  for (j in data.rightLabels) {
-    if (j % 2 == 0) {
-      container += `
-                                          <p class="yellow-bg ">
-                                          <strong>${data.rightLabels[j]}</strong>
-                                          </p>
-                                          `;
-    } else {
-      container += `
-                                          <p class="red-bg ">
-                                          <strong>${data.rightLabels[j]}</strong>
-                                          </p>
-                                          `;
-    }
-  }
-  container += `
-                                     </div>
-                           </div>
-                           </div>
-                           <div class="cart-container">
-                           <h2>${data.name}</h2>
-                           <p class="price">${data.discountedPrice} </p>
-                           <hr>
-                           <div class="add-to-cart-container">
-                           <div>
-                           <input type="button" onclick="addToCart(${data.id})" value="ADD TO CART">
-                           </div>
-                           <div>
-                           <i style="font-weight:100" class="fa-solid fa-heart"></i>
-                           <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                           </div>
-                           </div>
-                       </div>
-                   </div>
-                   </div>
-                   `;
-  return container;
-}
 
 // ************************   show mobile search bar  *****************************
 function showSearchBar() {
@@ -95,60 +27,6 @@ function showSearchBar() {
   searchBar.classList.toggle("show-mobile-search-bar");
 }
 
-showCartItem();
-async function showCartItem() {
-  let cartItemContainer = document.getElementById("cart-item");
-  let container = ``;
-  let response = await fetch("./script/products.json");
-  let responsData = await response.json();
-  let data = responsData.productData;
-  let cartArr = JSON.parse(localStorage.getItem("cartData")).cartArr;
-  let noOfItem = JSON.parse(localStorage.getItem("cartData")).noOfItem;
-  let cartItem = data.filter((item) => {
-    if (cartArr.includes(item.id)) {
-      return item;
-    }
-  });
-  cartItem.forEach((element) => {
-    container += showCartDetails(element, noOfItem);
-  });
-  cartItemContainer.innerHTML = container;
-}
-
-function showCartDetails(data, noOfItem) {
-  let container = ``;
-  container += `
-        <div class="item">
-          <div class="featured-products-card">
-            <div class="image-container">
-              <img src="${data.img}" alt="" />
-            </div>
-          </div>
-
-          <div class="cart-container">
-            <h2>${data.name}</h2>
-            <p class="price">
-              ${data.discountedPrice}
-            </p>
-            <div class="add-to-cart-container">
-              <div>
-                  <input type="button" onclick="removeFromCart(${data.id})" value="Remove">
-                      </div>
-            </div>
-          </div>
-        </div>
-
-      `;
-
-  return container;
-}
-function removeFromCart(productId) {
-  let cartData = JSON.parse(localStorage.getItem("cartData"));
-  let cartArr = cartData.cartArr;
-  cartArr.splice(cartArr.indexOf(productId), 1);
-  localStorage.setItem("cartData", JSON.stringify(cartData));
-  location.assign("shoppingCart.html");
-}
 // show total item in cart
 totalItemInCart();
 function totalItemInCart() {
@@ -157,42 +35,6 @@ function totalItemInCart() {
   document.getElementById("total-cart-price").innerHTML =
     cartData.cartArr.length * 999;
 }
- 
- 
-function showPagination(noOfPages, resultArr) {
-  let paginationHandler = document.getElementById("paginationHandler");
-  let htm = ``;
-  htm += `<li class="active-pagination">1</li>`;
-
-  for (let i = 2; i <= noOfPages; i++) {
-    htm += `<li>${i}</li>`;
-  }
-  paginationHandler.innerHTML = htm;
-  handlePagination(resultArr);
-}
- 
-//on clicking pagination
-function handlePagination(resultArr) {
-  document.getElementById("paginationHandler").childNodes.forEach((elem) => {
-    elem.addEventListener("click", () => {
-      let innerValue = parseInt(elem.innerText);
-      let start = (innerValue - 1) * 4;
-      let end = start + 4 - 1;
-      let activElem = document.getElementsByClassName("active-pagination")[0];
-      activElem.classList.remove("active-pagination");
-      elem.classList.add("active-pagination");
-      let whyBuyContainer = document.getElementById("searchCard");
-      let container = ` <div class="search-result" >`;
-      while (start <= end) {
-        if (start == resultArr.length) break;
-        container += showSearchResultContent(resultArr[start]);
-        start++;
-      }
-      whyBuyContainer.innerHTML = container;
-    });
-  });
-}
- 
 // *************   show hide navbar item sale and new container**********************
 var bottomNavbar = document.getElementById("fixed-bottom-navbar");
 var topPos = bottomNavbar.offsetTop;
@@ -214,6 +56,7 @@ function showHIdeNav() {
     saleContainer.style.display = "block";
   }
 }
+
 // ******************************** add to cart   ************************
 function addToCart(productId) {
   let cartData = JSON.parse(localStorage.getItem("cartData"));
@@ -309,3 +152,16 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
     location.assign("index.html");
   }
 });
+// add to wishlist
+function addToWishList(productId) {
+  let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
+  console.log(productId);
+  let wishListArr = wishlistData.wishListArr;
+  if (wishListArr.includes(productId)) {
+    alert("Item already in wishlist");
+  } else {
+    wishListArr.push(productId);
+    localStorage.setItem("wishListData", JSON.stringify(wishlistData));
+    alert("item added into wishlist");
+  }
+}

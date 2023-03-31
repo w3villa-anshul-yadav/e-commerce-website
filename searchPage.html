@@ -31,7 +31,7 @@
     />
     <!-- custom style sheet -->
     <link rel="stylesheet" href="./style/style.css" />
-    <title>e-commerce</title>
+    <title>Search</title>
   </head>
 
   <body>
@@ -283,7 +283,7 @@
     <div class="mobile-navbar body-spacer">
       <div class="login-wishlist-container">
         <a id="login-logout-click-mobile">
-          <i class="fa-solid fa-user">  </i>
+          <i class="fa-solid fa-user"> </i>
           <p id="login-logout-text-mobile">Login</p>
         </a>
         <!-- <p id="currentUser-mobile"></p> -->
@@ -390,373 +390,378 @@
       </div>
     </div>
 
-    <!-- *************************hero section carosel section ***************************************** -->
-    <main class="">
-      <section class="hero body-spacer">
-        <div class="crousel">
-          <div class="slideshow-container" id="hero-slider"></div>
-          <br />
+    <!-- current navigation bar -->
+    <div class="current-navigation-bar body-spacer">
+      <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <p>
+        <i class="fa-solid fa-arrow-right"></i>
+      </p>
+      <p id="current-page-title"></p>
+    </div>
+    <main class="search-page-main-container">
+      <div class="search-heading body-spacer">
+        <p>
+          Search -
+          <span id="search-value-heading"> </span>
+        </p>
+        <hr />
+      </div>
+      <hr />
 
-          <div class="crousel-dot-container" style="text-align: center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+      <div class="search-result-and-aside-nav-container body-spacer">
+        <aside class="search-navbar-aside">
+          <div class="aside-nav-item-conatainer">
+            <div>
+              <p>Filter</p>
+              <hr />
+            </div>
+            <button>
+              <i class="fa-regular fa-circle-xmark"></i>&nbsp;Clear
+            </button>
           </div>
-        </div>
-        <div class="side-card-container">
-          <div class="card">
-            <img src="./assets/back2.jpg" alt="" />
-            <div class="text-over-card-image">
-              <p>WEARABLES</p>
-              <h2>Intelligent & Durable Design</h2>
+          <!-- price navbar container  -->
+          <div
+            class="aside-nav-item-conatainer pt-20 c-blue"
+            id="toggle-price-button"
+          >
+            <div>
+              <p class="">PRICE</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-minus" id="price-toggle-icon"></i>
             </div>
           </div>
-          <div class="card">
-            <img src="./assets/back2.avif" alt="" />
-            <div class="text-over-card-image">
-              <p>COMPUTER</p>
-              <h2>Intelligent & Durable Design</h2>
+          <div class="price-navbar" id="price-range-toggle">
+            <input type="range" name="" id="" />
+            <div class="aside-nav-item-conatainer">
+              <div class="price-amount-container">
+                <input type="number" value="70" /> $
+              </div>
+              <div class="price-amount-container">
+                <input type="number" value="1718" /> $
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- **************************free services container section ****************************************** 
-1.free shiping
-2.Free returns
-3.Secure Shoping
-4.Unlimited Blocks
-
-
-
--->
-      <section class="services-container body-spacer">
-        <!-- 1.Free shiping  -->
-
-        <div class="free-shiping-container">
-          <div class="icon-container">
-            <div class="icon">
-              <i class="fa-solid fa-truck-fast"></i>
-            </div>
-          </div>
-          <div class="text">
-            <span>Free Shipping</span>
-            <p>Free delivery over $100</p>
-          </div>
-        </div>
-
-        <!-- 2.Free returns  -->
-
-        <div class="free-shiping-container">
-          <div class="icon-container">
-            <div class="icon">
-              <i class="fa-solid fa-arrow-rotate-left"></i>
-            </div>
-          </div>
-          <div class="text">
-            <span>Free Returns</span>
-            <p>Free delivery over $100</p>
-          </div>
-        </div>
-
-        <!-- 3.Secure shoping -->
-
-        <div class="free-shiping-container">
-          <div class="icon-container">
-            <div class="icon">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-          </div>
-          <div class="text">
-            <span>Free Shopping</span>
-            <p>Free delivery over $100</p>
-          </div>
-        </div>
-
-        <!-- 4.Unlimited Blocks -->
-
-        <div class="free-shiping-container">
-          <div class="icon-container">
-            <div class="icon">
-              <i class="fa-solid fa-cube"></i>
-            </div>
-          </div>
-          <div class="text">
-            <span>Unlimited Blocks</span>
-            <p>Free delivery over $100</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 
-    ********************************************************************* why buy from us section 
-    1.why buy us text
-    2.top categories navigation bar
-    3. categories card carosel
-    
-    ******************************************** -->
-      <section class="why-buy-from-us body-spacer">
-        <div class="why-buy-text">
-          <h1>Why buy from us?</h1>
           <hr />
-          <p>
-            Jurnal has been the best selling Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Iste asperiores Lorem ipsum dolor sit.
-            numquam minus iure, quidem dicta error quaerat qui repudiandae
-            laborum. <span><a href="">Learn more</a></span>
-          </p>
-        </div>
-
-        <div class="categories-navigation-container">
-          <a>
-            <p class="active-why-buy" onclick="toggleWhyBuyCategories(this)">
-              top categories
-            </p>
-          </a>
-
-          <a>
-            <p onclick="toggleWhyBuyCategories(this)">electronics</p>
-          </a>
-          <a>
-            <p onclick="toggleWhyBuyCategories(this)">beauty</p>
-          </a>
-          <a>
-            <p onclick="toggleWhyBuyCategories(this)">fashiion</p>
-          </a>
-        </div>
-
-        <!-- 3. categories card carosel -->
-
-        <div class="categories-card-carosel" id="why-buy"></div>
-      </section>
-
-      <!-- 
-*************************************************
-fratured products 
-1.heading (& text)
-2. featured navbar
-3.featured card
-************************************************* -->
-
-      <section class="featured-products why-buy-from-us body-spacer">
-        <!-- 1.heading (& text) -->
-
-        <div class="why-buy-text">
-          <h1>Featured Products</h1>
-          <hr />
-          <p>
-            Display any table as tab orAbout ipsum dolor sit amet consectetur
-            adipisicing elit. Iste asperiores Lorem ipsum dolor sit. numquam
-            minus iure, quidem dicta error quaerat qui repudiandae laborum.
-          </p>
-        </div>
-
-        <!-- 2. featured navbar -->
-
-        <div class="categories-navigation-container">
-          <a>
-            <p class="active-featured" onclick="toggleFeaturedCategories(this)">
-              featured
-            </p>
-            <div></div>
-          </a>
-
-          <a>
-            <p onclick="toggleFeaturedCategories(this)">latest</p>
-          </a>
-          <a>
-            <p onclick="toggleFeaturedCategories(this)">bestsellers</p>
-          </a>
-          <a>
-            <p onclick="toggleFeaturedCategories(this)">specials</p>
-          </a>
-        </div>
-
-        <!-- 3.featured card -->
-
-        <div class="categories-card-carosel" id="featured-products">
-          <div class="owl-carousel owl2 owl-theme"></div>
-        </div>
-
-        <div class="see-all-button">
-          <button onclick="seeAllProducts()">
-            SEE ALL PRODUCTS <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </section>
-
-      <!-- ***********************************************************   Featured Category
-         1.heading (& text) 
-         2.fashion gallary container
-
-
-  -->
-
-      <section
-        class="featured-category-container featured-products why-buy-from-us body-spacer"
-      >
-        <!-- 1.heading (& text) -->
-
-        <div class="why-buy-text">
-          <h1>Featured Categories</h1>
-          <hr />
-          <p>
-            Display any table as tab or ipsum dolor sit amet consectetur
-            adipisicing elit. Iste asperiores Lorem ipsum dolor sit. numquam
-            minus iure, quidem dicta error quaerat qui repudiandae laborum.
-          </p>
-        </div>
-        <div class="fashion-category-container">
-          <div class="fashion">
-            <span>Fashion</span>
-            <hr class="hr" />
-            <div class="image-container">
-              <img src="./assets/1card.jpg" alt="" />
+          <!-- availability navbar container  -->
+          <div class="availability-navbar-container pt-20">
+            <div
+              class="aside-nav-item-conatainer c-blue"
+              id="toggle-availability-button"
+            >
+              <div>
+                <p class="">AVAILABILITY</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-minus" id="toggle-availability-icon"></i>
+              </div>
             </div>
-            <div class="text-container">
-              <p>Accesories</p>
-              <p>Dressed</p>
-              <p>Pants</p>
-              <p>T-Shirts</p>
-              <a><u>See all in Fashion</u></a>
+            <div class="availability-navbar" id="availability-toggle">
+              <div class="m-tb-30">
+                <p><input type="checkbox" />In Stock</p>
+                <p><input type="checkbox" />Out of Stock</p>
+              </div>
             </div>
           </div>
+          <hr />
+          <!-- Subcategories nav container -->
+          <div class="subcategories-navbar-container pt-20">
+            <div
+              class="aside-nav-item-conatainer c-blue"
+              id="toggle-subcategories-button"
+            >
+              <div>
+                <p class="">SUBCATEGORIES</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-minus" id="toggle-subcategories-icon"></i>
+              </div>
+            </div>
+            <div class="subcategories-navbar" id="subcategories-toggle">
+              <div class="subcategories-item-container m-tb-30">
+                <img src="./assets/watchPremimum.jpg" alt="headphone" />
+                <p>Electronics</p>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- Brands nav container -->
+          <div class="brands-navbar-container pt-20">
+            <div
+              class="aside-nav-item-conatainer c-blue"
+              id="toggle-brands-button"
+            >
+              <div>
+                <p class="">BRANDS</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-minus" id="toggle-brands-icon"></i>
+              </div>
+            </div>
+            <div class="brands-navbar" id="brands-toggle">
+              <div class="brands-item-container m-tb-30">
+                <img src="./assets/logo1.jpg" alt="" />
+                <img src="./assets/logo2.jpg" alt="" />
+                <img src="./assets/logo4.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- select nav container -->
+          <div class="select-navbar-container pt-20">
+            <div
+              class="aside-nav-item-conatainer c-blue"
+              id="toggle-select-button"
+            >
+              <div>
+                <p class="">SELECT</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-minus" id="toggle-select-icon"></i>
+              </div>
+            </div>
+            <div class="select-navbar" id="select-toggle">
+              <div class="select-item-container m-tb-30">
+                <!--               
+               <img src="./assets/logo1.jpg" alt="">
+               <img src="./assets/logo2.jpg" alt="">
+               <img src="./assets/logo4.jpg" alt=""> -->
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- radio nav container -->
+          <div class="radio-navbar-container pt-20">
+            <div
+              class="aside-nav-item-conatainer c-blue"
+              id="toggle-radio-button"
+            >
+              <div>
+                <p class="">RADIO</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-minus" id="toggle-radio-icon"></i>
+              </div>
+            </div>
+            <div class="radio-navbar" id="radio-toggle">
+              <div class="radio-item-container m-tb-30">
+                <!--               
+               <img src="./assets/logo1.jpg" alt="">
+               <img src="./assets/logo2.jpg" alt="">
+               <img src="./assets/logo4.jpg" alt=""> -->
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- color nav container -->
+          <div class="color-navbar-container pt-20">
+            <div
+              class="aside-nav-item-conatainer c-blue"
+              id="toggle-color-button"
+            >
+              <div>
+                <p class="">COLOR</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-minus" id="toggle-color-icon"></i>
+              </div>
+            </div>
+            <div class="color-navbar" id="color-toggle">
+              <div class="color-item-container m-tb-30">
+                <div class="color-1"></div>
+                <div class="color-2"></div>
+                <div class="color-3"></div>
+                <div class="color-4"></div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- clockspeed nav container -->
+          <div class="clockspeed-navbar-container pt-20">
+            <div
+              class="aside-nav-item-conatainer c-blue"
+              id="toggle-clockspeed-button"
+            >
+              <div>
+                <p class="">CLOCKSPEED</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-minus" id="toggle-clockspeed-icon"></i>
+              </div>
+            </div>
+            <div class="clockspeed-navbar" id="clockspeed-toggle">
+              <div class="clockspeed-item-container m-tb-30">
+                <!-- <img src="./assets/logo1.jpg" alt="">
+               <img src="./assets/logo2.jpg" alt="">
+               <img src="./assets/logo4.jpg" alt=""> -->
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- test1 nav container -->
+          <div class="test1-navbar-container pt-20">
+            <div
+              class="aside-nav-item-conatainer c-blue"
+              id="toggle-test1-button"
+            >
+              <div>
+                <p class="">TEST 1</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-minus" id="toggle-test1-icon"></i>
+              </div>
+            </div>
+            <div class="test1-navbar" id="test1-toggle">
+              <div class="test1-item-container m-tb-30">
+                <!--               
+               <img src="./assets/logo1.jpg" alt="">
+               <img src="./assets/logo2.jpg" alt="">
+               <img src="./assets/logo4.jpg" alt=""> -->
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- noofcores nav container -->
+          <div class="noofcores-navbar-container pt-20">
+            <div
+              class="aside-nav-item-conatainer c-blue"
+              id="toggle-noofcores-button"
+            >
+              <div>
+                <p class="">NO. OF CORES</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-minus" id="toggle-noofcores-icon"></i>
+              </div>
+            </div>
+            <div class="noofcores-navbar" id="noofcores-toggle">
+              <div class="noofcores-item-container m-tb-30">
+                <!--               
+               <img src="./assets/logo1.jpg" alt="">
+               <img src="./assets/logo2.jpg" alt="">
+               <img src="./assets/logo4.jpg" alt=""> -->
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- style nav container -->
+          <div class="style-navbar-container pt-20">
+            <div
+              class="aside-nav-item-conatainer c-blue"
+              id="toggle-style-button"
+            >
+              <div>
+                <p class="">STYLE</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-minus" id="toggle-style-icon"></i>
+              </div>
+            </div>
+            <div class="style-navbar" id="style-toggle">
+              <div class="style-item-container m-tb-30">
+                <!--               
+               <img src="./assets/logo1.jpg" alt="">
+               <img src="./assets/logo2.jpg" alt="">
+               <img src="./assets/logo4.jpg" alt=""> -->
+              </div>
 
-          <!-- 2.fashion gallary container -->
+              <!-- <hr /> -->
+            </div>
+          </div>
+        </aside>
+        <!-- search Result right page container  -->
 
-          <div class="new-fashion-category-container">
-            <span>New in Fashion</span>
-            <hr class="hr" />
+        <div id="searchResult" class="">
+          <div class="search-category-container">
+            <div class="category-input-container">
+              <input type="text" name="" id="search-value" />
+              <select name="" id="">
+                <option value="All Categories">All Categories</option>
+                <option value="All ">ball</option>
+                <option value="All ">shoes</option>
+                <option value="All ">headphone</option>
+              </select>
+            </div>
+            <div class="categories-checkbox-container">
+              <p>
+                <input type="checkbox" />&nbsp;&nbsp;Search in subcategories
+              </p>
+              <p>
+                <input type="checkbox" />&nbsp;&nbsp;Search in product
+                description
+              </p>
+            </div>
+            <input
+              type="button"
+              name=""
+              value="SEARCH"
+              id="search-button-search-page"
+            />
+          </div>
+          <div class="search-result-page-main-heading pt-20">
+            <p>Products meeting the search criteria</p>
+            <hr />
+          </div>
+          <hr class="m-tb-15" />
+          <div class="list-grid-container">
+            <div class="list-gird-icon">
+              <i class="fa-solid fa-table-cells" id="view-grid"></i>
+              <i class="fa-solid fa-list" id="view-list"></i>
 
-            <div class="categories-card-carosel" id="featured-category"></div>
+              <div class="compare-items-container">
+                <div class="compare-icon" id="compare-items">
+                  <div><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+                </div>
+                <p class="product-compare-text">Product Compare</p>
+              </div>
+            </div>
+            <div class="sort-by-show-container">
+              <div class="sort-by-container">
+                <div class="sort-by-text">Sort By:</div>
+                <select name="" id="">
+                  <option value="">Default</option>
+                </select>
+              </div>
+              <div class="show-container">
+                <div class="sort-by-text">Show:</div>
+                <select name="" id="">
+                  <option value="">10</option>
+                  <option value="">11</option>
+                  <option value="">12</option>
+                  <option value="">13</option>
+                  <option value="">14</option>
+                  <option value="">15</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <hr class="m-tb-15" />
+          <div class="categories-card-carosel" id="searchCard"></div>
+          <div class="search-pagination">
+            <ul id="paginationHandler"></ul>
           </div>
         </div>
-      </section>
-
-      <!-- ************************************************************************Shop by Brand ***************************************************** -->
-
-      <section class="shop-by-brand why-buy-from-us body-spacer">
-        <!-- 1.heading (& text) -->
-
-        <div class="why-buy-text">
-          <h1>Shop by Brand</h1>
-          <hr />
-        </div>
-
-        <div class="categories-card-carosel" id="shop-by-brand"></div>
-      </section>
-
-      <!-- 
-    ************************************************************************** Improved gallery ******************************************* -->
-      <section class="improved-gallery why-buy-from-us body-spacer">
-        <div class="why-buy-text">
-          <h1>Improved Gallary Module</h1>
-          <hr />
-          <p>
-            The gallery module supports images Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Iure fugit nostrum nisi reprehenderit,
-            repudiandae quas praesentium in expedita tenetur voluptatem voluptas
-            magni! Sequi aliquid nobis, amet voluptates ratione totam
-            accusantium?
-          </p>
-        </div>
-        <div class="gallary-image-container" id="gallery-container"></div>
-      </section>
-
-      <!-- 
-    ***********************************from our blog section ******************************************************** -->
-      <section class="from-our-blog why-buy-from-us body-spacer">
-        <!-- 1.heading (& text) -->
-
-        <div class="why-buy-text">
-          <h1>From Our Blog</h1>
-          <hr />
-          <p>
-            Display any table as tab or ipsum dolor sit amet consectetur
-            adipisicing elit. Iste asperiores Lorem ipsum dolor sit. numquam
-            minus iure, quidem dicta error quaerat qui repudiandae laborum.
-          </p>
-        </div>
-
-        <!-- 2. from oue blog -->
-
-        <div class="categories-navigation-container">
-          <a>
-            <p class="active-blog" onclick="toggleBlogCategories(this)">
-              latest posts
-            </p>
-            <div></div>
-          </a>
-
-          <a>
-            <p onclick="toggleBlogCategories(this)">rated</p>
-          </a>
-        </div>
-        <div class="categories-card-carosel" id="our-blog">
-          <div class="owl-carousel owl5 owl-theme"></div>
-        </div>
-      </section>
-
-      <!-- 
-******************************************************
-what are people sying about us
-***************************************************** -->
-      <section
-        class="people-saying-about-us from-our-blog why-buy-from-us body-spacer"
-      >
-        <!-- 1.heading (& text) -->
-
-        <div class="why-buy-text">
-          <h1>What are people saying about us</h1>
-          <hr />
-        </div>
-
-        <!-- 2. featured navbar -->
-
-        <div class="categories-card-carosel" id="people-saying-about-us"></div>
-      </section>
+      </div>
       <!-- 
     *************************************
     most viewed section 
     **************************************** -->
 
       <section class="most-viewed body-spacer">
-        <p>MOST VIEWED</p>
+        <p>
+          RECENTLY VIEWED
+          <span style="opacity: 80%; padding-left: 10px"> MOST VIEWED</span>
+        </p>
+
         <hr />
         <div class="card-container">
           <div class="categories-card-carosel" id="most-viewed"></div>
         </div>
       </section>
-      <!-- 
-*******************************
-Social media handles
-
-****************************** -->
-      <section class="social-media-icons body-spacer">
-        <div class="rounded-icon-background">
-          <a><i class="fa-brands fa-facebook"></i></a>
-        </div>
-        <div class="rounded-icon-background">
-          <a><i class="fa-brands fa-twitter"></i></a>
-        </div>
-        <div class="rounded-icon-background">
-          <a><i class="fa-brands fa-instagram"></i></a>
-        </div>
-        <div class="rounded-icon-background">
-          <a> <i class="fa-brands fa-linkedin"></i></a>
-        </div>
-        <div class="rounded-icon-background">
-          <a> <i class="fa-brands fa-youtube"></i></a>
-        </div>
-        <div class="rounded-icon-background">
-          <a> <i class="fa-brands fa-skype"></i></a>
-        </div>
-        <div class="rounded-icon-background">
-          <a> <i class="fa-brands fa-google-plus-g"></i></a>
-        </div>
-      </section>
     </main>
-    
+
     <!-- 
     *****************************************
     Footer 
@@ -804,7 +809,7 @@ Social media handles
         <hr />
         <p class="para">
           Stay up to date with news and promotions by signing up for promotions
-and Newslatter        </p>
+        </p>
 
         <div class="input-container">
           <input type="email" placeholder="Your email" />
@@ -849,6 +854,6 @@ copyright text
       referrerpolicy="no-referrer"
     ></script>
     <!-- custome script  -->
-    <script src="./script/script.js"></script>
+    <script src="./script/searchPage.js"></script>
   </body>
 </html>
