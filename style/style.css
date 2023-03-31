@@ -2572,6 +2572,9 @@ input[type="checkbox"] {
   .sort-by-text {
     display: none;
   }
+  .why-buy-text hr {
+  margin-left: 34%;
+  }
 
   .product-compare-text {
     display: none;
