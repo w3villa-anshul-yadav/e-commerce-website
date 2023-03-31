@@ -628,7 +628,7 @@ contains two main section
 }
 
 /* <!-- *************************hero section carosel section ***************************************** --> */
-
+ 
 .hero {
   display: flex;
   justify-content: space-between;
@@ -2341,8 +2341,8 @@ search bar
   padding-bottom: 6px;
 }
 input[type="checkbox"] {
-  width: 13px;
-  height: 13px;
+  width: 15px;
+  height: 15px;
 }
 #search-button-search-page {
   width: 100%;
