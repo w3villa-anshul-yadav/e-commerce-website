@@ -1,5 +1,5 @@
 // *********************show search result on this page ******************
-showResult(localStorage.getItem("searchValue"));
+showResult(localStorage.getItem("searchValue").trim());
 // localStorage.setItem("searchValue","");
 // ************************   show search Result  **********************************
 document.getElementById("searchButton").addEventListener("click", () => {
