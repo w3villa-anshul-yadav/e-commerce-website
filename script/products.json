@@ -577,6 +577,14 @@
     },
     {
       "img": "./assets/headphone.jpg",
+      "otherImage": [
+        "./assets/headphone.jpg",
+        "./assets/headphone.jpg",
+        "./assets/headphone.jpg",
+        "./assets/headphone.jpg",
+        "./assets/headphone.jpg",
+        "./assets/headphone.jpg"
+      ],
       "crossLabel": ["2-3 DAYS"],
       "id": 55,
 
@@ -586,17 +594,17 @@
       "category": "featuredCategories",
       "discription": [
         "The Journal is sit amet",
-        "consectetur adipisicing elit. ",
-        " Repellendus beatae Lorem ipsum dolor, ",
-        " sit amet consectetur adipisicing elit. ",
+        "consectetur adipisicing elit ",
+        " Repellendus beatae Lorem ipsum dolor ",
+        " sit amet consectetur adipisicing elit ",
         "Dolores Lorem ipsum dolor sit amet ",
-        "consectetur adipisicing elit. Soluta, dicta! consequuntur, ",
-        " Repellendus beatae Lorem ipsum dolor, ",
-        " sit amet consectetur adipisicing elit. ",
+        "consectetur adipisicing elit Soluta, dicta! consequuntur",
+        " Repellendus beatae Lorem ipsum dolor ",
+        " sit amet consectetur adipisicing elit ",
         "Dolores Lorem ipsum dolor sit amet ",
         "aliquam fuga porro dignissimos quod. ipsam eum temporibus ",
-        "incidunt inventore architecto sapiente at, error blanditiis.",
-        "consectetur adipisicing elit. Soluta, dicta! consequuntur, "
+        "incidunt inventore architecto sapiente at, error blanditiis",
+        "consectetur adipisicing elit. Soluta, dicta! consequuntur"
       ],
       "price": "$3,229.00",
       "brand": ["Ericksoon", "Model519"]

@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- for font awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -11,20 +13,38 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- css for Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- css for Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- custom style sheet -->
     <link rel="stylesheet" href="./style/style.css" />
     <style>
-      #searchItem {
-        height: 450px;
-        width: 280px;
-      }
-      .search-result {
-        justify-content: center;
+      .featured-products-card .cart-container .price {
+        font-size: 22px;
+        font-weight: 600;
+        color: rgb(255, 136, 0);
+        opacity: 70%;
       }
     </style>
-    <title>All Products</title>
+    <title>Search</title>
   </head>
+
   <body>
-   
+    <!-- **************************header section ********************************** -->
+
     <header>
       <div class="top-navbar-container body-spacer">
         <!-- top-most-navbar  have three different section-->
@@ -268,6 +288,7 @@
         </div>
       </div>
     </header>
+
     <!-- navbar for mobile screen dispalyed after 1220px -->
     <div class="mobile-navbar body-spacer">
       <div class="login-wishlist-container">
@@ -379,14 +400,80 @@
       </div>
     </div>
 
-    <main>
-      <div class="body-spacer products-container">
-        <h3>WishList Item</h3>
-        <div class="categories-card-carosel" id="allProductsCard"></div>
-        <div class="search-pagination">
-          <ul id="paginationHandler"></ul>
+    <!-- current navigation bar -->
+    <div class="current-navigation-bar body-spacer">
+      <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <p>
+        <i class="fa-solid fa-arrow-right"></i>
+      </p>
+      <p id="current-page-nav"></p>
+    </div>
+
+    <main class="wrapper-product">
+      <div class="product-name-heading body-spacer">
+        <div id="product-name"></div>
+        <hr />
+      </div>
+      <hr />
+      <div class="product-container body-spacer">
+        <div id="product-image">
+          <div id="more-product-image"></div>
+          <div class="image-container" id="main-image-conatiner">
+            <!-- <img id="product-main-image" alt="product image" /> -->
+            <div id="main-image"></div>
+
+            <div class="labels">
+              <div class="cross-labels"></div>
+              <div class="right-labels">
+                <p class="yellow-bg">
+                  <strong>-70%</strong>
+                </p>
+
+                <p class="red-bg">
+                  <strong>HOT</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-details-container">
+          <div class="details-navigation-container">
+            <p
+              class="nav-active"
+              onclick="navigateProductDetails(this)"
+              id="product-discription"
+            >
+              description
+            </p>
+            <p onclick="navigateProductDetails(this)">specidication</p>
+            <p onclick="navigateProductDetails(this)">reviews</p>
+            <p onclick="navigateProductDetails(this)">custom&nbsp;tab</p>
+          </div>
+          <div id="detailTextContainer">
+            <div id="detailText" class="height-90"></div>
+            <div class="detailTextAfter"></div>
+            <div id="showMoreButton">
+              <i class="fa-solid fa-chevron-down"></i>Show More
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- 
+    *************************************
+    most viewed section 
+    **************************************** -->
+      <section class="most-viewed-wrapper">
+        <div class="most-viewed body-spacer">
+          <p>MOST VIEWED</p>
+          <hr />
+          <div class="card-container">
+            <div class="categories-card-carosel" id="most-viewed"></div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- 
@@ -454,14 +541,14 @@ copyright text
 ********************************** -->
     <div class="copyright-wrapper">
       <div class="copyright body-spacer">
-      <div>
-        <p>
-          Copyright © 2023 developed by
-          <a href="mailto:anyadav411998@gmail.com"> anshul yadav </a>
-        </p>
-        <img src="./assets/paymentcard.jpg" alt="" />
+        <div>
+          <p>
+            Copyright © 2023 developed by
+            <a href="mailto:anyadav411998@gmail.com"> anshul yadav </a>
+          </p>
+          <img src="./assets/paymentcard.jpg" alt="" />
+        </div>
       </div>
-    </div>
     </div>
     <div>
       <div class="top-navigation-controller">
@@ -476,6 +563,14 @@ copyright text
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./script/wishList.js"></script>
+    <!-- owl crousel script  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- custome script  -->
+    <script src="script/product.js"></script>
   </body>
 </html>

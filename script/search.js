@@ -156,10 +156,12 @@ document.getElementById("view-grid").addEventListener("click", () => {
   displayGridViewSearch();
 });
 function showSearchResultContent(data) {
+  console.log(typeof data);
+  localStorage.setItem("product", JSON.stringify(data));
   let container = ``;
   container += `         <div class="item">
                         <div class="featured-products-card toggle-list-view" >
-                            <div class="image-container">
+                            <div class="image-container" onclick="showProduct(`+data.id+`)">
                                 <img src="${data.img}" alt=""> 
                                 <div class="labels">
                                 <div class="cross-labels">
@@ -640,4 +642,9 @@ function showInputRangeOnPriseInput() {
     document.getElementById("min").value;
   document.getElementById("maxInput").value =
     document.getElementById("max").value;
+}
+
+// show product
+function showProduct() {
+  location.href = "product.html";
 }

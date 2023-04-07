@@ -917,7 +917,7 @@ contains two main section
 }
 .why-buy-from-us {
   padding-top: 35px;
-  padding-bottom:35px;
+  padding-bottom: 35px;
 }
 
 .why-buy-from-us .why-buy-text h1 {
@@ -1111,6 +1111,7 @@ SOME STYLES ARE IN ABOUVE SECTION
 .image-container {
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
 
 .featured-products-card .image-container img {
@@ -1386,7 +1387,7 @@ input[type="number"]::-webkit-outer-spin-button,
 .featured-category-wrapper {
   background-color: #dde0e8b5;
 }
- 
+
 .fashion-category-container {
   display: flex;
 }
@@ -1622,7 +1623,7 @@ what are people sying about us
 .people-saying-about-us-wrapper {
   background-color: white;
 }
- 
+
 .people-saying-about-us .featured-products-card .quote {
   padding-top: 60px;
   text-align: center;
@@ -2176,6 +2177,7 @@ search bar
   display: flex;
   align-items: center;
   column-gap: 10px;
+  background-color: #fffffd;
   height: 30px;
 }
 .current-navigation-bar a i,
@@ -2665,4 +2667,176 @@ input[type="checkbox"] {
 #view-grid,
 #view-list {
   cursor: pointer;
+}
+
+/* product page style  */
+.wrapper-product {
+  background-color: var(--light-gray-color);
+}
+/* product name heading style 
+*/
+#product-name {
+  font-size: 40px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  text-transform: capitalize;
+}
+.product-name-heading hr {
+  padding: 1px;
+  width: 150px;
+  border: none;
+  background-color: #e74a0a;
+}
+.product-container {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  display: flex;
+  column-gap: 40px;
+}
+#product-image {
+  display: flex;
+  column-gap: 15px;
+}
+#more-product-image {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+#more-product-image img {
+  width: 5vw;
+  /* height: 70px; */
+  object-fit: contain;
+  border: 0.1px solid rgb(205, 203, 203);
+  border-radius: 3px;
+}
+.product-container .image-container {
+  width: 35vw;
+}
+#product-main-image {
+  width: 100%;
+  object-fit: contain;
+  border: 0.1px solid rgb(205, 203, 203);
+  border-radius: 3px;
+}
+#product-image .image-container {
+  position: relative;
+}
+#product-image .image-container .labels .right-labels {
+  position: absolute !important;
+  top: 2%;
+  right: 3%;
+  font-size: 12px;
+}
+#product-image .image-container .labels .right-labels p {
+  margin-bottom: 5px;
+  padding: 6px;
+  border-radius: 4px;
+}
+.product-details-container{
+  width: 55vw;
+}
+.details-navigation-container {
+  display: flex;
+  column-gap: 15px;
+  width:70%;
+  overflow-x: auto;
+  /* justify-content: center; */
+}
+.details-navigation-container p {
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 60%;
+  /* width: 100px; */
+}
+.nav-active {
+  opacity: 100% !important;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f19204;
+}
+#detailTextContainer {
+  position: relative;
+}
+#detailText {
+  padding-top: 20px;
+  font-size: 19px;
+  position: relative;
+}
+.detailTextAfter {
+  background-color: #dedddd50;
+  position: absolute;
+  bottom: 3px;
+  width: 98%;
+  left: 0;
+  height: 20px;
+  border: none;
+}
+.height-90 {
+  overflow: hidden;
+  height: 90px;
+}
+#showMoreButton {
+  margin: auto;
+  width: 95px;
+  position: absolute;
+  bottom: -2px;
+  left: 40%;
+  height: 22px;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  color: white;
+  background-color: #0919c6;
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+@media screen and (max-width: 712px) {
+  .product-container .image-container {
+    width: 80vw;
+  }
+  .owl-theme .owl-nav.disabled + .owl-dots{
+    padding-top: 0;
+  }
+  #more-product-image img {
+    width: 12vw;
+    height: 10vw;
+  }
+  #product-image .image-container .labels .right-labels {
+    font-size: 8px;
+  }
+  .product-container {
+    flex-wrap: wrap;
+  }
+  .product-details-container{
+  width: 93vw;
+  margin-top:15px
+}
+.details-navigation-container{
+  width: 85%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#product-image {
+column-gap: 5px;
+}
+.detailTextAfter{
+  width: 85%;
+}
+#detailText{
+  
+  padding-left: 5px;
+  padding-right: 8px;
+}
+#showMoreButton{
+  left: 35%;
+}
+}
+
+@media screen and (max-width: 1240px) {
+  .details-navigation-container p {
+    font-size: 12px;
+  }
 }
