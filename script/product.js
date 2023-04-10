@@ -7,9 +7,10 @@ document.getElementById("current-page-nav").innerHTML =
 document.getElementById("product-name").innerHTML = product.name;
 
 let image = "";
-product.otherImage.forEach((element) => {
-  image += `<img src=${element} alt="product image" >`;
-});
+ for( i=0;i<7;i++){
+  image += `<img src=${product.img} alt="product image" >`;
+ }
+ 
 
 document.getElementById("more-product-image").innerHTML = image;
 // document.getElementById("product-main-image").src = "" + product.img + "";
@@ -29,7 +30,7 @@ button.addEventListener("click", () => {
   let elem = document.getElementById("detailText");
   if (button.innerHTML.includes("Show More")) {
     button.innerHTML = '<i class="fa-solid fa-angle-up"></i>' + "Show Less";
-    button.style.bottom = "-25px";
+    button.style.bottom = "-18px";
     document.getElementsByClassName(
       "detailTextAfter"
     )[0].style.backgroundColor = "transparent";
@@ -46,22 +47,20 @@ button.addEventListener("click", () => {
 displayProduct();
 function displayProduct(){
   let mainImageContainer = document.getElementById("main-image");
-  let container = ` <div class="owl-carousel owl1 owl-theme">`;
+  let container = `<div class="owl-carousel owl1 owl-theme">`;
   container += `
      <div class="item">
           <img src="${product.img}" alt="product image">
-           
       </div>`;
-       if(window.innerWidth<=712)
-  for (i in product.otherImage) {
-    container += `
+  if (window.innerWidth <= 712)
+    for (i in product.otherImage) {
+      container += `
      <div class="item">
-          <img src="${product.otherImage[i]}" alt="product image">
-           
+          <img src="${product.otherImage}" alt="product image">
       </div>`;
-  }
+    }
   container += `</div>`;
-  mainImageContainer.innerHTML=container;
+  mainImageContainer.innerHTML = container;
   owl1();
 }
 window.addEventListener("resize", () => {
@@ -77,11 +76,10 @@ function owl1() {
     responsive: {
       0: {
         items: 1,
-      }
+      },
     },
   });
 }
-
 
 // common script
 
@@ -257,3 +255,169 @@ function addToWishList(productId) {
     alert("item added into wishlist");
   }
 }
+
+function owl6() {
+  $(".owl6").owlCarousel({
+    //for display Most Viewed
+    loop: true,
+    margin: 25,
+    nav: false,
+    // autoplay: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 2,
+      },
+      700: {
+        items: 3,
+      },
+      1100: {
+        items: 4,
+      },
+    },
+  });
+}
+
+displayMostViewed();
+async function displayMostViewed() {
+  let container = document.getElementById("most-viewed");
+  let elem = `<div class="owl-carousel owl6 owl-theme">
+  `;
+  let response = await fetch("./script/mostViewed.json");
+  let responsData = await response.json();
+  let data = responsData.mostViewed;
+  for (i in data) {
+    elem += `
+    <div class="item">
+              <div class="card">
+                <img src="${data[i].img}" alt="" />
+                <div>
+                  <h2>${data[i].name}</h2>
+                  <p>${data[i].prise}</p>
+                  <div class="icon-container">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+    `;
+  }
+  elem += `</div>`;
+  container.innerHTML = elem;
+  owl6();
+}
+
+displayfeaturedCategories();
+async function displayfeaturedCategories() {
+  let response = await fetch("./script/products.json");
+  let responsData = await response.json();
+  let data = responsData.productData;
+  let whyBuyContainer = document.getElementById("related-products");
+  let container = ` <div class="owl-carousel owl3 owl-theme">`;
+  let count = 0;
+  for (i in data) {
+    if (data[i].category === "featuredCategories") {
+      count++;
+
+      container += `
+     <div class="item">
+     <div class="featured-products-card">
+         <div class="image-container">
+             <img src="${data[i].img}" alt="">
+
+             <div class="labels">
+                      <div class="cross-labels">
+                      `;
+      for (k in data[i].crossLabel) {
+        container += `                 
+                           <p class="red-bg">
+                               <strong>${data[i].crossLabel[k]}</strong>
+                           </p>                  
+                       `;
+      }
+      container += `
+                      </div>
+                      <div class="right-labels">
+                      `;
+      for (j in data[i].rightLabels) {
+        if (j % 2 == 0) {
+          container += `
+                            <p class="blue-bg ">
+                              <strong>${data[i].rightLabels[j]}</strong>
+                           </p>
+                            `;
+        } else {
+          container += `
+                            <p class="yellow-bg ">
+                              <strong>${data[i].rightLabels[j]}</strong>
+                           </p>
+                            `;
+        }
+      }
+      container += `            
+                       </div>
+             </div>
+         </div>
+         <div class="cart-container">
+             <h2>${data[i].name}</h2>
+             <p class="price">${data[i].discountedPrice} </p>
+             <hr class="related-products-hr">
+             <div class="add-to-cart-container">
+                 <div>
+                     <input type="button" onclick="addToCart(${data[i].id})" value="ADD TO CART">
+                 </div>
+                 <div>
+                     <i style="font-weight:100" class="fa-solid fa-heart" onclick="addToWishList(${data[i].id})"></i>
+                     <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+      `;
+    }
+  }
+  container += `</div>`;
+  whyBuyContainer.innerHTML = container;
+  owl3();
+}
+function owl3() {
+  $(".owl3").owlCarousel({
+    //for display featured Categories
+    loop: true,
+    margin: 10,
+    nav: false,
+    // autoplay: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      450: {
+        items: 2,
+      },
+      700: {
+        items: 1,
+      },
+      850: {
+        items: 2,
+      },
+      1246: {
+        items: 3,
+      },
+      1400: {
+        items: 4,
+      },
+    },
+  });
+}
+// ************************   show search Result  **********************************
+document.getElementById("searchButton").addEventListener("click", () => {
+  showSearchResult();
+});
+document.getElementById("mobileSearchButton").addEventListener("click", () => {
+  showSearchResult();
+});

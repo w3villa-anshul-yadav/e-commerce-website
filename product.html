@@ -8,11 +8,33 @@
     <!-- for font awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      data-purpose="Layout StyleSheet"
+      title="Default"
+      disabled
+      href="/css/app-af6a05f42b013986b481566363f0186f.css?vsn=d"
     />
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-df1bd4d47fc6bf066625b27b61ccafe7.css?vsn=d"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-regular.css"
+    />
+
     <!-- css for Owl Carousel -->
     <link
       rel="stylesheet"
@@ -458,19 +480,239 @@
               <i class="fa-solid fa-chevron-down"></i>Show More
             </div>
           </div>
+          <div class="rating-review-container">
+            <div class="rating-star-container">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <a href="#">Based on 1 reviews</a>
+            <p>-</p>
+            <a href="#"> Write a review</a>
+          </div>
+          <hr />
+          <div class="price-detail-container">
+            <div class="price-tax-container">
+              <del> <p id="product-price">70.34</p> </del>
+              <p id="product-discounted-price">23.434</p>
+              <p>Ex Tax: 70.61$</p>
+              <p>Price in reward points: 400</p>
+              <p>10 or more 69.04$</p>
+              <p>20 or more 60.41$</p>
+              <p>30 or more 51.78$</p>
+            </div>
+            <div class="side-container">
+              <div class="instock-container">
+                <p><i class="fa-solid fa-check"></i>IN STOCK</p>
+                <ul>
+                  <li>Reward Points:100</li>
+                  <li>Model: product 15</li>
+                  <li>Weight: 12.50kg</li>
+                  <li>DimensionsL: 1.00cm x 2.00cm x 3.00cm</li>
+                </ul>
+              </div>
+              <div class="product-brand-logo">
+                <img src="./assets/logo1.jpg" alt="" />
+                <a href="#">Apple</a>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="product-form-container">
+            <div class="select-container">
+              <label for="another-select">Another Select <span> *</span></label>
+              <select name="" id="another-select">
+                <option value="">....Please Select....</option>
+                <option value="">select 1</option>
+                <option value="">select 2</option>
+                <option value="">select 3</option>
+              </select>
+            </div>
+            <div class="select-container">
+              <label for="another-select">Select List <span> *</span></label>
+              <select name="" id="another-select">
+                <option value="">....Please Select....</option>
+                <option value="">select 1</option>
+                <option value="">select 2</option>
+                <option value="">select 3</option>
+              </select>
+            </div>
+            <div class="radio-buttons">
+              <p>Radio <span>*</span></p>
+              <div class="custom-radio">
+                <input type="radio" id="Small" name="skills" value="small" />
+                <label for="Small">Small(+7.85$)</label>
+
+                <input type="radio" id="Medium" name="skills" value="medium" />
+                <label for="Medium">Medium(+15.85$)</label>
+
+                <input type="radio" id="Large" name="skills" value="Large" />
+                <label for="Large">Large(+23.85$)</label>
+              </div>
+            </div>
+            <div class="single-choice-with-image">
+              <p>Single choice (with image) <span>*</span></p>
+              <div>
+                <p class="blue"></p>
+                <p class="purple"></p>
+                <p class="green"></p>
+                <p class="red"></p>
+              </div>
+            </div>
+            <div class="input-fields">
+              <p>Text <span>*</span></p>
+              <input type="text" placeholder="test" />
+            </div>
+            <div class="input-fields">
+              <p>Textarea <span>*</span></p>
+              <textarea
+                name=""
+                id=""
+                placeholder="Textarea"
+                cols="80"
+                rows="10"
+              ></textarea>
+            </div>
+            <div class="input-fields">
+              <p>File</p>
+              <button onclick="document.getElementById('fileInput').click()">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i> UPLOAD FILE
+              </button>
+              <input type="file" id="filInput" />
+            </div>
+            <div class="input-fields">
+              <p>Date <span>*</span></p>
+              <input type="date" class="date" />
+              <i class="fa-sharp fa-solid fa-calendar-days calander-icon"></i>
+            </div>
+            <div class="input-fields">
+              <p>Time <span>*</span></p>
+              <input type="time" class="date" />
+              <i class="fa-sharp fa-solid fa-calendar-days calander-icon"></i>
+            </div>
+            <div class="input-fields">
+              <p>Date & Time <span>*</span></p>
+              <input type="datetime-local" class="date" />
+              <i class="fa-sharp fa-solid fa-calendar-days calander-icon"></i>
+            </div>
+          </div>
+          <hr />
+          <div class="buttons-container">
+            <div class="buttons">
+              <div class="quantity">
+                <div class="quantity-input">
+                  <input type="text" name="name" value="1" />
+                  <div class="button-container">
+                    <button class="up-btn" type="button" name="button">
+                      <i class="fa-sharp fa-regular fa-chevron-up"></i>
+                    </button>
+                    <button class="up-btn" type="button" name="button">
+                      <i class="fa-sharp fa-regular fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button class="add-to-cart">
+                <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+              </button>
+              <button class="buy-now">
+                <i class="fa-regular fa-circle-dollar"></i>
+                <span> Buy Now </span>
+              </button>
+              <button class="questions">
+                <i class="fa-regular fa-circle-question"></i>
+              </button>
+            </div>
+          </div>
+          <div class="wishlist-compare-container">
+            <div class="add-to-wishlist">
+              <i class="fa-regular fa-heart" style="color: #ff0000"></i> Add to
+              Wishlist
+            </div>
+            <div class="compare-product">
+              <i
+                class="fa-regular fa-circle-waveform-lines"
+                style="color: #103a8d"
+              ></i>
+              Compare this Product
+            </div>
+          </div>
+          <div class="warning">
+            <i class="fa-solid fa-circle-info"></i> This product has a minimum
+            quantity of 2
+          </div>
+          <div class="social-links">
+            <div class="social-link">
+              <i class="fa-brands fa-facebook"></i>
+            </div>
+            <div class="social-link">
+              <i class="fa-brands fa-twitter"></i>
+            </div>
+            <div class="social-link">
+              <i class="fa-brands fa-pinterest"></i>
+            </div>
+            <div class="social-link">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="more-social-link"><span>+</span> 7</div>
+          </div>
         </div>
       </div>
 
+      <!-- releted product and people also bought product  -->
+      <section class="related-product-wrapper">
+        <div class="most-viewed related-products body-spacer">
+          <p>RElATED PRODUCTS <span>PEOPLE ALSO BOUGHT</span></p>
+
+          <hr />
+          <div class="card-container">
+            <div class="categories-card-carosel" id="related-products"></div>
+          </div>
+        </div>
+      </section>
       <!-- 
     *************************************
     most viewed section 
     **************************************** -->
+
       <section class="most-viewed-wrapper">
         <div class="most-viewed body-spacer">
-          <p>MOST VIEWED</p>
+          <p>RECENTLY VIEWED <span>MOST VIEWED</span></p>
           <hr />
           <div class="card-container">
             <div class="categories-card-carosel" id="most-viewed"></div>
+          </div>
+        </div>
+      </section>
+      <!-- 
+*******************************
+Social media handles
+
+****************************** -->
+      <section class="social-media-icons-wrapper">
+        <div class="social-media-icons body-spacer">
+          <div class="rounded-icon-background">
+            <a><i class="fa-brands fa-facebook"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a><i class="fa-brands fa-twitter"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a> <i class="fa-brands fa-linkedin"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a> <i class="fa-brands fa-youtube"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a> <i class="fa-brands fa-skype"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a> <i class="fa-brands fa-google-plus-g"></i></a>
           </div>
         </div>
       </section>
@@ -571,6 +813,6 @@ copyright text
       referrerpolicy="no-referrer"
     ></script>
     <!-- custome script  -->
-    <script src="script/product.js"></script>
+    <script src="./script/product.js"></script>
   </body>
 </html>
