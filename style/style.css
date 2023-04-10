@@ -2721,7 +2721,7 @@ input[type="checkbox"] {
 }
 #main-image img {
   display: block;
-  height: 600px;
+  height: 550px;
   object-fit: cover;
   width: 100%;
 }
