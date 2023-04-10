@@ -7,7 +7,7 @@ document.getElementById("current-page-nav").innerHTML =
 document.getElementById("product-name").innerHTML = product.name;
 
 let image = "";
- for( i=0;i<7;i++){
+ for( i=0;i<6;i++){
   image += `<img src=${product.img} alt="product image" >`;
  }
  

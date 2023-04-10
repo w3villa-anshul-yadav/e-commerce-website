@@ -28,6 +28,7 @@ function showSearchResult() {
   localStorage.setItem("searchValue", inputValue);
   location.href = "search.html";
 }
+let viewProductData;
 async function showResult(inputValue) {
   let whyBuyContainer = document.getElementById("searchCard");
   //display search heading on search page
@@ -58,7 +59,7 @@ async function showResult(inputValue) {
     noOfPages = Math.ceil(resultArr.length / 3);
     for (i = 0; i < resultArr.length; i++) {
       if (i >= 3) break;
-      container += showSearchResultContent(resultArr[i]);
+       container += showSearchResultContent(resultArr[i]);
     }
     try {
       showPagination(noOfPages, resultArr);
@@ -156,12 +157,11 @@ document.getElementById("view-grid").addEventListener("click", () => {
   displayGridViewSearch();
 });
 function showSearchResultContent(data) {
-  console.log(typeof data);
-  localStorage.setItem("product", JSON.stringify(data));
   let container = ``;
+    localStorage.setItem("product", JSON.stringify(data));
   container += `         <div class="item">
                         <div class="featured-products-card toggle-list-view" >
-                            <div class="image-container" onclick="showProduct(`+data.id+`)">
+                            <div class="image-container" onclick="showProduct()" >
                                 <img src="${data.img}" alt=""> 
                                 <div class="labels">
                                 <div class="cross-labels">
@@ -296,7 +296,7 @@ function handlePagination(resultArr) {
       let container = ` <div class="search-result" >`;
       while (start <= end) {
         if (start == resultArr.length) break;
-        container += showSearchResultContent(resultArr[start]);
+         container += showSearchResultContent(resultArr[start]);
         start++;
       }
       whyBuyContainer.innerHTML = container;
@@ -645,6 +645,6 @@ function showInputRangeOnPriseInput() {
 }
 
 // show product
-function showProduct() {
+function showProduct( ) {
   location.href = "product.html";
 }

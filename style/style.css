@@ -2705,8 +2705,8 @@ input[type="checkbox"] {
 
 #more-product-image img {
   width: 5vw;
-  /* height: 70px; */
-  object-fit: contain;
+  height: 75px;
+  object-fit: cover;
   border: 0.1px solid rgb(205, 203, 203);
   border-radius: 3px;
 }
@@ -2718,6 +2718,12 @@ input[type="checkbox"] {
   object-fit: contain;
   border: 0.1px solid rgb(205, 203, 203);
   border-radius: 3px;
+}
+#main-image img {
+  display: block;
+  height: 600px;
+  object-fit: cover;
+  width: 100%;
 }
 #product-image .image-container {
   position: relative;
@@ -2804,6 +2810,9 @@ input[type="checkbox"] {
   #more-product-image img {
     width: 12vw;
     height: 10vw;
+  }
+  #main-image img {
+    height: 70vw;
   }
   #product-image .image-container .labels .right-labels {
     font-size: 8px;
@@ -2928,12 +2937,6 @@ input[type="checkbox"] {
 .price-detail-container .side-container {
   width: 70%;
 }
-/* @media screen and (max-width: 1250px) {
-.price-detail-container .side-container{
-   width: calc( 100vw - 300px);
-  
-}
-} */
 
 @media screen and (max-width: 720px) {
   .price-tax-container {
@@ -3278,52 +3281,52 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 @media screen and (max-width: 375px) {
   .buttons-container .buttons {
-       justify-content: center;
-
+    justify-content: center;
   }
   .buttons-container .add-to-cart {
     width: 38%;
     height: 30px;
     font-size: 14px;
   }
-  
-  .buttons-container .quantity .quantity-input input{
+
+  .buttons-container .quantity .quantity-input input {
     height: 31px;
     width: 30px;
   }
   .wishlist-compare-container {
-  font-size: 12px;
+    font-size: 12px;
   }
-  .buttons-container .buy-now,.buttons-container .questions {
-  width: 30px;
-  height: 30px;
+  .buttons-container .buy-now,
+  .buttons-container .questions {
+    width: 30px;
+    height: 30px;
   }
-  .button-container i{
+  .button-container i {
     font-size: 10px;
   }
-  .warning{
+  .warning {
     padding-left: 10px;
   }
   .most-viewed p {
     font-size: 12px;
   }
   .wishlist-compare-container i {
-  font-size: 13px;
+    font-size: 13px;
   }
   .buttons-container .quantity .quantity-input button {
-  height: 15px;
-  width: 14px;
+    height: 15px;
+    width: 14px;
   }
-  .add-to-cart i{
+  .add-to-cart i {
     display: none;
   }
-  .buy-now span{
+  .buy-now span {
     display: none;
   }
   .input-fields input {
-  width: 82px;
+    width: 82px;
   }
 }
-.most-viewed .owl-theme .owl-dots .owl-dot span{
+.most-viewed .owl-theme .owl-dots .owl-dot span {
   display: none;
 }
