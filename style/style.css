@@ -1111,8 +1111,7 @@ SOME STYLES ARE IN ABOUVE SECTION
 .image-container {
   overflow: hidden;
   position: relative;
-  cursor: pointer;
-}
+ }
 
 .featured-products-card .image-container img {
   height: 330px;
@@ -1236,15 +1235,7 @@ SOME STYLES ARE IN ABOUVE SECTION
   border-radius: 3px;
   border: 0.5px solid rgb(205, 201, 201);
 }
-/* .list-add-to-cart-container .square-cart {
-  width: 40px;
-  height: 40px;
-  border: 0.8px solid #b6b5b5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-} */
+ 
 .list-add-to-cart-container div input[type="number"] {
   width: 60px;
   height: 40px;
@@ -2747,14 +2738,12 @@ input[type="checkbox"] {
   column-gap: 15px;
   width: 70%;
   overflow-x: auto;
-  /* justify-content: center; */
-}
+ }
 .details-navigation-container p {
   text-transform: uppercase;
   cursor: pointer;
   opacity: 60%;
-  /* width: 100px; */
-}
+ }
 .nav-active {
   opacity: 100% !important;
   padding-bottom: 8px;
@@ -3068,6 +3057,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 .input-fields button {
   margin-top: 10px;
+  cursor: pointer;
   display: block;
   width: 100%;
   height: 40px;

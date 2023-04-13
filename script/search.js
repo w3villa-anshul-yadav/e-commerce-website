@@ -28,7 +28,7 @@ function showSearchResult() {
   localStorage.setItem("searchValue", inputValue);
   location.href = "search.html";
 }
-let viewProductData;
+let viewProductData; //this variable is used for showing reslt in product page
 async function showResult(inputValue) {
   let whyBuyContainer = document.getElementById("searchCard");
   //display search heading on search page
@@ -56,10 +56,11 @@ async function showResult(inputValue) {
         notFound = false;
       }
     }
+    viewProductData=resultArr; 
     noOfPages = Math.ceil(resultArr.length / 3);
     for (i = 0; i < resultArr.length; i++) {
       if (i >= 3) break;
-       container += showSearchResultContent(resultArr[i]);
+      container += showSearchResultContent(resultArr[i]);
     }
     try {
       showPagination(noOfPages, resultArr);
@@ -158,10 +159,9 @@ document.getElementById("view-grid").addEventListener("click", () => {
 });
 function showSearchResultContent(data) {
   let container = ``;
-    localStorage.setItem("product", JSON.stringify(data));
   container += `         <div class="item">
                         <div class="featured-products-card toggle-list-view" >
-                            <div class="image-container" onclick="showProduct()" >
+                            <div class="image-container" onclick="showProduct(${data.id})" >
                                 <img src="${data.img}" alt=""> 
                                 <div class="labels">
                                 <div class="cross-labels">
@@ -204,7 +204,7 @@ function showSearchResultContent(data) {
                           <p>${data.brand[1]}</p>
                       </div>
                       <div class="cart-container">
-                          <h2>${data.name}</h2>
+                          <h2 onclick="showProduct(${data.id})" >${data.name}</h2>
                         
                           <p class="price">${data.discountedPrice} <span><del>${data.price}</del></span></p>
                           <div class="add-to-cart-container">
@@ -296,7 +296,7 @@ function handlePagination(resultArr) {
       let container = ` <div class="search-result" >`;
       while (start <= end) {
         if (start == resultArr.length) break;
-         container += showSearchResultContent(resultArr[start]);
+        container += showSearchResultContent(resultArr[start]);
         start++;
       }
       whyBuyContainer.innerHTML = container;
@@ -645,6 +645,11 @@ function showInputRangeOnPriseInput() {
 }
 
 // show product
-function showProduct( ) {
-  location.href = "product.html";
+function showProduct(id) {
+  let data= viewProductData.find(( value )=>{
+    return value.id === id;
+  })
+  console.log(data);
+    localStorage.setItem("product", JSON.stringify(data));
+   location.href = "product.html";
 }
