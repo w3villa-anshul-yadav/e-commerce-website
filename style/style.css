@@ -1964,6 +1964,7 @@ search Result
 #searchResult .item img {
   width: 100%;
   height: 390px;
+  cursor: pointer;
 }
 
 .search-result {
@@ -1980,6 +1981,7 @@ search Result
 }
 #searchResult h2 {
   font-size: 30px;
+  cursor: pointer;
 }
 #searchResult h3 {
   font-size: 40px;
