@@ -238,16 +238,110 @@
 
           <div class="nav-menu-container">
             <div>
-              <a class="left-menu-icon-container">
-                <div class="hamburgur"><i class="fa-solid fa-bars"></i></div>
-                <p>All departments</p>
-                <div class="sale-container">Sale</div>
+              <a>
+                <div class="left-menu-icon-container">
+                  <div class="hamburgur">
+                    <i class="fa-solid fa-bars"></i>
+                  </div>
+                  <p>All departments</p>
+                  <div class="sale-container">Sale</div>
+                  <div id="on-hover-department">
+                    <div
+                      class="on-hover-main-menu"
+                      onmouseenter="displayNavSubMenuContent()"
+                      onmouseleave="hideNavSubMenuContent()"
+                    >
+                      <i class="fa-solid fa-bars"></i>
+                      Shop By Category
+                    </div>
+                    <div class="on-hover-main-menu">
+                      <i class="fa-solid fa-bars"></i> Shop by Brand
+                    </div>
+                    <div class="on-hover-main-menu">
+                      <i class="fa-solid fa-bars"></i>
+                      Special Deals
+                    </div>
+                    <div class="on-hover-main-menu">
+                      <i class="fa-solid fa-bars"></i>
+                      Bestsellers
+                    </div>
+                    <div class="on-hover-main-menu">
+                      <i class="fa-solid fa-bars"></i>
+                      Custom Links
+                    </div>
+                    <div class="on-hover-main-menu">
+                      <i class="fa-solid fa-bars"></i>
+                      See All Products
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="on-hover-department-nav-sub-menu" 
+                  onmouseenter="displayOnHoverSubMenuContent(event)"
+                  onmouseleave="hideOnHoverSubMenuContent(event)"
+                >
+                  <div class="content">
+                    <div class="nav-sub-menu-content">
+                      <h3>Fashion</h3>
+
+                      <a href=""> Accesories </a>
+                      <a href=""> Paint </a>
+                      <a href=""> T-shirt </a>
+                      <a href=""> Dress </a>
+                      <a href=""> See-all-products </a>
+                    </div>
+
+                    <div class="nav-sub-menu-content">
+                      <a href=""> <h3>Fashion</h3></a> <a href="">Accesories</a>
+                      <a href="">Paint</a>
+                      <a href="">T-shirt</a>
+                      <a href="">Dress</a>
+                      <a href="">See-all-products</a>
+                    </div>
+
+                    <div class="nav-sub-menu-content">
+                      <a href=""> <h3>Fashion</h3></a> <a href="">Accesories</a>
+                      <a href="">Paint</a>
+                      <a href="">T-shirt</a>
+                      <a href="">Dress</a>
+                      <a href="">See-all-products</a>
+                    </div>
+                    <div class="nav-sub-menu-content">
+                      <a href=""><h3>Fashion</h3></a>
+
+                      <a href=""> Accesories </a>
+                      <a href=""> Paint </a>
+                      <a href=""> T-shirt </a>
+                      <a href=""> Dress </a>
+                      <a href=""> See-all-products </a>
+                    </div>
+
+                    <div class="nav-sub-menu-content">
+                      <a href=""> <h3>Fashion</h3></a> <a href="">Accesories</a>
+                      <a href="">Paint</a>
+                      <a href="">T-shirt</a>
+                      <a href="">Dress</a>
+                      <a href="">See-all-products</a>
+                    </div>
+
+                    <div class="nav-sub-menu-content">
+                      <a href=""> <h3>Fashion</h3></a> <a href="">Accesories</a>
+                      <a href="">Paint</a>
+                      <a href="">T-shirt</a>
+                      <a href="">Dress</a>
+                      <a href="">See-all-products</a>
+                    </div>
+                  </div>
+                  <img src="./assets/1card.jpg" alt="" />
+                </div>
               </a>
             </div>
-            <div>
-              <a>
+            <div class="multilevel-nav">
+              <a >
                 <p>multilevel</p>
+              
               </a>
+              
             </div>
 
             <div class="mega-menu-container">
@@ -256,7 +350,7 @@
                 <div class="new-container">New</div>
               </a>
             </div>
-            <div>
+            <div class="full-width-nav">
               <a>
                 <p>full width</p>
               </a>
@@ -409,6 +503,7 @@
           </div>
           <div class="side-card-container">
             <div class="card">
+              <div class="card-overlay"></div>
               <img src="./assets/back2.jpg" alt="" />
               <div class="text-over-card-image">
                 <p>WEARABLES</p>
@@ -416,6 +511,8 @@
               </div>
             </div>
             <div class="card">
+              <div class="card-overlay"></div>
+
               <img src="./assets/back4.jpg" alt="" />
               <div class="text-over-card-image">
                 <p>COMPUTER</p>
@@ -760,30 +857,30 @@ what are people sying about us
 Social media handles
 
 ****************************** -->
-      <section class="social-media-icons-wrapper ">
-      <div class="social-media-icons body-spacer">
-        <div class="rounded-icon-background">
-          <a><i class="fa-brands fa-facebook"></i></a>
+      <section class="social-media-icons-wrapper">
+        <div class="social-media-icons body-spacer">
+          <div class="rounded-icon-background">
+            <a><i class="fa-brands fa-facebook"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a><i class="fa-brands fa-twitter"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a> <i class="fa-brands fa-linkedin"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a> <i class="fa-brands fa-youtube"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a> <i class="fa-brands fa-skype"></i></a>
+          </div>
+          <div class="rounded-icon-background">
+            <a> <i class="fa-brands fa-google-plus-g"></i></a>
+          </div>
         </div>
-        <div class="rounded-icon-background">
-          <a><i class="fa-brands fa-twitter"></i></a>
-        </div>
-        <div class="rounded-icon-background">
-          <a><i class="fa-brands fa-instagram"></i></a>
-        </div>
-        <div class="rounded-icon-background">
-          <a> <i class="fa-brands fa-linkedin"></i></a>
-        </div>
-        <div class="rounded-icon-background">
-          <a> <i class="fa-brands fa-youtube"></i></a>
-        </div>
-        <div class="rounded-icon-background">
-          <a> <i class="fa-brands fa-skype"></i></a>
-        </div>
-        <div class="rounded-icon-background">
-          <a> <i class="fa-brands fa-google-plus-g"></i></a>
-        </div>
-      </div>
       </section>
     </main>
 
@@ -852,14 +949,14 @@ copyright text
 ********************************** -->
     <div class="copyright-wrapper">
       <div class="copyright body-spacer">
-      <div>
-        <p>
-          Copyright © 2023 developed by
-          <a href="mailto:anyadav411998@gmail.com"> anshul yadav </a>
-        </p>
-        <img src="./assets/paymentcard.jpg" alt="" />
+        <div>
+          <p>
+            Copyright © 2023 developed by
+            <a href="mailto:anyadav411998@gmail.com"> anshul yadav </a>
+          </p>
+          <img src="./assets/paymentcard.jpg" alt="" />
+        </div>
       </div>
-    </div>
     </div>
     <div>
       <div class="top-navigation-controller">

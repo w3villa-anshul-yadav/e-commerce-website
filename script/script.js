@@ -40,7 +40,7 @@ function setCurrentUser() {
   if (userIndx) {
     let username = loginData.loginArr[userIndx].username;
     document.getElementById("currentUser").innerHTML = username.toUpperCase();
-    
+
     document.getElementById("currentUser").style.color = "blue";
     document.getElementById("login-logout-text").innerText = "Log Out";
     document.getElementById("login-logout-text-mobile").innerText = "Log Out";
@@ -132,7 +132,7 @@ function owl2() {
     loop: true,
     margin: 23,
     nav: false,
-    autoplay: true,
+    // autoplay: true,
     responsive: {
       0: {
         items: 1,
@@ -219,7 +219,7 @@ function owl5() {
     loop: true,
     margin: 25,
     nav: false,
-    autoplay: true,
+    // autoplay: true,
     responsive: {
       0: {
         items: 1,
@@ -314,7 +314,7 @@ async function displayWhyBuyUs(elem) {
   for (i in data) {
     container += `
      <div class="item">
-          <img src="${data[i].img}" alt="">
+          <img src="${data[i].img}" onmouseleave="unZoomImage(this)" onmouseenter="zoomImage(this)"  alt="">
           <div class="text-on-image">
               <p>${data[i].name}</p>
           </div>
@@ -338,9 +338,14 @@ async function displayfeaturedProducts(elem) {
                         <div class="item">
                         <div class="featured-products-card">
                             <div class="image-container">
-                                <img src="${data[i].img}" alt=""> 
+                                <img src="${data[i].img}" onmouseleave="unZoomImage(this)" onmouseenter="zoomImage(this)" alt=""> 
+                                <div class="zoom-icon">
+                               
+                                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </div>
                                 <div class="labels">
                                 <div class="cross-labels">
+                                
                           `;
       for (k in data[i].crossLabel) {
         container += `  
@@ -424,8 +429,11 @@ async function displayfeaturedCategories() {
      <div class="item">
      <div class="featured-products-card">
          <div class="image-container">
-             <img src="${data[i].img}" alt="">
-
+             <img src="${data[i].img}" onmouseleave="unZoomImage(this)" onmouseenter="zoomImage(this)"  alt="">
+               <div class="zoom-icon">
+                                
+                                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </div>
              <div class="labels">
                       <div class="cross-labels">
                       `;
@@ -502,7 +510,9 @@ async function displayOurBlog(elem) {
   <div class="item">
                     <div class="featured-products-card">
                     <div class="image-container">
-                        <img src="${data[i].img}" alt="" />
+                        <img src="${
+                          data[i].img
+                        }" alt="" onmouseenter="zoomImage(this)" onmouseleave="unZoomImage(this)"  />
                         <div class="blog-details brand-model">
                         <i class="fa-solid fa-user"></i>
                         <p>${data[i].author}</p>
@@ -551,7 +561,9 @@ async function displayShopByBrand() {
     container += `<div class="item" >
       <div class="featured-products-card">
         <div class="image-container">
-          <a><img src="${data[i].img}" alt="" /></a>
+          <a><img src="${data[i].img}" onmouseleave="unZoomShopByBrandImage(this)" onmouseenter="zoomShopByBrandImage(this)"  alt="" />
+          <p id="brand-logo-label" style="text-align: center">Apple</p>
+          </a>
         </div>
       </div>
     </div>`;
@@ -570,7 +582,14 @@ async function displayImprovedGallery() {
   let container = document.getElementById("gallery-container");
 
   for (i in data) {
-    container.innerHTML += `<img src="${data[i].img}" alt="gallery image">`;
+    container.innerHTML += `
+    <div class="gallary-image">
+    <img src="${data[i].img}" alt="gallery image"  onmouseenter="zoomImage(this)" onmouseleave="unZoomImage(this)"   >
+     <div class="zoom-icon">
+                               
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                                </div>`;
   }
 }
 displayPeopleSaying();
@@ -614,7 +633,7 @@ async function displayMostViewed() {
     elem += `
     <div class="item">
               <div class="card">
-                <img src="${data[i].img}" alt="" />
+                <img src="${data[i].img}" onmouseenter="zoomImage(this)" onmouseleave="unZoomImage(this)" alt="" />
                 <div>
                   <h2>${data[i].name}</h2>
                   <p>${data[i].prise}</p>
@@ -695,7 +714,7 @@ function showSearchResult() {
   } else {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
-  if(!(inputValue.trim()=="")){
+  if (!(inputValue.trim() == "")) {
     localStorage.setItem("searchValue", inputValue);
     location.href = "search.html";
   }
@@ -789,7 +808,7 @@ function totalItemInCart() {
 // add to wishlist
 function addToWishList(productId) {
   let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
-   let wishListArr = wishlistData.wishListArr;
+  let wishListArr = wishlistData.wishListArr;
   if (wishListArr.includes(productId)) {
     alert("Item already in wishlist");
   } else {
@@ -797,4 +816,38 @@ function addToWishList(productId) {
     localStorage.setItem("wishListData", JSON.stringify(wishlistData));
     alert("item added into wishlist");
   }
+}
+//zoom image on mouse hover
+function zoomImage(elem) {
+  elem.style.transform = "scale(1.17)";
+  console.log(elem);
+  elem.style.transition = ".3s ease-in-out";
+}
+function unZoomImage(elem) {
+  elem.style.transform = "scale(1)";
+}
+function zoomShopByBrandImage(elem) {
+  zoomImage(elem);
+}
+function unZoomShopByBrandImage(elem) {
+  unZoomImage(elem);
+}
+// nov menu on hover
+function displayNavSubMenuContent() {
+  let targetElem = document.querySelector("#on-hover-department-nav-sub-menu");
+  document.querySelector("#on-hover-department").style.display = "block";
+  targetElem.style.display = "flex";
+}
+function hideNavSubMenuContent() {
+  let targetElem = document.querySelector("#on-hover-department-nav-sub-menu");
+  document.querySelector("#on-hover-department").style.display = "none";
+  targetElem.style.display = "none";
+}
+function displayOnHoverSubMenuContent(elem) {
+  elem.target.style.display = "flex";
+  document.querySelector("#on-hover-department").style.display = "block";
+}
+function hideOnHoverSubMenuContent(elem) {
+  document.querySelector("#on-hover-department").style.display = "none";
+  elem.target.style.display = "none";
 }
