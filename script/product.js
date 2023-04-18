@@ -1,4 +1,5 @@
 getProductData();
+let product;
 async function getProductData() {
   let response = await fetch("./script/products.json");
   let responsData = await response.json();
@@ -7,14 +8,14 @@ async function getProductData() {
   //get data form url
   let urlPrams = new URLSearchParams(window.location.search);
   let id = urlPrams.get("product");
-  const product = data.find((item) => {
+  product = data.find((item) => {
     return item.id == id;
   });
   showProductPage(product);
 }
 function showProductPage(product) {
   document.getElementById("current-page-nav").innerHTML =
-    "search  &nbsp;&nbsp; " +
+    "product  &nbsp;&nbsp; " +
     '         <i class="fa-solid fa-arrow-right"></i> &nbsp;&nbsp;   ' +
     product.name;
 
@@ -24,22 +25,16 @@ function showProductPage(product) {
   for (i = 0; i < 6; i++) {
     image += `<img src=${product.img} alt="product image" >`;
   }
-  document.getElementById("product-price").innerHTML = "1999$";
+  document.getElementById("product-price").innerHTML = "$1999";
   document.getElementById("product-discounted-price").innerHTML =
     product.discountedPrice;
 
   document.getElementById("more-product-image").innerHTML = image;
   // document.getElementById("product-main-image").src = "" + product.img + "";
-
-  navigateProductDetails(document.getElementById("product-discription"));
-  function navigateProductDetails(elem) {
-    document
-      .getElementsByClassName("nav-active")[0]
-      .classList.remove("nav-active");
-    elem.classList.add("nav-active");
-    document.getElementById("detailText").innerText =
-      product.discription.join("");
-  }
+  navigateProductDetails(
+    document.getElementById("product-discription"),
+    product
+  );
 
   let button = document.getElementById("showMoreButton");
   button.addEventListener("click", () => {
@@ -62,12 +57,19 @@ function showProductPage(product) {
   });
   displayProductImage(product);
 }
+function navigateProductDetails(elem, p = product) {
+  document
+    .getElementsByClassName("nav-active")[0]
+    .classList.remove("nav-active");
+  elem.classList.add("nav-active");
+  document.getElementById("detailText").innerText = p.discription.join("");
+}
 function displayProductImage(product) {
   let mainImageContainer = document.getElementById("main-image");
   let container = `<div class="owl-carousel owl1 owl-theme">`;
   container += `
      <div class="item">
-          <img src="${product.img}" alt="product image">
+          <img src="${product.img}" alt="product image"  >
       </div>`;
   if (window.innerWidth <= 712)
     for (i in product.otherImage) {
@@ -81,7 +83,7 @@ function displayProductImage(product) {
   owl1();
 }
 window.addEventListener("resize", () => {
-  displayProduct();
+  displayProductImage(product);
 });
 function owl1() {
   //for  display Why Buy Us
@@ -381,7 +383,7 @@ async function displayfeaturedCategories() {
       container += `
      <div class="item">
      <div class="featured-products-card">
-         <div class="image-container">
+         <div class="image-container" onclick="showProduct(${data[i].id})">
              <img src="${data[i].img}" alt="">
 
              <div class="labels">
@@ -509,4 +511,8 @@ function displayOnHoverSubMenuContent(elem) {
 function hideOnHoverSubMenuContent(elem) {
   document.querySelector("#on-hover-department").style.display = "none";
   elem.target.style.display = "none";
+}
+// show product
+function showProduct(id) {
+  location.href = "product.html" + "?" + "product=" + id;
 }

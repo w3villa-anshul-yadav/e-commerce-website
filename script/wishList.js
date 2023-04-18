@@ -16,7 +16,6 @@ function showSearchResult() {
   }
   if (!(inputValue.trim() == "")) {
     location.href = "search.html" + "?" + "query=" + inputValue;
-    
   }
 }
 async function showResult(inputValue) {
@@ -72,7 +71,7 @@ function showSearchResultContent(data, operation) {
   container += `
   <div class="item">
   <div class="featured-products-card" id="searchItem">
-  <div class="image-container">
+  <div class="image-container" onclick="showProduct(${data.id})">
   <img src="${data.img}" alt="">
   
   <div class="labels">
@@ -426,4 +425,8 @@ function displayOnHoverSubMenuContent(elem) {
 function hideOnHoverSubMenuContent(elem) {
   document.querySelector("#on-hover-department").style.display = "none";
   elem.target.style.display = "none";
+}
+// show product
+function showProduct(id) {
+  location.href = "product.html" + "?" + "product=" + id;
 }

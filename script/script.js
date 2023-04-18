@@ -337,7 +337,7 @@ async function displayfeaturedProducts(elem) {
       container += `
                         <div class="item">
                         <div class="featured-products-card">
-                            <div class="image-container">
+                            <div class="image-container" onclick="showProduct(${data[i].id})">
                                 <img src="${data[i].img}" onmouseleave="unZoomImage(this)" onmouseenter="zoomImage(this)" alt=""> 
                                 <div class="zoom-icon">
                                
@@ -428,7 +428,7 @@ async function displayfeaturedCategories() {
       container += `
      <div class="item">
      <div class="featured-products-card">
-         <div class="image-container">
+         <div class="image-container" onclick="showProduct(${data[i].id})">
              <img src="${data[i].img}" onmouseleave="unZoomImage(this)" onmouseenter="zoomImage(this)"  alt="">
                <div class="zoom-icon">
                                 
@@ -509,7 +509,7 @@ async function displayOurBlog(elem) {
     container += `
   <div class="item">
                     <div class="featured-products-card">
-                    <div class="image-container">
+                    <div class="image-container" >
                         <img src="${
                           data[i].img
                         }" alt="" onmouseenter="zoomImage(this)" onmouseleave="unZoomImage(this)"  />
@@ -560,7 +560,7 @@ async function displayShopByBrand() {
   for (i in data) {
     container += `<div class="item" >
       <div class="featured-products-card">
-        <div class="image-container">
+        <div class="image-container"  >
           <a><img src="${data[i].img}" onmouseleave="unZoomShopByBrandImage(this)" onmouseenter="zoomShopByBrandImage(this)"  alt="" />
           <p id="brand-logo-label" style="text-align: center">Apple</p>
           </a>
@@ -716,7 +716,6 @@ function showSearchResult() {
   }
   if (!(inputValue.trim() == "")) {
     location.href = "search.html" + "?" + "query=" + inputValue;
-    
   }
 }
 function showPagination(noOfPages, resultArr) {
@@ -889,4 +888,8 @@ function displayOnHoverSubMenuContent(elem) {
 function hideOnHoverSubMenuContent(elem) {
   document.querySelector("#on-hover-department").style.display = "none";
   elem.target.style.display = "none";
+}
+// show product
+function showProduct(id) {
+  location.href = "product.html" + "?" + "product=" + id;
 }

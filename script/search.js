@@ -159,8 +159,8 @@ function showSearchResultContent(data) {
   let container = ``;
   container += `         <div class="item">
                         <div class="featured-products-card toggle-list-view" >
-                            <div class="image-container" onclick="showProduct(${data.id})" >
-                                <img src="${data.img}" alt=""> 
+                            <div class="image-container"  onclick="showProduct(${data.id})" >
+                                <img src="${data.img}"  onmouseenter="zoomImage(this)" onmouseleave="unZoomImage(this)"  alt=""> 
                                 <div class="labels">
                                 <div class="cross-labels">
                           `;
@@ -718,4 +718,8 @@ function displayOnHoverSubMenuContent(elem) {
 function hideOnHoverSubMenuContent(elem) {
   document.querySelector("#on-hover-department").style.display = "none";
   elem.target.style.display = "none";
+}
+// show product
+function showProduct(id) {
+  location.href = "product.html" + "?" + "product=" + id;
 }

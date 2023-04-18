@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
 :root {
-  --primary-blue-color: #2b3cf8;
+  --primary-blue-color: #0d52d6;
   --light-gray-color: rgb(243, 243, 247);
 }
 body {
@@ -314,7 +314,7 @@ have four sub section
 .rounded-icon-background {
   width: 32px;
   height: 32px;
-  background-color: #2b3cf8;
+  background-color: var(--primary-blue-color);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -1355,7 +1355,7 @@ SOME STYLES ARE IN ABOUVE SECTION
 .list-add-to-cart-container div input[type="button"] {
   width: 93px;
   cursor: pointer;
-  background-color: rgb(59, 59, 241);
+  background-color:  #0f3a8d;
   border: none;
   height: 34px;
   color: white;
@@ -1740,6 +1740,7 @@ input[type="number"]::-webkit-outer-spin-button,
 .from-our-blog .featured-products-card .image-container img {
   object-fit: cover !important;
   height: 350px;
+  cursor: pointer;
   padding: 0;
 }
 .from-our-blog .blog-paragraph-container h3 {
@@ -3234,8 +3235,9 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   font-size: 15px;
   padding: 11px 12px;
   border-radius: 3px;
-  background: blue;
+  background: var(--primary-blue-color);
   color: white;
+  
 }
 .product-details-container
   .list-add-to-cart-container
