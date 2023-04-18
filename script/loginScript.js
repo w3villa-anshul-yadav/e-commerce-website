@@ -1,3 +1,29 @@
+loadFirstTimeOnBrouser();
+function loadFirstTimeOnBrouser() {
+  if (!localStorage.getItem("cartData")) {
+    let cartData = {
+      cartArr: [],
+    };
+    localStorage.setItem("cartData", JSON.stringify(cartData));
+  }
+  if (!localStorage.getItem("loginFormStatus")) {
+    localStorage.setItem("loginFormStatus", false);
+  }
+
+  if (!localStorage.getItem("loginData")) {
+    let obj = {
+      loginArr: [{}],
+    };
+    localStorage.setItem("loginData", JSON.stringify(obj));
+  }
+
+  if (!localStorage.getItem("wishListData")) {
+    let wishListData = {
+      wishListArr: [],
+    };
+    localStorage.setItem("wishListData", JSON.stringify(wishListData));
+  }
+}
 totalItemInCart();
 // ************************   show search Result in page  ******************************
 function showSearchResult() {
@@ -9,7 +35,6 @@ function showSearchResult() {
   }
   if (!(inputValue.trim() == "")) {
     location.href = "search.html" + "?" + "query=" + inputValue;
-    
   }
 }
 
@@ -274,7 +299,7 @@ document.getElementById("searchButton").addEventListener("click", () => {
 document.getElementById("mobileSearchButton").addEventListener("click", () => {
   showSearchResult();
 });
- 
+
 async function showResult(inputValue) {
   let whyBuyContainer = document.getElementById("searchCard");
   let container = ` <div class="search-result" >`;
@@ -412,7 +437,7 @@ document.getElementById("searchButton").addEventListener("click", () => {
 document.getElementById("mobileSearchButton").addEventListener("click", () => {
   showSearchResult();
 });
- 
+
 async function showResult(inputValue) {
   let whyBuyContainer = document.getElementById("searchCard");
   let container = ` <div class="search-result" >`;
@@ -638,7 +663,7 @@ document.getElementById("login-logout-click").addEventListener("click", () => {
 // add to wishlist
 function addToWishList(productId) {
   let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
-   let wishListArr = wishlistData.wishListArr;
+  let wishListArr = wishlistData.wishListArr;
   if (wishListArr.includes(productId)) {
     alert("Item already in wishlist");
   } else {

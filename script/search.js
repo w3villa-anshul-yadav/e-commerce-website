@@ -1,3 +1,29 @@
+loadFirstTimeOnBrouser();
+function loadFirstTimeOnBrouser() {
+  if (!localStorage.getItem("cartData")) {
+    let cartData = {
+      cartArr: [],
+    };
+    localStorage.setItem("cartData", JSON.stringify(cartData));
+  }
+  if (!localStorage.getItem("loginFormStatus")) {
+    localStorage.setItem("loginFormStatus", false);
+  }
+
+  if (!localStorage.getItem("loginData")) {
+    let obj = {
+      loginArr: [{}],
+    };
+    localStorage.setItem("loginData", JSON.stringify(obj));
+  }
+
+  if (!localStorage.getItem("wishListData")) {
+    let wishListData = {
+      wishListArr: [],
+    };
+    localStorage.setItem("wishListData", JSON.stringify(wishListData));
+  }
+}
 // *********************show search result on this page ******************
 prepareSearchInput();
 function prepareSearchInput() {
