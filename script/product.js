@@ -106,7 +106,7 @@ function showSearchResult() {
 }
 
 // ******************************** add to cart   ************************
-function addToCart(productId) {
+function addToCart(productId, img, name) {
   let cartData = JSON.parse(localStorage.getItem("cartData"));
   if (cartData.cartArr.includes(productId)) {
     alert("item already in cart");
@@ -121,9 +121,48 @@ function addToCart(productId) {
       cartData.cartArr.push(productId);
       localStorage.setItem("cartData", JSON.stringify(cartData));
     }
-    alert("item added");
     totalItemInCart();
+    document.getElementsByClassName("added-to-cart-modal")[0].style.display =
+      "block";
+    showItemAddedToCartModal(img, name);
+    setTimeout(() => {
+      document.getElementsByClassName("added-to-cart-modal")[0].innerHTML = ``;
+      document.getElementsByClassName("added-to-cart-modal")[0].style.display =
+        "none";
+    }, 3000);
   }
+}
+function showItemAddedToCartModal(img, name) {
+  document.getElementsByClassName("added-to-cart-modal")[0].innerHTML += `
+        <div style='position:relative;'>
+        <i
+        class="fa-solid fa-xmark cross-item-added-to-cart"
+           onclick="hideItemAdded(event)"
+        ></i>
+        <div class="added-to-cart-modal-top">
+          <img src="${img}" alt="" />
+          <div>
+            <p id="product-name">${name}</p>
+            <p>Success: You have added</p>
+            <p>
+              ${name} <span>to your <a href=""> shopping cart</a>!</span>
+            </p>
+          </div>
+        </div>
+        <div class="view-checkout-button-container">
+          <a href="./shoppingCart.html">
+            <i class="fa-solid fa-cart-shopping"></i> &nbsp; VIEW CART
+          </a>
+          <a>
+            CHECKOUT &nbsp; <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        </div>
+   `;
+}
+function hideItemAdded(event) {
+  console.log(event.target.parentNode);
+  event.target.parentNode.style.display = "none";
 }
 
 // ************************   show mobile search bar  *****************************
@@ -368,7 +407,7 @@ async function displayfeaturedCategories() {
              <hr class="related-products-hr">
              <div class="add-to-cart-container">
                  <div>
-                     <input type="button" onclick="addToCart(${data[i].id})" value="ADD TO CART">
+                     <input type="button" onclick="addToCart(${data[i].id},'${data[i].img}','${data[i].name}')" value="ADD TO CART">
                  </div>
                  <div>
                      <i style="font-weight:100" class="fa-solid fa-heart" onclick="addToWishList(${data[i].id})"></i>
@@ -421,3 +460,37 @@ document.getElementById("searchButton").addEventListener("click", () => {
 document.getElementById("mobileSearchButton").addEventListener("click", () => {
   showSearchResult();
 });
+
+//zoom image on mouse hover
+function zoomImage(elem) {
+  elem.style.transform = "scale(1.17)";
+  elem.style.transition = ".3s ease-in-out";
+}
+function unZoomImage(elem) {
+  elem.style.transform = "scale(1)";
+}
+function zoomShopByBrandImage(elem) {
+  zoomImage(elem);
+}
+function unZoomShopByBrandImage(elem) {
+  unZoomImage(elem);
+}
+// nov menu on hover
+function displayNavSubMenuContent() {
+  let targetElem = document.querySelector("#on-hover-department-nav-sub-menu");
+  document.querySelector("#on-hover-department").style.display = "block";
+  targetElem.style.display = "flex";
+}
+function hideNavSubMenuContent() {
+  let targetElem = document.querySelector("#on-hover-department-nav-sub-menu");
+  document.querySelector("#on-hover-department").style.display = "none";
+  targetElem.style.display = "none";
+}
+function displayOnHoverSubMenuContent(elem) {
+  elem.target.style.display = "flex";
+  document.querySelector("#on-hover-department").style.display = "block";
+}
+function hideOnHoverSubMenuContent(elem) {
+  document.querySelector("#on-hover-department").style.display = "none";
+  elem.target.style.display = "none";
+}

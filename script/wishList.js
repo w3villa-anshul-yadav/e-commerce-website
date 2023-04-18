@@ -114,7 +114,7 @@ function showSearchResultContent(data, operation) {
              <hr>
              <div class="add-to-cart-container">
              <div>
-             <input type="button" onclick="addToCart(${data.id})" value="ADD TO CART">
+             <input type="button" onclick="addToCart(${data.id},'${data.img}','${data.name}')" value="ADD TO CART">
              </div>
              <div>
             `;
@@ -180,7 +180,7 @@ async function showWishList() {
   let responsData = await response.json();
 
   resultArr = getWishListDataArray(responsData.productData);
- 
+
   noOfPages = Math.ceil(resultArr.length / 4);
   for (let i = 0; i < resultArr.length; i++) {
     if (i >= 4) break;
@@ -191,16 +191,63 @@ async function showWishList() {
   whyBuyContainer.innerHTML = container;
 }
 // ******************************** add to cart   ************************
-function addToCart(productId) {
+function addToCart(productId, img, name) {
   let cartData = JSON.parse(localStorage.getItem("cartData"));
   if (cartData.cartArr.includes(productId)) {
     alert("item already in cart");
   } else {
-    cartData.cartArr.push(productId);
-    localStorage.setItem("cartData", JSON.stringify(cartData));
-    alert("item added");
+    if (cartData) {
+      cartData.cartArr.push(productId);
+      localStorage.setItem("cartData", JSON.stringify(cartData));
+    } else {
+      let cartData = {
+        cartArr: [],
+      };
+      cartData.cartArr.push(productId);
+      localStorage.setItem("cartData", JSON.stringify(cartData));
+    }
     totalItemInCart();
+    document.getElementsByClassName("added-to-cart-modal")[0].style.display =
+      "block";
+    showItemAddedToCartModal(img, name);
+    setTimeout(() => {
+      document.getElementsByClassName("added-to-cart-modal")[0].innerHTML = ``;
+      document.getElementsByClassName("added-to-cart-modal")[0].style.display =
+        "none";
+    }, 3000);
   }
+}
+function showItemAddedToCartModal(img, name) {
+  document.getElementsByClassName("added-to-cart-modal")[0].innerHTML += `
+        <div style='position:relative;'>
+        <i
+        class="fa-solid fa-xmark cross-item-added-to-cart"
+           onclick="hideItemAdded(event)"
+        ></i>
+        <div class="added-to-cart-modal-top">
+          <img src="${img}" alt="" />
+          <div>
+            <p id="product-name">${name}</p>
+            <p>Success: You have added</p>
+            <p>
+              ${name} <span>to your <a href=""> shopping cart</a>!</span>
+            </p>
+          </div>
+        </div>
+        <div class="view-checkout-button-container">
+          <a href="./shoppingCart.html">
+            <i class="fa-solid fa-cart-shopping"></i> &nbsp; VIEW CART
+          </a>
+          <a>
+            CHECKOUT &nbsp; <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        </div>
+   `;
+}
+function hideItemAdded(event) {
+  console.log(event.target.parentNode);
+  event.target.parentNode.style.display = "none";
 }
 //******************sell all button************************************/
 function seeAllProducts() {
@@ -337,7 +384,7 @@ function removeFromWishList(productId) {
 // add to wishlist
 function addToWishList(productId) {
   let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
-   let wishListArr = wishlistData.wishListArr;
+  let wishListArr = wishlistData.wishListArr;
   if (wishListArr.includes(productId)) {
     alert("Item already in wishlist");
   } else {
@@ -345,4 +392,38 @@ function addToWishList(productId) {
     localStorage.setItem("wishListData", JSON.stringify(wishlistData));
     alert("item added into wishlist");
   }
+}
+
+//zoom image on mouse hover
+function zoomImage(elem) {
+  elem.style.transform = "scale(1.17)";
+  elem.style.transition = ".3s ease-in-out";
+}
+function unZoomImage(elem) {
+  elem.style.transform = "scale(1)";
+}
+function zoomShopByBrandImage(elem) {
+  zoomImage(elem);
+}
+function unZoomShopByBrandImage(elem) {
+  unZoomImage(elem);
+}
+// nov menu on hover
+function displayNavSubMenuContent() {
+  let targetElem = document.querySelector("#on-hover-department-nav-sub-menu");
+  document.querySelector("#on-hover-department").style.display = "block";
+  targetElem.style.display = "flex";
+}
+function hideNavSubMenuContent() {
+  let targetElem = document.querySelector("#on-hover-department-nav-sub-menu");
+  document.querySelector("#on-hover-department").style.display = "none";
+  targetElem.style.display = "none";
+}
+function displayOnHoverSubMenuContent(elem) {
+  elem.target.style.display = "flex";
+  document.querySelector("#on-hover-department").style.display = "block";
+}
+function hideOnHoverSubMenuContent(elem) {
+  document.querySelector("#on-hover-department").style.display = "none";
+  elem.target.style.display = "none";
 }

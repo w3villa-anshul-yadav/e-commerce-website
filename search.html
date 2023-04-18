@@ -46,7 +46,7 @@
   <body>
     <!-- **************************header section ********************************** -->
    
-    <header>
+  <header>
       <div class="top-navbar-container body-spacer">
         <!-- top-most-navbar  have three different section-->
 
@@ -247,13 +247,105 @@
 
           <div class="nav-menu-container">
             <div>
-              <a class="left-menu-icon-container">
-                <div class="hamburgur"><i class="fa-solid fa-bars"></i></div>
-                <p>All departments</p>
-                <div class="sale-container">Sale</div>
+              <a>
+                <div class="left-menu-icon-container">
+                  <div class="hamburgur">
+                    <i class="fa-solid fa-bars"></i>
+                  </div>
+                  <p>All departments</p>
+                  <div class="sale-container">Sale</div>
+                  <div id="on-hover-department">
+                    <div
+                      class="on-hover-main-menu"
+                      onmouseenter="displayNavSubMenuContent()"
+                      onmouseleave="hideNavSubMenuContent()"
+                    >
+                      <i class="fa-solid fa-bars"></i>
+                      Shop By Category
+                    </div>
+                    <div class="on-hover-main-menu">
+                      <i class="fa-solid fa-bars"></i> Shop by Brand
+                    </div>
+                    <div class="on-hover-main-menu">
+                      <i class="fa-solid fa-bars"></i>
+                      Special Deals
+                    </div>
+                    <div class="on-hover-main-menu">
+                      <i class="fa-solid fa-bars"></i>
+                      Bestsellers
+                    </div>
+                    <div class="on-hover-main-menu">
+                      <i class="fa-solid fa-bars"></i>
+                      Custom Links
+                    </div>
+                    <div class="on-hover-main-menu">
+                      <i class="fa-solid fa-bars"></i>
+                      See All Products
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="on-hover-department-nav-sub-menu"
+                  onmouseenter="displayOnHoverSubMenuContent(event)"
+                  onmouseleave="hideOnHoverSubMenuContent(event)"
+                >
+                  <div class="content">
+                    <div class="nav-sub-menu-content">
+                      <h3>Fashion</h3>
+
+                      <a href=""> Accesories </a>
+                      <a href=""> Paint </a>
+                      <a href=""> T-shirt </a>
+                      <a href=""> Dress </a>
+                      <a href=""> See-all-products </a>
+                    </div>
+
+                    <div class="nav-sub-menu-content">
+                      <a href=""> <h3>Fashion</h3></a> <a href="">Accesories</a>
+                      <a href="">Paint</a>
+                      <a href="">T-shirt</a>
+                      <a href="">Dress</a>
+                      <a href="">See-all-products</a>
+                    </div>
+
+                    <div class="nav-sub-menu-content">
+                      <a href=""> <h3>Fashion</h3></a> <a href="">Accesories</a>
+                      <a href="">Paint</a>
+                      <a href="">T-shirt</a>
+                      <a href="">Dress</a>
+                      <a href="">See-all-products</a>
+                    </div>
+                    <div class="nav-sub-menu-content">
+                      <a href=""><h3>Fashion</h3></a>
+
+                      <a href=""> Accesories </a>
+                      <a href=""> Paint </a>
+                      <a href=""> T-shirt </a>
+                      <a href=""> Dress </a>
+                      <a href=""> See-all-products </a>
+                    </div>
+
+                    <div class="nav-sub-menu-content">
+                      <a href=""> <h3>Fashion</h3></a> <a href="">Accesories</a>
+                      <a href="">Paint</a>
+                      <a href="">T-shirt</a>
+                      <a href="">Dress</a>
+                      <a href="">See-all-products</a>
+                    </div>
+
+                    <div class="nav-sub-menu-content">
+                      <a href=""> <h3>Fashion</h3></a> <a href="">Accesories</a>
+                      <a href="">Paint</a>
+                      <a href="">T-shirt</a>
+                      <a href="">Dress</a>
+                      <a href="">See-all-products</a>
+                    </div>
+                  </div>
+                  <img src="./assets/1card.jpg" alt="" />
+                </div>
               </a>
             </div>
-            <div>
+            <div class="multilevel-nav">
               <a>
                 <p>multilevel</p>
               </a>
@@ -265,7 +357,7 @@
                 <div class="new-container">New</div>
               </a>
             </div>
-            <div>
+            <div class="full-width-nav">
               <a>
                 <p>full width</p>
               </a>
@@ -287,6 +379,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="added-to-cart-modal">
+       
       </div>
     </header>
 
