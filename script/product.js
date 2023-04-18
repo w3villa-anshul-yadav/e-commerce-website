@@ -24,8 +24,8 @@ function loadFirstTimeOnBrouser() {
     localStorage.setItem("wishListData", JSON.stringify(wishListData));
   }
 }
+
 getProductData();
-let product;
 async function getProductData() {
   let response = await fetch("./script/products.json");
   let responsData = await response.json();
@@ -34,7 +34,7 @@ async function getProductData() {
   //get data form url
   let urlPrams = new URLSearchParams(window.location.search);
   let id = urlPrams.get("product");
-  product = data.find((item) => {
+  let product = data.find((item) => {
     return item.id == id;
   });
   showProductPage(product);
@@ -51,6 +51,10 @@ function showProductPage(product) {
   for (i = 0; i < 6; i++) {
     image += `<img src=${product.img} alt="product image" >`;
   }
+  document.getElementById(
+    "detailText"
+  ).innerText = `The Journal is sit ametconsectetur adipisicing elit Repellendus beatae Lorem ipsum dolor sit amet consectetur adipisicing elit Dolores Lorem ipsum dolor sit amet consectetur adipisicing elit Soluta, dicta! consequuntur Repellendus beatae Lorem ipsum dolor sit amet consectetur adipisicing elit Dolores Lorem ipsum dolor sit amet aliquam fuga porro dignissimos quod. ipsam eum temporibus incidunt inventore architecto sapiente at, error blanditiisconsectetur adipisicing elit. Soluta, dicta! consequuntur`;
+
   document.getElementById("product-price").innerHTML = "$1999";
   document.getElementById("product-discounted-price").innerHTML =
     product.discountedPrice;
@@ -83,12 +87,11 @@ function showProductPage(product) {
   });
   displayProductImage(product);
 }
-function navigateProductDetails(elem, p = product) {
+function navigateProductDetails(elem) {
   document
     .getElementsByClassName("nav-active")[0]
     .classList.remove("nav-active");
   elem.classList.add("nav-active");
-  document.getElementById("detailText").innerText = p.discription.join("");
 }
 function displayProductImage(product) {
   let mainImageContainer = document.getElementById("main-image");
@@ -108,9 +111,7 @@ function displayProductImage(product) {
   mainImageContainer.innerHTML = container;
   owl1();
 }
-window.addEventListener("resize", () => {
-  displayProductImage(product);
-});
+
 function owl1() {
   //for  display Why Buy Us
   $(".owl1").owlCarousel({
