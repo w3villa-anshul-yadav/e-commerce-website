@@ -1,51 +1,68 @@
-let product = JSON.parse(localStorage.getItem("product"));
-document.getElementById("current-page-nav").innerHTML =
-  "search  &nbsp;&nbsp; " +
-  '         <i class="fa-solid fa-arrow-right"></i> &nbsp;&nbsp;   ' +
-  product.name;
+getProductData();
+async function getProductData() {
+  let response = await fetch("./script/products.json");
+  let responsData = await response.json();
+  let data = responsData.productData;
 
-document.getElementById("product-name").innerHTML = product.name;
-
-let image = "";
- for( i=0;i<6;i++){
-  image += `<img src=${product.img} alt="product image" >`;
- }
- 
-
-document.getElementById("more-product-image").innerHTML = image;
-// document.getElementById("product-main-image").src = "" + product.img + "";
-
-navigateProductDetails(document.getElementById("product-discription"));
-function navigateProductDetails(elem) {
-  document
-    .getElementsByClassName("nav-active")[0]
-    .classList.remove("nav-active");
-  elem.classList.add("nav-active");
-  document.getElementById("detailText").innerText =
-    product.discription.join("");
+  //get data form url
+  let urlPrams = new URLSearchParams(window.location.search);
+  let id = urlPrams.get("product");
+  const product = data.find((item) => {
+    return item.id == id;
+  });
+  showProductPage(product);
 }
+function showProductPage(product) {
+  document.getElementById("current-page-nav").innerHTML =
+    "search  &nbsp;&nbsp; " +
+    '         <i class="fa-solid fa-arrow-right"></i> &nbsp;&nbsp;   ' +
+    product.name;
 
-let button = document.getElementById("showMoreButton");
-button.addEventListener("click", () => {
-  let elem = document.getElementById("detailText");
-  if (button.innerHTML.includes("Show More")) {
-    button.innerHTML = '<i class="fa-solid fa-angle-up"></i>' + "Show Less";
-    button.style.bottom = "-18px";
-    document.getElementsByClassName(
-      "detailTextAfter"
-    )[0].style.backgroundColor = "transparent";
-  } else {
-    button.innerHTML = '<i class="fa-solid fa-chevron-down"></i>' + "Show More";
-    button.style.bottom = "-2px";
-    document.getElementsByClassName(
-      "detailTextAfter"
-    )[0].style.backgroundColor = "#dedddd50";
+  document.getElementById("product-name").innerHTML = product.name;
+
+  let image = "";
+  for (i = 0; i < 6; i++) {
+    image += `<img src=${product.img} alt="product image" >`;
   }
-  elem.classList.toggle("height-90");
-});
+  document.getElementById("product-price").innerHTML = "1999$";
+  document.getElementById("product-discounted-price").innerHTML =
+    product.discountedPrice;
 
-displayProduct();
-function displayProduct(){
+  document.getElementById("more-product-image").innerHTML = image;
+  // document.getElementById("product-main-image").src = "" + product.img + "";
+
+  navigateProductDetails(document.getElementById("product-discription"));
+  function navigateProductDetails(elem) {
+    document
+      .getElementsByClassName("nav-active")[0]
+      .classList.remove("nav-active");
+    elem.classList.add("nav-active");
+    document.getElementById("detailText").innerText =
+      product.discription.join("");
+  }
+
+  let button = document.getElementById("showMoreButton");
+  button.addEventListener("click", () => {
+    let elem = document.getElementById("detailText");
+    if (button.innerHTML.includes("Show More")) {
+      button.innerHTML = '<i class="fa-solid fa-angle-up"></i>' + "Show Less";
+      button.style.bottom = "-18px";
+      document.getElementsByClassName(
+        "detailTextAfter"
+      )[0].style.backgroundColor = "transparent";
+    } else {
+      button.innerHTML =
+        '<i class="fa-solid fa-chevron-down"></i>' + "Show More";
+      button.style.bottom = "-2px";
+      document.getElementsByClassName(
+        "detailTextAfter"
+      )[0].style.backgroundColor = "#dedddd50";
+    }
+    elem.classList.toggle("height-90");
+  });
+  displayProductImage(product);
+}
+function displayProductImage(product) {
   let mainImageContainer = document.getElementById("main-image");
   let container = `<div class="owl-carousel owl1 owl-theme">`;
   container += `
@@ -100,8 +117,7 @@ function showSearchResult() {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
   if (!(inputValue.trim() == "")) {
-    localStorage.setItem("searchValue", inputValue);
-    location.href = "search.html";
+    location.href = "search.html" + "?" + "query=" + inputValue;
   }
 }
 

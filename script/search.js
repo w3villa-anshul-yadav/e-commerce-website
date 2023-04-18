@@ -1,6 +1,9 @@
 // *********************show search result on this page ******************
-showResult(localStorage.getItem("searchValue").trim());
-// localStorage.setItem("searchValue","");
+prepareSearchInput();
+function prepareSearchInput() {
+  let urlPrams = new URLSearchParams(window.location.search);
+  showResult(urlPrams.get("query").trim());
+}
 // ************************   show search Result  **********************************
 document.getElementById("searchButton").addEventListener("click", () => {
   showSearchResult();
@@ -21,14 +24,10 @@ function showSearchResult() {
   } else {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
-  if (inputValue == "") {
-    inputValue = document.getElementById("search-value").value;
+  if (!(inputValue.trim() == "")) {
+    location.href = "search.html" + "?" + "query=" + inputValue;
   }
-
-  localStorage.setItem("searchValue", inputValue);
-  location.href = "search.html";
 }
-let viewProductData; //this variable is used for showing reslt in product page
 async function showResult(inputValue) {
   let whyBuyContainer = document.getElementById("searchCard");
   //display search heading on search page
@@ -56,7 +55,6 @@ async function showResult(inputValue) {
         notFound = false;
       }
     }
-    viewProductData=resultArr; 
     noOfPages = Math.ceil(resultArr.length / 3);
     for (i = 0; i < resultArr.length; i++) {
       if (i >= 3) break;
@@ -210,7 +208,7 @@ function showSearchResultContent(data) {
                           <div class="add-to-cart-container">
                               <div>
                                   <input type="number" id="${data.id}-no-of-item" value="1">
-                                  <input type="button" id="${data.id}" onclick="addToCart(${data[i].id},'${data[i].img}','${data[i].name}')" value="ADD TO CART">
+                                  <input type="button" id="${data.id}" onclick="addToCart(${data.id},'${data.img}','${data.name}')" value="ADD TO CART">
                               </div>
                               <div>
                                   <i style="font-weight:100" class="fa-solid fa-heart" onclick="addToWishList(${data.id})"></i>
@@ -249,7 +247,7 @@ function showSearchResultContent(data) {
             <input
               type="button"
               id="${data.id}"
-              onclick="addToCart(${data[i].id},'${data[i].img}','${data[i].name}')"
+              onclick="addToCart(${data.id},'${data.img}','${data.name}')"
               value="ADD TO CART"
             />
           </div>
@@ -685,12 +683,7 @@ function showInputRangeOnPriseInput() {
 
 // show product
 function showProduct(id) {
-  let data= viewProductData.find(( value )=>{
-    return value.id === id;
-  })
-  console.log(data);
-    localStorage.setItem("product", JSON.stringify(data));
-   location.href = "product.html";
+  location.href = "product.html" + "?" + "product=" + id;
 }
 
 //zoom image on mouse hover

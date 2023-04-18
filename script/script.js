@@ -715,8 +715,8 @@ function showSearchResult() {
     inputValue = document.getElementById("mobileSearchInput").value;
   }
   if (!(inputValue.trim() == "")) {
-    localStorage.setItem("searchValue", inputValue);
-    location.href = "search.html";
+    location.href = "search.html" + "?" + "query=" + inputValue;
+    
   }
 }
 function showPagination(noOfPages, resultArr) {
