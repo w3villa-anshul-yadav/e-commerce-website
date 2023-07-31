@@ -1,82 +1,82 @@
 loadFirstTimeOnBrouser();
 function loadFirstTimeOnBrouser() {
-  if (!localStorage.getItem("cartData")) {
-    let cartData = {
-      cartArr: [],
-    };
-    localStorage.setItem("cartData", JSON.stringify(cartData));
-  }
-  if (!localStorage.getItem("loginFormStatus")) {
-    localStorage.setItem("loginFormStatus", false);
-  }
+    if (!localStorage.getItem('cartData')) {
+        let cartData = {
+            cartArr: [],
+        };
+        localStorage.setItem('cartData', JSON.stringify(cartData));
+    }
+    if (!localStorage.getItem('loginFormStatus')) {
+        localStorage.setItem('loginFormStatus', false);
+    }
 
-  if (!localStorage.getItem("loginData")) {
-    let obj = {
-      loginArr: [{}],
-    };
-    localStorage.setItem("loginData", JSON.stringify(obj));
-  }
+    if (!localStorage.getItem('loginData')) {
+        let obj = {
+            loginArr: [{}],
+        };
+        localStorage.setItem('loginData', JSON.stringify(obj));
+    }
 
-  if (!localStorage.getItem("wishListData")) {
-    let wishListData = {
-      wishListArr: [],
-    };
-    localStorage.setItem("wishListData", JSON.stringify(wishListData));
-  }
+    if (!localStorage.getItem('wishListData')) {
+        let wishListData = {
+            wishListArr: [],
+        };
+        localStorage.setItem('wishListData', JSON.stringify(wishListData));
+    }
 }
 totalItemInCart();
 // ************************   show search Result in page  ******************************
 function showSearchResult() {
-  let inputValue;
-  if (window.innerWidth > 1272) {
-    inputValue = document.getElementById("searchInput").value;
-  } else {
-    inputValue = document.getElementById("mobileSearchInput").value;
-  }
-  if (!(inputValue.trim() == "")) {
-    location.href = "search.html" + "?" + "query=" + inputValue;
-  }
+    let inputValue;
+    if (window.innerWidth > 1272) {
+        inputValue = document.getElementById('searchInput').value;
+    } else {
+        inputValue = document.getElementById('mobileSearchInput').value;
+    }
+    if (!(inputValue.trim() == '')) {
+        location.href = 'search.html' + '?' + 'query=' + inputValue;
+    }
 }
 
 // ************************   show mobile search bar  *****************************
 function showSearchBar() {
-  let searchBar = document.getElementById("mobile-search-bar");
-  searchBar.classList.toggle("show-mobile-search-bar");
+    let searchBar = document.getElementById('mobile-search-bar');
+    searchBar.classList.toggle('show-mobile-search-bar');
 }
 // *************   show hide navbar item sale and new container**********************
-var bottomNavbar = document.getElementById("fixed-bottom-navbar");
+var bottomNavbar = document.getElementById('fixed-bottom-navbar');
 var topPos = bottomNavbar.offsetTop;
 window.onscroll = function () {
-  showHIdeNav();
+    showHIdeNav();
 };
 function showHIdeNav() {
-  let saleContainer = document.getElementsByClassName("sale-container")[0];
-  let newContainer = document.getElementsByClassName("new-container")[0];
-  if (window.pageYOffset >= topPos) {
-    bottomNavbar.style.position = "fixed";
-    saleContainer.style.display = "none";
-    newContainer.style.display = "none";
-  } else {
-    bottomNavbar.style.transition = ".5s ease";
-    bottomNavbar.style.position = "static";
-    newContainer.style.display = "block";
-    saleContainer.style.display = "block";
-  }
+    let saleContainer = document.getElementsByClassName('sale-container')[0];
+    let newContainer = document.getElementsByClassName('new-container')[0];
+    if (window.pageYOffset >= topPos) {
+        bottomNavbar.style.position = 'fixed';
+        saleContainer.style.display = 'none';
+        newContainer.style.display = 'none';
+    } else {
+        bottomNavbar.style.transition = '.5s ease';
+        bottomNavbar.style.position = 'static';
+        newContainer.style.display = 'block';
+        saleContainer.style.display = 'block';
+    }
 }
 // onClicking register button in navbar
 function signUpForm() {
-  localStorage.setItem("loginFormStatus", true);
-  location.assign("login.html");
+    localStorage.setItem('loginFormStatus', true);
+    location.assign('login.html');
 }
 
 // signup page on click
 function showSignUp(elem) {
-  let passwordContainer = document.getElementById("password-container");
-  let loginButton = document.getElementById("login");
-  if (elem.innerHTML == "Sign Up") {
-    passwordContainer.insertAdjacentHTML(
-      "afterend",
-      `
+    let passwordContainer = document.getElementById('password-container');
+    let loginButton = document.getElementById('login');
+    if (elem.innerHTML == 'Sign Up') {
+        passwordContainer.insertAdjacentHTML(
+            'afterend',
+            `
           <div class="confirm-password">
              <i class="fa-solid fa-lock"></i>
              <input
@@ -88,160 +88,200 @@ function showSignUp(elem) {
                      />
                      </div>
                      `
-    );
-    elem.innerHTML = "Log In";
-    loginButton.value = "SIGN UP";
-  } else {
-    let confirmPassword = document
-      .getElementsByClassName("confirm-password")[0]
-      .remove();
-    elem.innerHTML = "Sign Up";
-    loginButton.value = "LOG IN";
-  }
+        );
+        elem.innerHTML = 'Log In';
+        loginButton.value = 'SIGN UP';
+    } else {
+        let confirmPassword = document
+            .getElementsByClassName('confirm-password')[0]
+            .remove();
+        elem.innerHTML = 'Sign Up';
+        loginButton.value = 'LOG IN';
+    }
 }
 
 //signup
-document.getElementById("login").addEventListener("click", function () {
-  if (this.value == "LOG IN") logIn();
-  else signUp();
+document.getElementById('login').addEventListener('click', function () {
+    if (this.value == 'LOG IN') logIn();
+    else signUp();
 });
 function signUp() {
-  var userName = document.getElementById("user-name").value;
-  var password = document.getElementById("password").value;
-  var confirmPassword = document.getElementById("confirm-password").value;
-  if (password != confirmPassword) {
-    alert("password are not same");
-  } else {
-    let loginObj;
-    if (userName.length != 0 && password.length != 0) {
-      loginObj = {
+    var userName = document.getElementById('user-name').value.trim();
+    var password = document.getElementById('password').value.trim();
+    var confirmPassword = document
+        .getElementById('confirm-password')
+        .value.trim();
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return;
+    }
+
+     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(userName)) {
+        alert('Invalid email format.');
+        return;
+    }
+
+    if (isUserRegistered(userName)) {
+        alert(
+            'This email is already registered. Please use a different email address.'
+        );
+        return;
+    }
+     var passwordRegex = /^(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,}$/;
+    if (!passwordRegex.test(password)) {
+        alert(
+            'Password must be at least 6 characters long, contain at least one special character (!@#$%^&*), and at least one uppercase letter.'
+        );
+        return;
+    }
+
+    let loginObj = {
         username: userName,
         password: password,
         logedStatus: false,
-      };
+    };
+
+    if (localStorage.getItem('loginData')) {
+        try {
+            let loginData = JSON.parse(localStorage.getItem('loginData'));
+            loginData.loginArr.push(loginObj);
+            localStorage.setItem('loginData', JSON.stringify(loginData));
+            alert('Your account has been created.');
+            location.assign('login.html');
+        } catch (err) {
+            alert('An error occurred while creating your account.');
+            location.assign('login.html');
+        }
     } else {
-      alert("input required");
+        let obj = {
+            loginArr: [loginObj],
+        };
+        localStorage.setItem('loginData', JSON.stringify(obj));
+        alert('Your account has been created.');
+        location.assign('login.html');
     }
-    if (localStorage.getItem("loginData")) {
-      try {
-        let loginData = JSON.parse(localStorage.getItem("loginData"));
-        loginData.loginArr.push(loginObj);
-        localStorage.setItem("loginData", JSON.stringify(loginData));
-        alert("Your account has been created");
-        location.assign("login.html");
-      } catch (err) {
-        location.assign("login.html");
-      }
-    } else {
-      let obj = {
-        loginArr: [loginObj],
-      };
-      localStorage.setItem("loginData", JSON.stringify(obj));
-      alert("Your account has been created");
-      location.assign("login.html");
+}
+function isUserRegistered(email) {
+    if (localStorage.getItem('loginData')) {
+        let loginData = JSON.parse(localStorage.getItem('loginData'));
+        let users = loginData.loginArr;
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].username === email) {
+                return true;
+            }
+        }
     }
-  }
+    return false;
 }
 
 //login check
 function logIn() {
-  let loginData = JSON.parse(localStorage.getItem("loginData"));
-  if (loginData) {
-    var userName = document.getElementById("user-name");
-    var userPassword = document.getElementById("password");
-    let flag = false;
-    for (i in loginData.loginArr) {
-      if (userName.value.length != 0 && password.value.length != 0) {
-        if (
-          userName.value == loginData.loginArr[i].username &&
-          userPassword.value == loginData.loginArr[i].password
-        ) {
-          loginData.loginArr[i].logedStatus = true;
-          localStorage.setItem("loginData", JSON.stringify(loginData));
-          flag = true;
+    let loginData = JSON.parse(localStorage.getItem('loginData'));
+    if (loginData) {
+        var userName = document.getElementById('user-name');
+        var userPassword = document.getElementById('password');
+        let flag = false;
+        for (i in loginData.loginArr) {
+            if (userName.value.length != 0 && password.value.length != 0) {
+                if (
+                    userName.value == loginData.loginArr[i].username &&
+                    userPassword.value == loginData.loginArr[i].password
+                ) {
+                    loginData.loginArr[i].logedStatus = true;
+                    localStorage.setItem(
+                        'loginData',
+                        JSON.stringify(loginData)
+                    );
+                    flag = true;
+                }
+            } else {
+                alert('input requied');
+                break;
+            }
         }
-      } else {
-        alert("input requied");
-        break;
-      }
-    }
-    if (flag) {
-      location.assign("index.html");
+        if (flag) {
+            location.assign('index.html');
+        } else {
+            alert('password did not matched');
+        }
     } else {
-      alert("password did not matched");
+        alert('invalid user id & password');
     }
-  } else {
-    alert("invalid user id & password");
-  }
 }
 totalItemInCart();
 function totalItemInCart() {
-  let cartData = JSON.parse(localStorage.getItem("cartData"));
-  document.getElementById("item-counter").innerHTML = cartData.cartArr.length;
+    let cartData = JSON.parse(localStorage.getItem('cartData'));
+    document.getElementById('item-counter').innerHTML = cartData.cartArr.length;
 }
 // on clicking register button
 function signUpForm() {
-  localStorage.setItem("loginFormStatus", true);
-  location.assign("login.html");
+    localStorage.setItem('loginFormStatus', true);
+    location.assign('login.html');
 }
 
 function getCurrentLoggedUserIndex(loginArr) {
-  for (i in loginArr) {
-    //get current user index
-    if (loginArr[i].logedStatus == true) {
-      return i;
+    for (i in loginArr) {
+        //get current user index
+        if (loginArr[i].logedStatus == true) {
+            return i;
+        }
     }
-  }
-  return false;
+    return false;
 }
 //on clicking login button
-document.getElementById("login-logout-click").addEventListener("click", () => {
-  let bool = localStorage.getItem("loginFormStatus");
-  bool = bool == "false" ? true : false;
-  if (
-    bool &&
-    document.getElementById("login-logout-text").innerText == "Login"
-  ) {
-    location.assign("login.html");
-  } else {
-    document.getElementById("login-logout-text").innerText = "Login";
-    let loginData = JSON.parse(localStorage.getItem("loginData"));
-    let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
-    loginData.loginArr[currentUserIndex].logedStatus = false;
-    localStorage.setItem("loginData", JSON.stringify(loginData));
-    location.assign("index.html");
-  }
+document.getElementById('login-logout-click').addEventListener('click', () => {
+    let bool = localStorage.getItem('loginFormStatus');
+    bool = bool == 'false' ? true : false;
+    if (
+        bool &&
+        document.getElementById('login-logout-text').innerText == 'Login'
+    ) {
+        location.assign('login.html');
+    } else {
+        document.getElementById('login-logout-text').innerText = 'Login';
+        let loginData = JSON.parse(localStorage.getItem('loginData'));
+        let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
+        loginData.loginArr[currentUserIndex].logedStatus = false;
+        localStorage.setItem('loginData', JSON.stringify(loginData));
+        location.assign('index.html');
+    }
 });
 
 // ******************************** add to cart   ************************
 function addToCart(productId, img, name) {
-  let cartData = JSON.parse(localStorage.getItem("cartData"));
-  if (cartData.cartArr.includes(productId)) {
-    alert("item already in cart");
-  } else {
-    if (cartData) {
-      cartData.cartArr.push(productId);
-      localStorage.setItem("cartData", JSON.stringify(cartData));
+    let cartData = JSON.parse(localStorage.getItem('cartData'));
+    if (cartData.cartArr.includes(productId)) {
+        alert('item already in cart');
     } else {
-      let cartData = {
-        cartArr: [],
-      };
-      cartData.cartArr.push(productId);
-      localStorage.setItem("cartData", JSON.stringify(cartData));
+        if (cartData) {
+            cartData.cartArr.push(productId);
+            localStorage.setItem('cartData', JSON.stringify(cartData));
+        } else {
+            let cartData = {
+                cartArr: [],
+            };
+            cartData.cartArr.push(productId);
+            localStorage.setItem('cartData', JSON.stringify(cartData));
+        }
+        totalItemInCart();
+        document.getElementsByClassName(
+            'added-to-cart-modal'
+        )[0].style.display = 'block';
+        showItemAddedToCartModal(img, name);
+        setTimeout(() => {
+            document.getElementsByClassName(
+                'added-to-cart-modal'
+            )[0].innerHTML = ``;
+            document.getElementsByClassName(
+                'added-to-cart-modal'
+            )[0].style.display = 'none';
+        }, 3000);
     }
-    totalItemInCart();
-    document.getElementsByClassName("added-to-cart-modal")[0].style.display =
-      "block";
-    showItemAddedToCartModal(img, name);
-    setTimeout(() => {
-      document.getElementsByClassName("added-to-cart-modal")[0].innerHTML = ``;
-      document.getElementsByClassName("added-to-cart-modal")[0].style.display =
-        "none";
-    }, 3000);
-  }
 }
 function showItemAddedToCartModal(img, name) {
-  document.getElementsByClassName("added-to-cart-modal")[0].innerHTML += `
+    document.getElementsByClassName('added-to-cart-modal')[0].innerHTML += `
         <div style='position:relative;'>
         <i
         class="fa-solid fa-xmark cross-item-added-to-cart"
@@ -269,88 +309,88 @@ function showItemAddedToCartModal(img, name) {
    `;
 }
 function hideItemAdded(event) {
-  console.log(event.target.parentNode);
-  event.target.parentNode.style.display = "none";
+    console.log(event.target.parentNode);
+    event.target.parentNode.style.display = 'none';
 }
 
 function totalItemInCart() {
-  let cartData = JSON.parse(localStorage.getItem("cartData"));
-  document.getElementById("item-counter").innerHTML = cartData.cartArr.length;
+    let cartData = JSON.parse(localStorage.getItem('cartData'));
+    document.getElementById('item-counter').innerHTML = cartData.cartArr.length;
 }
 
 //on clicking login button
-document.getElementById("login-logout-click").addEventListener("click", () => {
-  if (document.getElementById("login-logout-text").innerText == "Login") {
-    location.assign("login.html");
-  } else {
-    document.getElementById("login-logout-text").innerText = "Login";
-    let loginData = JSON.parse(localStorage.getItem("loginData"));
-    let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
-    loginData.loginArr[currentUserIndex].logedStatus = false;
-    localStorage.setItem("loginData", JSON.stringify(loginData));
-    location.assign("index.html");
-  }
+document.getElementById('login-logout-click').addEventListener('click', () => {
+    if (document.getElementById('login-logout-text').innerText == 'Login') {
+        location.assign('login.html');
+    } else {
+        document.getElementById('login-logout-text').innerText = 'Login';
+        let loginData = JSON.parse(localStorage.getItem('loginData'));
+        let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
+        loginData.loginArr[currentUserIndex].logedStatus = false;
+        localStorage.setItem('loginData', JSON.stringify(loginData));
+        location.assign('index.html');
+    }
 });
 
 // ************************   show search Result  **********************************
-document.getElementById("searchButton").addEventListener("click", () => {
-  showSearchResult();
+document.getElementById('searchButton').addEventListener('click', () => {
+    showSearchResult();
 });
-document.getElementById("mobileSearchButton").addEventListener("click", () => {
-  showSearchResult();
+document.getElementById('mobileSearchButton').addEventListener('click', () => {
+    showSearchResult();
 });
 
 async function showResult(inputValue) {
-  let whyBuyContainer = document.getElementById("searchCard");
-  let container = ` <div class="search-result" >`;
-  let notFound = true;
-  let noOfPages;
-  let resultArr = [];
-  if (inputValue.trim().length == 0) {
-    container += `<h1 style='color:red'> Input Required</h1>`;
-    notFound = false;
-  } else {
-    let response = await fetch("./script/products.json");
-    let responsData = await response.json();
-    let data = responsData.productData;
-    for (i in data) {
-      if (
-        data[i].name.toUpperCase().includes(inputValue.toUpperCase()) &&
-        data[i].category === "featuredCategories"
-      ) {
-        resultArr.push(data[i]);
+    let whyBuyContainer = document.getElementById('searchCard');
+    let container = ` <div class="search-result" >`;
+    let notFound = true;
+    let noOfPages;
+    let resultArr = [];
+    if (inputValue.trim().length == 0) {
+        container += `<h1 style='color:red'> Input Required</h1>`;
         notFound = false;
-      }
+    } else {
+        let response = await fetch('./script/products.json');
+        let responsData = await response.json();
+        let data = responsData.productData;
+        for (i in data) {
+            if (
+                data[i].name.toUpperCase().includes(inputValue.toUpperCase()) &&
+                data[i].category === 'featuredCategories'
+            ) {
+                resultArr.push(data[i]);
+                notFound = false;
+            }
+        }
+        noOfPages = Math.ceil(resultArr.length / 4);
+        for (let i = 0; i < resultArr.length; i++) {
+            if (i >= 4) break;
+            container += showSearchResultContent(resultArr[i]);
+        }
+        try {
+            showPagination(noOfPages, resultArr);
+        } catch (err) {}
     }
-    noOfPages = Math.ceil(resultArr.length / 4);
-    for (let i = 0; i < resultArr.length; i++) {
-      if (i >= 4) break;
-      container += showSearchResultContent(resultArr[i]);
+    if (notFound) {
+        container += `<h1 style='color:red'> NO Result Found</h1>`;
     }
-    try {
-      showPagination(noOfPages, resultArr);
-    } catch (err) {}
-  }
-  if (notFound) {
-    container += `<h1 style='color:red'> NO Result Found</h1>`;
-  }
-  container += `</div>`;
-  whyBuyContainer.innerHTML = container;
+    container += `</div>`;
+    whyBuyContainer.innerHTML = container;
 }
 function showPagination(noOfPages, resultArr) {
-  let paginationHandler = document.getElementById("paginationHandler");
-  let htm = ``;
-  htm += `<li class="active-pagination">1</li>`;
+    let paginationHandler = document.getElementById('paginationHandler');
+    let htm = ``;
+    htm += `<li class="active-pagination">1</li>`;
 
-  for (let i = 2; i <= noOfPages; i++) {
-    htm += `<li>${i}</li>`;
-  }
-  paginationHandler.innerHTML = htm;
-  handlePagination(resultArr);
+    for (let i = 2; i <= noOfPages; i++) {
+        htm += `<li>${i}</li>`;
+    }
+    paginationHandler.innerHTML = htm;
+    handlePagination(resultArr);
 }
 function showSearchResultContent(data) {
-  let container = ``;
-  container += `
+    let container = ``;
+    container += `
               <div class="item">
               <div class="featured-products-card" id="searchItem">
               <div class="image-container" onclick="showProduct(${data.id})">
@@ -359,33 +399,33 @@ function showSearchResultContent(data) {
               <div class="labels">
               <div class="cross-labels">
               `;
-  for (k in data.crossLabel) {
-    container += `
+    for (k in data.crossLabel) {
+        container += `
                 <p class="blue-bg">
                 <strong>${data.crossLabel[k]}</strong>
                 </p>
                 `;
-  }
-  container += `
+    }
+    container += `
               </div>
               <div class="right-labels">
               `;
-  for (j in data.rightLabels) {
-    if (j % 2 == 0) {
-      container += `
+    for (j in data.rightLabels) {
+        if (j % 2 == 0) {
+            container += `
                                         <p class="yellow-bg ">
                                         <strong>${data.rightLabels[j]}</strong>
                                         </p>
                                         `;
-    } else {
-      container += `
+        } else {
+            container += `
                                         <p class="red-bg ">
                                         <strong>${data.rightLabels[j]}</strong>
                                         </p>
                                         `;
+        }
     }
-  }
-  container += `
+    container += `
                                    </div>
                          </div>
                          </div>
@@ -406,89 +446,90 @@ function showSearchResultContent(data) {
                  </div>
                  </div>
                  `;
-  return container;
+    return container;
 }
 //on clicking pagination
 function handlePagination(resultArr) {
-  document.getElementById("paginationHandler").childNodes.forEach((elem) => {
-    elem.addEventListener("click", () => {
-      let innerValue = parseInt(elem.innerText);
-      let start = (innerValue - 1) * 4;
-      let end = start + 4 - 1;
-      let activElem = document.getElementsByClassName("active-pagination")[0];
-      activElem.classList.remove("active-pagination");
-      elem.classList.add("active-pagination");
-      let whyBuyContainer = document.getElementById("searchCard");
-      let container = ` <div class="search-result" >`;
-      while (start <= end) {
-        if (start == resultArr.length) break;
-        container += showSearchResultContent(resultArr[start]);
-        start++;
-      }
-      whyBuyContainer.innerHTML = container;
+    document.getElementById('paginationHandler').childNodes.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            let innerValue = parseInt(elem.innerText);
+            let start = (innerValue - 1) * 4;
+            let end = start + 4 - 1;
+            let activElem =
+                document.getElementsByClassName('active-pagination')[0];
+            activElem.classList.remove('active-pagination');
+            elem.classList.add('active-pagination');
+            let whyBuyContainer = document.getElementById('searchCard');
+            let container = ` <div class="search-result" >`;
+            while (start <= end) {
+                if (start == resultArr.length) break;
+                container += showSearchResultContent(resultArr[start]);
+                start++;
+            }
+            whyBuyContainer.innerHTML = container;
+        });
     });
-  });
 }
 
 // ************************   show search Result  **********************************
-document.getElementById("searchButton").addEventListener("click", () => {
-  showSearchResult();
+document.getElementById('searchButton').addEventListener('click', () => {
+    showSearchResult();
 });
-document.getElementById("mobileSearchButton").addEventListener("click", () => {
-  showSearchResult();
+document.getElementById('mobileSearchButton').addEventListener('click', () => {
+    showSearchResult();
 });
 
 async function showResult(inputValue) {
-  let whyBuyContainer = document.getElementById("searchCard");
-  let container = ` <div class="search-result" >`;
-  let notFound = true;
-  let noOfPages;
-  let resultArr = [];
-  if (inputValue.trim().length == 0) {
-    container += `<h1 style='color:red'> Input Required</h1>`;
-    notFound = false;
-  } else {
-    let response = await fetch("./script/products.json");
-    let responsData = await response.json();
-    let data = responsData.productData;
-    for (i in data) {
-      if (
-        data[i].name.toUpperCase().includes(inputValue.toUpperCase()) &&
-        data[i].category === "featuredCategories"
-      ) {
-        resultArr.push(data[i]);
+    let whyBuyContainer = document.getElementById('searchCard');
+    let container = ` <div class="search-result" >`;
+    let notFound = true;
+    let noOfPages;
+    let resultArr = [];
+    if (inputValue.trim().length == 0) {
+        container += `<h1 style='color:red'> Input Required</h1>`;
         notFound = false;
-      }
+    } else {
+        let response = await fetch('./script/products.json');
+        let responsData = await response.json();
+        let data = responsData.productData;
+        for (i in data) {
+            if (
+                data[i].name.toUpperCase().includes(inputValue.toUpperCase()) &&
+                data[i].category === 'featuredCategories'
+            ) {
+                resultArr.push(data[i]);
+                notFound = false;
+            }
+        }
+        noOfPages = Math.ceil(resultArr.length / 4);
+        for (let i = 0; i < resultArr.length; i++) {
+            if (i >= 4) break;
+            container += showSearchResultContent(resultArr[i]);
+        }
+        try {
+            showPagination(noOfPages, resultArr);
+        } catch (err) {}
     }
-    noOfPages = Math.ceil(resultArr.length / 4);
-    for (let i = 0; i < resultArr.length; i++) {
-      if (i >= 4) break;
-      container += showSearchResultContent(resultArr[i]);
+    if (notFound) {
+        container += `<h1 style='color:red'> NO Result Found</h1>`;
     }
-    try {
-      showPagination(noOfPages, resultArr);
-    } catch (err) {}
-  }
-  if (notFound) {
-    container += `<h1 style='color:red'> NO Result Found</h1>`;
-  }
-  container += `</div>`;
-  whyBuyContainer.innerHTML = container;
+    container += `</div>`;
+    whyBuyContainer.innerHTML = container;
 }
 function showPagination(noOfPages, resultArr) {
-  let paginationHandler = document.getElementById("paginationHandler");
-  let htm = ``;
-  htm += `<li class="active-pagination">1</li>`;
+    let paginationHandler = document.getElementById('paginationHandler');
+    let htm = ``;
+    htm += `<li class="active-pagination">1</li>`;
 
-  for (let i = 2; i <= noOfPages; i++) {
-    htm += `<li>${i}</li>`;
-  }
-  paginationHandler.innerHTML = htm;
-  handlePagination(resultArr);
+    for (let i = 2; i <= noOfPages; i++) {
+        htm += `<li>${i}</li>`;
+    }
+    paginationHandler.innerHTML = htm;
+    handlePagination(resultArr);
 }
 function showSearchResultContent(data) {
-  let container = ``;
-  container += `
+    let container = ``;
+    container += `
   <div class="item">
   <div class="featured-products-card" id="searchItem">
   <div class="image-container" onclick="showProduct(${data.id})">
@@ -497,33 +538,33 @@ function showSearchResultContent(data) {
   <div class="labels">
   <div class="cross-labels">
   `;
-  for (k in data.crossLabel) {
-    container += `                 
+    for (k in data.crossLabel) {
+        container += `                 
     <p class="blue-bg">
     <strong>${data.crossLabel[k]}</strong>
     </p>                  
     `;
-  }
-  container += `
+    }
+    container += `
   </div>
   <div class="right-labels">
   `;
-  for (j in data.rightLabels) {
-    if (j % 2 == 0) {
-      container += `
+    for (j in data.rightLabels) {
+        if (j % 2 == 0) {
+            container += `
                             <p class="yellow-bg ">
                             <strong>${data.rightLabels[j]}</strong>
                             </p>
                             `;
-    } else {
-      container += `
+        } else {
+            container += `
                             <p class="red-bg ">
                             <strong>${data.rightLabels[j]}</strong>
                             </p>
                             `;
+        }
     }
-  }
-  container += `            
+    container += `            
                        </div>
              </div>
              </div>
@@ -544,169 +585,180 @@ function showSearchResultContent(data) {
      </div>
      </div>
      `;
-  return container;
+    return container;
 }
 //on clicking pagination
 function handlePagination(resultArr) {
-  document.getElementById("paginationHandler").childNodes.forEach((elem) => {
-    elem.addEventListener("click", () => {
-      let innerValue = parseInt(elem.innerText);
-      let start = (innerValue - 1) * 4;
-      let end = start + 4 - 1;
-      let activElem = document.getElementsByClassName("active-pagination")[0];
-      activElem.classList.remove("active-pagination");
-      elem.classList.add("active-pagination");
-      let whyBuyContainer = document.getElementById("searchCard");
-      let container = ` <div class="search-result" >`;
-      while (start <= end) {
-        if (start == resultArr.length) break;
-        container += showSearchResultContent(resultArr[start]);
-        start++;
-      }
-      whyBuyContainer.innerHTML = container;
+    document.getElementById('paginationHandler').childNodes.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            let innerValue = parseInt(elem.innerText);
+            let start = (innerValue - 1) * 4;
+            let end = start + 4 - 1;
+            let activElem =
+                document.getElementsByClassName('active-pagination')[0];
+            activElem.classList.remove('active-pagination');
+            elem.classList.add('active-pagination');
+            let whyBuyContainer = document.getElementById('searchCard');
+            let container = ` <div class="search-result" >`;
+            while (start <= end) {
+                if (start == resultArr.length) break;
+                container += showSearchResultContent(resultArr[start]);
+                start++;
+            }
+            whyBuyContainer.innerHTML = container;
+        });
     });
-  });
 }
 //******************sell all button************************************/
 function seeAllProducts() {
-  location.assign("allProducts.html");
+    location.assign('allProducts.html');
 }
 // ************************   show mobile search bar  *****************************
 function showSearchBar() {
-  let searchBar = document.getElementById("mobile-search-bar");
-  searchBar.classList.toggle("show-mobile-search-bar");
+    let searchBar = document.getElementById('mobile-search-bar');
+    searchBar.classList.toggle('show-mobile-search-bar');
 }
 
 totalItemInCart();
 function totalItemInCart() {
-  let cartData = JSON.parse(localStorage.getItem("cartData"));
-  document.getElementById("item-counter").innerHTML = cartData.cartArr.length;
-  document.getElementById("total-cart-price").innerText =
-    cartData.cartArr.length * 999;
+    let cartData = JSON.parse(localStorage.getItem('cartData'));
+    document.getElementById('item-counter').innerHTML = cartData.cartArr.length;
+    document.getElementById('total-cart-price').innerText =
+        cartData.cartArr.length * 999;
 }
 // on clicking register button
 function signUpForm() {
-  localStorage.setItem("loginFormStatus", true);
-  location.assign("login.html");
+    localStorage.setItem('loginFormStatus', true);
+    location.assign('login.html');
 }
 loadSignUp();
 function loadSignUp() {
-  let bool = localStorage.getItem("loginFormStatus");
-  bool = bool == "true" ? true : false;
-  if (bool) {
-    showSignUp(document.getElementById("signup-button"));
-  }
-  setTimeout(() => {
-    localStorage.setItem("loginFormStatus", false);
-  }, 500);
+    let bool = localStorage.getItem('loginFormStatus');
+    bool = bool == 'true' ? true : false;
+    if (bool) {
+        showSignUp(document.getElementById('signup-button'));
+    }
+    setTimeout(() => {
+        localStorage.setItem('loginFormStatus', false);
+    }, 500);
 }
 // display current user name text
 
 window.onload = function () {
-  setCurrentUser();
+    setCurrentUser();
 };
 function setCurrentUser() {
-  let loginData = JSON.parse(localStorage.getItem("loginData"));
-  let userIndx = getCurrentLoggedUserIndex(loginData.loginArr);
-  if (userIndx) {
-    let username = loginData.loginArr[userIndx].username;
-    document.getElementById("currentUser").innerHTML = username.toUpperCase();
-    // document.getElementById("currentUser-mobile").innerHTML = username.toUpperCase();
-    document.getElementById("currentUser").style.color = "blue";
-    document.getElementById("login-logout-text").innerText = "Log Out";
-    document.getElementById("login-logout-text-mobile").innerText = "Log Out";
-  } else {
-    document.getElementById("currentUser").innerHTML = "";
-    // document.getElementById("currentUser-mobile").innerHTML = "";
-    document.getElementById("login-logout-text").innerText = "Login";
-    document.getElementById("login-logout-text-mobile").innerText = "Login";
-  }
+    let loginData = JSON.parse(localStorage.getItem('loginData'));
+    let userIndx = getCurrentLoggedUserIndex(loginData.loginArr);
+    if (userIndx) {
+        let username = loginData.loginArr[userIndx].username;
+        document.getElementById('currentUser').innerHTML =
+            username.toUpperCase();
+        // document.getElementById("currentUser-mobile").innerHTML = username.toUpperCase();
+        document.getElementById('currentUser').style.color = 'blue';
+        document.getElementById('login-logout-text').innerText = 'Log Out';
+        document.getElementById('login-logout-text-mobile').innerText =
+            'Log Out';
+    } else {
+        document.getElementById('currentUser').innerHTML = '';
+        // document.getElementById("currentUser-mobile").innerHTML = "";
+        document.getElementById('login-logout-text').innerText = 'Login';
+        document.getElementById('login-logout-text-mobile').innerText = 'Login';
+    }
 } //on clicking login button for mobile nav
 document
-  .getElementById("login-logout-click-mobile")
-  .addEventListener("click", () => {
-    let bool = localStorage.getItem("loginFormStatus");
-    bool = bool == "false" ? true : false;
-    if (
-      bool &&
-      document.getElementById("login-logout-text-mobile").innerText == "Login"
-    ) {
-      location.assign("login.html");
-    } else {
-      document.getElementById("login-logout-text-mobile").innerText = "Login";
-      let loginData = JSON.parse(localStorage.getItem("loginData"));
-      let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
-      loginData.loginArr[currentUserIndex].logedStatus = false;
-      localStorage.setItem("loginData", JSON.stringify(loginData));
-      location.assign("index.html");
-    }
-  });
+    .getElementById('login-logout-click-mobile')
+    .addEventListener('click', () => {
+        let bool = localStorage.getItem('loginFormStatus');
+        bool = bool == 'false' ? true : false;
+        if (
+            bool &&
+            document.getElementById('login-logout-text-mobile').innerText ==
+                'Login'
+        ) {
+            location.assign('login.html');
+        } else {
+            document.getElementById('login-logout-text-mobile').innerText =
+                'Login';
+            let loginData = JSON.parse(localStorage.getItem('loginData'));
+            let currentUserIndex = getCurrentLoggedUserIndex(
+                loginData.loginArr
+            );
+            loginData.loginArr[currentUserIndex].logedStatus = false;
+            localStorage.setItem('loginData', JSON.stringify(loginData));
+            location.assign('index.html');
+        }
+    });
 
 //on clicking login button
-document.getElementById("login-logout-click").addEventListener("click", () => {
-  let bool = localStorage.getItem("loginFormStatus");
-  bool = bool == "false" ? true : false;
-  if (
-    bool &&
-    document.getElementById("login-logout-text").innerText == "Login"
-  ) {
-    location.assign("login.html");
-  } else {
-    document.getElementById("login-logout-text").innerText = "Login";
-    let loginData = JSON.parse(localStorage.getItem("loginData"));
-    let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
-    loginData.loginArr[currentUserIndex].logedStatus = false;
-    localStorage.setItem("loginData", JSON.stringify(loginData));
-    location.assign("index.html");
-  }
+document.getElementById('login-logout-click').addEventListener('click', () => {
+    let bool = localStorage.getItem('loginFormStatus');
+    bool = bool == 'false' ? true : false;
+    if (
+        bool &&
+        document.getElementById('login-logout-text').innerText == 'Login'
+    ) {
+        location.assign('login.html');
+    } else {
+        document.getElementById('login-logout-text').innerText = 'Login';
+        let loginData = JSON.parse(localStorage.getItem('loginData'));
+        let currentUserIndex = getCurrentLoggedUserIndex(loginData.loginArr);
+        loginData.loginArr[currentUserIndex].logedStatus = false;
+        localStorage.setItem('loginData', JSON.stringify(loginData));
+        location.assign('index.html');
+    }
 });
 // add to wishlist
 function addToWishList(productId) {
-  let wishlistData = JSON.parse(localStorage.getItem("wishListData"));
-  let wishListArr = wishlistData.wishListArr;
-  if (wishListArr.includes(productId)) {
-    alert("Item already in wishlist");
-  } else {
-    wishListArr.push(productId);
-    localStorage.setItem("wishListData", JSON.stringify(wishlistData));
-    alert("item added into wishlist");
-  }
+    let wishlistData = JSON.parse(localStorage.getItem('wishListData'));
+    let wishListArr = wishlistData.wishListArr;
+    if (wishListArr.includes(productId)) {
+        alert('Item already in wishlist');
+    } else {
+        wishListArr.push(productId);
+        localStorage.setItem('wishListData', JSON.stringify(wishlistData));
+        alert('item added into wishlist');
+    }
 }
 
 //zoom image on mouse hover
 function zoomImage(elem) {
-  elem.style.transform = "scale(1.17)";
-  elem.style.transition = ".3s ease-in-out";
+    elem.style.transform = 'scale(1.17)';
+    elem.style.transition = '.3s ease-in-out';
 }
 function unZoomImage(elem) {
-  elem.style.transform = "scale(1)";
+    elem.style.transform = 'scale(1)';
 }
 function zoomShopByBrandImage(elem) {
-  zoomImage(elem);
+    zoomImage(elem);
 }
 function unZoomShopByBrandImage(elem) {
-  unZoomImage(elem);
+    unZoomImage(elem);
 }
 // nov menu on hover
 function displayNavSubMenuContent() {
-  let targetElem = document.querySelector("#on-hover-department-nav-sub-menu");
-  document.querySelector("#on-hover-department").style.display = "block";
-  targetElem.style.display = "flex";
+    let targetElem = document.querySelector(
+        '#on-hover-department-nav-sub-menu'
+    );
+    document.querySelector('#on-hover-department').style.display = 'block';
+    targetElem.style.display = 'flex';
 }
 function hideNavSubMenuContent() {
-  let targetElem = document.querySelector("#on-hover-department-nav-sub-menu");
-  document.querySelector("#on-hover-department").style.display = "none";
-  targetElem.style.display = "none";
+    let targetElem = document.querySelector(
+        '#on-hover-department-nav-sub-menu'
+    );
+    document.querySelector('#on-hover-department').style.display = 'none';
+    targetElem.style.display = 'none';
 }
 function displayOnHoverSubMenuContent(elem) {
-  elem.target.style.display = "flex";
-  document.querySelector("#on-hover-department").style.display = "block";
+    elem.target.style.display = 'flex';
+    document.querySelector('#on-hover-department').style.display = 'block';
 }
 function hideOnHoverSubMenuContent(elem) {
-  document.querySelector("#on-hover-department").style.display = "none";
-  elem.target.style.display = "none";
+    document.querySelector('#on-hover-department').style.display = 'none';
+    elem.target.style.display = 'none';
 }
 // show product
 function showProduct(id) {
-  location.href = "product.html" + "?" + "product=" + id;
+    location.href = 'product.html' + '?' + 'product=' + id;
 }
